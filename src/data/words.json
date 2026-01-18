@@ -1,0 +1,3685 @@
+{
+  "groups": [
+    {
+      "id": 1,
+      "name": "Set 1",
+      "words": [
+        {
+          "id": 1,
+          "word": "abound",
+          "synonym": "proliferate",
+          "sentence": "The forests abound with wildlife of every kind."
+        },
+        {
+          "id": 2,
+          "word": "amorphous",
+          "synonym": "vague",
+          "sentence": "The artist created an amorphous sculpture with no clear form."
+        },
+        {
+          "id": 3,
+          "word": "austere",
+          "synonym": "ascetic",
+          "sentence": "The teacher’s austere manner made the students nervous."
+        },
+        {
+          "id": 4,
+          "word": "austere",
+          "synonym": "spartan",
+          "sentence": "The room was decorated in an austere style with minimal furniture."
+        },
+        {
+          "id": 5,
+          "word": "belie",
+          "synonym": "mask",
+          "sentence": "Her calm voice belied the anger she felt inside."
+        },
+        {
+          "id": 6,
+          "word": "capricious",
+          "synonym": "impulsive",
+          "sentence": "His capricious behavior made him difficult to work with."
+        },
+        {
+          "id": 7,
+          "word": "cerebral",
+          "synonym": "intellectual",
+          "sentence": "The movie was more cerebral than action-packed."
+        },
+        {
+          "id": 8,
+          "word": "cerebral",
+          "synonym": "brain-related",
+          "sentence": "Cerebral activity increases during intense concentration."
+        },
+        {
+          "id": 9,
+          "word": "congenial",
+          "synonym": "friendly",
+          "sentence": "He found the atmosphere at the office quite congenial."
+        },
+        {
+          "id": 10,
+          "word": "congenial",
+          "synonym": "suitable",
+          "sentence": "They moved to a more congenial environment for their children."
+        },
+        {
+          "id": 11,
+          "word": "conspicuous",
+          "synonym": "noticeable",
+          "sentence": "Her bright red dress made her conspicuous in the crowd."
+        },
+        {
+          "id": 12,
+          "word": "cursory",
+          "synonym": "desultory",
+          "sentence": "He gave the document only a cursory glance before signing it."
+        },
+        {
+          "id": 13,
+          "word": "daunting",
+          "synonym": "intimidating",
+          "sentence": "Climbing the mountain seemed a daunting challenge."
+        },
+        {
+          "id": 14,
+          "word": "deify",
+          "synonym": "worship",
+          "sentence": "Some fans deify their favorite celebrities."
+        },
+        {
+          "id": 15,
+          "word": "didactic",
+          "synonym": "instructive",
+          "sentence": "The professor’s lecture was highly didactic but informative."
+        },
+        {
+          "id": 16,
+          "word": "disseminate",
+          "synonym": "spread",
+          "sentence": "The organization works to disseminate information about climate change."
+        },
+        {
+          "id": 17,
+          "word": "feasible",
+          "synonym": "expedient",
+          "sentence": "The engineer proposed a feasible solution to the problem."
+        },
+        {
+          "id": 18,
+          "word": "flout",
+          "synonym": "defy",
+          "sentence": "He continued to flout the school rules despite repeated warnings."
+        },
+        {
+          "id": 19,
+          "word": "homogeneous",
+          "synonym": "uniform",
+          "sentence": "The population of the small village was largely homogeneous."
+        },
+        {
+          "id": 20,
+          "word": "humdrum",
+          "synonym": "boring",
+          "sentence": "She longed to escape her humdrum daily routine."
+        },
+        {
+          "id": 21,
+          "word": "insipid",
+          "synonym": "dull",
+          "sentence": "The soup was insipid and lacked flavor."
+        },
+        {
+          "id": 22,
+          "word": "loquacious",
+          "synonym": "talkative",
+          "sentence": "Her loquacious nature made her popular at parties."
+        },
+        {
+          "id": 23,
+          "word": "misanthropic",
+          "synonym": "antisocial",
+          "sentence": "His misanthropic attitude made him avoid most social gatherings."
+        },
+        {
+          "id": 24,
+          "word": "misnomer",
+          "synonym": "wrong name",
+          "sentence": "Calling the tiny cottage a 'mansion' is a misnomer."
+        },
+        {
+          "id": 25,
+          "word": "negligent",
+          "synonym": "careless",
+          "sentence": "The driver was found negligent in maintaining his vehicle."
+        },
+        {
+          "id": 26,
+          "word": "obsequious",
+          "synonym": "obedient",
+          "sentence": "The assistant’s obsequious behavior irritated his boss."
+        },
+        {
+          "id": 27,
+          "word": "placate",
+          "synonym": "pacify",
+          "sentence": "She tried to placate the angry customer with a refund."
+        },
+        {
+          "id": 28,
+          "word": "proclivity",
+          "synonym": "tendency",
+          "sentence": "He has a proclivity for solving complex puzzles."
+        },
+        {
+          "id": 29,
+          "word": "puerile",
+          "synonym": "childish",
+          "sentence": "His puerile jokes annoyed everyone at the meeting."
+        },
+        {
+          "id": 30,
+          "word": "quixotic",
+          "synonym": "idealistic",
+          "sentence": "His plan to end poverty overnight was noble but quixotic."
+        },
+        {
+          "id": 31,
+          "word": "spendthrift",
+          "synonym": "profligate",
+          "sentence": "Despite his wealth, he was known as a reckless spendthrift."
+        },
+        {
+          "id": 32,
+          "word": "taciturn",
+          "synonym": "reserved",
+          "sentence": "He was a taciturn man who rarely spoke in public."
+        },
+        {
+          "id": 33,
+          "word": "wary",
+          "synonym": "cautious",
+          "sentence": "Be wary of strangers offering unsolicited help."
+        }
+      ]
+    },
+
+    {
+      "id": 2,
+      "name": "Set 2",
+      "words": [
+        {
+          "id": 1,
+          "word": "adulterate",
+          "synonym": "contaminate",
+          "sentence": "The company was fined for adulterating milk with water."
+        },
+        {
+          "id": 2,
+          "word": "advocate",
+          "synonym": "support",
+          "sentence": "She advocates for equal rights in the workplace."
+        },
+        {
+          "id": 3,
+          "word": "advocate",
+          "synonym": "supporter",
+          "sentence": "He is a strong advocate of renewable energy."
+        },
+        {
+          "id": 4,
+          "word": "aggrandize",
+          "synonym": "magnify",
+          "sentence": "The dictator tried to aggrandize his power through propaganda."
+        },
+        {
+          "id": 5,
+          "word": "alacrity",
+          "synonym": "zeal",
+          "sentence": "She accepted the invitation with surprising alacrity."
+        },
+        {
+          "id": 6,
+          "word": "ambivalent",
+          "synonym": "uncertain",
+          "sentence": "He felt ambivalent about moving to another country."
+        },
+        {
+          "id": 7,
+          "word": "ameliorate",
+          "synonym": "improve",
+          "sentence": "New policies were introduced to ameliorate living conditions."
+        },
+        {
+          "id": 8,
+          "word": "amenable",
+          "synonym": "cooperative",
+          "sentence": "The team was amenable to the new schedule."
+        },
+        {
+          "id": 9,
+          "word": "amenable",
+          "synonym": "responsive",
+          "sentence": "Children are often more amenable to guidance than adults."
+        },
+        {
+          "id": 10,
+          "word": "anachronistic",
+          "synonym": "archaic",
+          "sentence": "Using a typewriter today feels anachronistic."
+        },
+        {
+          "id": 11,
+          "word": "audacious",
+          "synonym": "bold",
+          "sentence": "The startup made an audacious move into a crowded market."
+        },
+        {
+          "id": 12,
+          "word": "audacious",
+          "synonym": "rude",
+          "sentence": "His audacious remark during the meeting caught everyone off guard and was seen by many as downright disrespectful."
+        },
+        {
+          "id": 13,
+          "word": "avaricious",
+          "synonym": "greedy",
+          "sentence": "The avaricious landlord raised the rent every year."
+        },
+        {
+          "id": 14,
+          "word": "banal",
+          "synonym": "dull",
+          "sentence": "His speech was full of banal clichés."
+        },
+        {
+          "id": 15,
+          "word": "benign",
+          "synonym": "harmless",
+          "sentence": "Luckily, the tumor turned out to be benign."
+        },
+        {
+          "id": 16,
+          "word": "benign",
+          "synonym": "kind",
+          "sentence": "Her benign smile made everyone feel at ease."
+        },
+        {
+          "id": 17,
+          "word": "brazen",
+          "synonym": "shameless",
+          "sentence": "He made a brazen attempt to lie to the committee."
+        },
+        {
+          "id": 18,
+          "word": "calumny",
+          "synonym": "slander",
+          "sentence": "The article was a piece of pure calumny against the mayor."
+        },
+        {
+          "id": 19,
+          "word": "candid",
+          "synonym": "honest",
+          "sentence": "She was candid about her mistakes during the meeting."
+        },
+        {
+          "id": 20,
+          "word": "castigate",
+          "synonym": "criticize",
+          "sentence": "The teacher castigated the student for cheating."
+        },
+        {
+          "id": 21,
+          "word": "caustic",
+          "synonym": "mordant",
+          "sentence": "His caustic remarks hurt her feelings."
+        },
+        {
+          "id": 22,
+          "word": "caustic",
+          "synonym": "corrosive",
+          "sentence": "Be careful—this caustic chemical can damage metal surfaces."
+        },
+        {
+          "id": 23,
+          "word": "construe",
+          "synonym": "interpret",
+          "sentence": "Her silence was construed as agreement."
+        },
+        {
+          "id": 24,
+          "word": "contrite",
+          "synonym": "remorseful",
+          "sentence": "He was contrite after realizing the damage he had caused."
+        },
+        {
+          "id": 25,
+          "word": "convoluted",
+          "synonym": "complex",
+          "sentence": "The novel’s plot was too convoluted to follow."
+        },
+        {
+          "id": 26,
+          "word": "covet",
+          "synonym": "desire",
+          "sentence": "He coveted his neighbor’s new car."
+        },
+        {
+          "id": 27,
+          "word": "craven",
+          "synonym": "cowardly",
+          "sentence": "His craven behavior during the crisis disappointed everyone."
+        },
+        {
+          "id": 28,
+          "word": "decorum",
+          "synonym": "propriety",
+          "sentence": "She maintained decorum throughout the formal ceremony."
+        },
+        {
+          "id": 29,
+          "word": "deft",
+          "synonym": "skillful",
+          "sentence": "The artist’s deft brushstrokes brought the portrait to life."
+        },
+        {
+          "id": 30,
+          "word": "demur",
+          "synonym": "object",
+          "sentence": "She agreed at first but later demurred when the risks became clear."
+        },
+        {
+          "id": 31,
+          "word": "demur",
+          "synonym": "hesitation",
+          "sentence": "The judge asked if there were any objections, and there was a brief demur from the defense attorney before proceeding."
+        },
+        {
+          "id": 32,
+          "word": "derivative",
+          "synonym": "unoriginal",
+          "sentence": "The movie felt derivative of older classics."
+        },
+        {
+          "id": 33,
+          "word": "desiccate",
+          "synonym": "dry out",
+          "sentence": "The hot sun desiccated the soil within hours."
+        },
+        {
+          "id": 34,
+          "word": "diatribe",
+          "synonym": "tirade",
+          "sentence": "The politician launched into a diatribe against corruption."
+        },
+        {
+          "id": 35,
+          "word": "incredulous",
+          "synonym": "skeptical",
+          "sentence": "He gave her an incredulous look when she told the story."
+        },
+        {
+          "id": 36,
+          "word": "ingenuous",
+          "synonym": "naive",
+          "sentence": "Her ingenuous nature made her an easy target for deception."
+        }
+      ]
+    },
+
+    {
+      "id": 3,
+      "name": "Set 3",
+      "words": [
+        {
+          "id": 1,
+          "word": "abate",
+          "synonym": "diminish",
+          "sentence": "The storm finally abated after three hours of heavy rain."
+        },
+        {
+          "id": 2,
+          "word": "abjure",
+          "synonym": "renounce",
+          "sentence": "He publicly abjured his former beliefs after the controversy."
+        },
+        {
+          "id": 3,
+          "word": "anomalous",
+          "synonym": "irregular",
+          "sentence": "The scientist was intrigued by the anomalous results in the experiment."
+        },
+        {
+          "id": 4,
+          "word": "antipathy",
+          "synonym": "aversion",
+          "sentence": "She felt a strong antipathy toward dishonesty in any form."
+        },
+        {
+          "id": 5,
+          "word": "arcane",
+          "synonym": "mysterious",
+          "sentence": "The professor’s lecture on quantum theory was full of arcane details."
+        },
+        {
+          "id": 6,
+          "word": "arduous",
+          "synonym": "onerous",
+          "sentence": "Climbing the steep mountain was an arduous task."
+        },
+        {
+          "id": 7,
+          "word": "artless",
+          "synonym": "innocent",
+          "sentence": "Her artless smile charmed everyone in the room."
+        },
+        {
+          "id": 8,
+          "word": "artless",
+          "synonym": "simple",
+          "sentence": "The artist’s work had an artless beauty that felt natural and unrefined."
+        },
+        {
+          "id": 9,
+          "word": "artless",
+          "synonym": "lacking skill",
+          "sentence": "Her artless attempt at painting made it clear she had never held a brush before."
+        },
+        {
+          "id": 10,
+          "word": "ascetic",
+          "synonym": "austere",
+          "sentence": "The monk lived an ascetic life, owning nothing but his robe."
+        },
+        {
+          "id": 11,
+          "word": "ascetic",
+          "synonym": "hermit",
+          "sentence": "The ascetic lived in a small cell, devoid of luxuries."
+        },
+        {
+          "id": 12,
+          "word": "assuage",
+          "synonym": "alleviate",
+          "sentence": "The doctor gave her medicine to assuage the pain."
+        },
+        {
+          "id": 13,
+          "word": "assuage",
+          "synonym": "satisfy",
+          "sentence": "Only a buffet could assuage his appetite."
+        },
+        {
+          "id": 14,
+          "word": "betray",
+          "synonym": "reveal",
+          "sentence": "His trembling hands betrayed his nervousness."
+        },
+        {
+          "id": 15,
+          "word": "bucolic",
+          "synonym": "rural",
+          "sentence": "They enjoyed a peaceful weekend in the bucolic countryside."
+        },
+        {
+          "id": 16,
+          "word": "burgeon",
+          "synonym": "proliferate",
+          "sentence": "The small startup quickly burgeoned into a successful company."
+        },
+        {
+          "id": 17,
+          "word": "cacophonous",
+          "synonym": "noisy",
+          "sentence": "The cacophonous sounds of the city kept him awake all night."
+        },
+        {
+          "id": 18,
+          "word": "canonize",
+          "synonym": "glorify",
+          "sentence": "History has canonized her as a hero of the revolution."
+        },
+        {
+          "id": 19,
+          "word": "censure",
+          "synonym": "condemn",
+          "sentence": "The committee censured the member for unethical conduct."
+        },
+        {
+          "id": 20,
+          "word": "chicanery",
+          "synonym": "deception",
+          "sentence": "The politician was known for using chicanery to win votes."
+        },
+        {
+          "id": 21,
+          "word": "coalesce",
+          "synonym": "merge",
+          "sentence": "The two parties coalesced to form a new political movement."
+        },
+        {
+          "id": 22,
+          "word": "cogent",
+          "synonym": "compelling",
+          "sentence": "She presented a cogent argument supported by solid evidence."
+        },
+        {
+          "id": 23,
+          "word": "compelling",
+          "synonym": "cogent",
+          "sentence": "The lawyer made a compelling case for his client’s innocence."
+        },
+        {
+          "id": 24,
+          "word": "compelling",
+          "synonym": "fascinating",
+          "sentence": "The documentary was so compelling that no one moved until it ended."
+        },
+        {
+          "id": 25,
+          "word": "contend",
+          "synonym": "assert",
+          "sentence": "He contended that the new policy would benefit small businesses."
+        },
+        {
+          "id": 26,
+          "word": "contend",
+          "synonym": "compete",
+          "sentence": "Several teams are contending for the championship title."
+        },
+        {
+          "id": 27,
+          "word": "contend",
+          "synonym": "struggle",
+          "sentence": "They had to contend with bad weather during their expedition."
+        },
+        {
+          "id": 28,
+          "word": "copious",
+          "synonym": "abundant",
+          "sentence": "She took copious notes during the lecture."
+        },
+        {
+          "id": 29,
+          "word": "cosmopolitan",
+          "synonym": "worldly",
+          "sentence": "New York is a cosmopolitan city with residents from all over the globe."
+        },
+        {
+          "id": 30,
+          "word": "cosmopolitan",
+          "synonym": "sophisticated",
+          "sentence": "He had a cosmopolitan charm that made him popular in any crowd."
+        },
+        {
+          "id": 31,
+          "word": "deference",
+          "synonym": "respect",
+          "sentence": "They bowed their heads in deference to the old man."
+        },
+        {
+          "id": 32,
+          "word": "desultory",
+          "synonym": "aimless",
+          "sentence": "Their desultory conversation wandered from topic to topic."
+        },
+        {
+          "id": 33,
+          "word": "diffident",
+          "synonym": "shy",
+          "sentence": "She was too diffident to express her true opinion."
+        },
+        {
+          "id": 34,
+          "word": "dilatory",
+          "synonym": "slow",
+          "sentence": "The company was criticized for its dilatory response to complaints."
+        },
+        {
+          "id": 35,
+          "word": "equivocate",
+          "synonym": "waver",
+          "sentence": "He tends to equivocate when asked direct questions."
+        },
+        {
+          "id": 36,
+          "word": "polarize",
+          "synonym": "divide",
+          "sentence": "The controversial law polarized public opinion."
+        },
+        {
+          "id": 37,
+          "word": "prodigal",
+          "synonym": "profligate",
+          "sentence": "The prodigal son spent all his inheritance on luxuries."
+        },
+        {
+          "id": 38,
+          "word": "verbose",
+          "synonym": "loquacious",
+          "sentence": "His verbose explanation only confused the audience."
+        }
+      ]
+    },
+
+    {
+      "id": 20,
+      "name": "Set 20",
+      "words": [
+        {
+          "id": 1,
+          "word": "abreast",
+          "synonym": "up-to-date",
+          "sentence": "I stay abreast of tech news to never fall behind."
+        },
+        {
+          "id": 2,
+          "word": "confound",
+          "synonym": "baffle",
+          "sentence": "The magician’s trick confounded everyone in the audience."
+        },
+        {
+          "id": 3,
+          "word": "digression",
+          "synonym": "aside",
+          "sentence": "His long digression about movies made the lecture interesting."
+        },
+        {
+          "id": 4,
+          "word": "discrepancy",
+          "synonym": "difference",
+          "sentence": "There is a discrepancy between your report and the data."
+        },
+        {
+          "id": 5,
+          "word": "duplicitous",
+          "synonym": "deceitful",
+          "sentence": "The spy was duplicitous, hiding his true intentions."
+        },
+        {
+          "id": 6,
+          "word": "expedient",
+          "synonym": "feasible",
+          "sentence": "Using online forms is more expedient than printing papers."
+        },
+        {
+          "id": 7,
+          "word": "fabricate",
+          "synonym": "invent",
+          "sentence": "He fabricated an excuse to skip the meeting."
+        },
+        {
+          "id": 8,
+          "word": "glum",
+          "synonym": "sullen",
+          "sentence": "She looked glum after hearing the bad news."
+        },
+        {
+          "id": 9,
+          "word": "harbinger",
+          "synonym": "forerunner",
+          "sentence": "The robin is a harbinger of spring."
+        },
+        {
+          "id": 10,
+          "word": "intrinsic",
+          "synonym": "essential",
+          "sentence": "Curiosity is intrinsic to human nature."
+        },
+        {
+          "id": 11,
+          "word": "largesse",
+          "synonym": "generosity",
+          "sentence": "The king’s largesse helped the poor villagers."
+        },
+        {
+          "id": 12,
+          "word": "libertine",
+          "synonym": "hedonist",
+          "sentence": "He lived as a libertine, caring only for pleasure."
+        },
+        {
+          "id": 13,
+          "word": "malfeasance",
+          "synonym": "wrongdoing",
+          "sentence": "The mayor was investigated for malfeasance."
+        },
+        {
+          "id": 14,
+          "word": "manifest",
+          "synonym": "obvious",
+          "sentence": "Her talent was manifest to everyone."
+        },
+        {
+          "id": 15,
+          "word": "manifest",
+          "synonym": "display",
+          "sentence": "He manifested his anger with loud words."
+        },
+        {
+          "id": 16,
+          "word": "minute",
+          "synonym": "tiny",
+          "sentence": "The minute details make the painting realistic."
+        },
+        {
+          "id": 17,
+          "word": "modish",
+          "synonym": "fashionable",
+          "sentence": "She wore a modish outfit to the party."
+        },
+        {
+          "id": 18,
+          "word": "nascent",
+          "synonym": "emerging",
+          "sentence": "The nascent startup showed great promise."
+        },
+        {
+          "id": 19,
+          "word": "perennial",
+          "synonym": "everlasting",
+          "sentence": "His perennial optimism inspired everyone."
+        },
+        {
+          "id": 20,
+          "word": "pious",
+          "synonym": "devout",
+          "sentence": "The pious monk meditated daily."
+        },
+        {
+          "id": 21,
+          "word": "pious",
+          "synonym": "virtuous",
+          "sentence": "She made a pious promise to help the needy."
+        },
+        {
+          "id": 22,
+          "word": "providential",
+          "synonym": "fortunate",
+          "sentence": "It was providential that she found her lost ring."
+        },
+        {
+          "id": 23,
+          "word": "prowess",
+          "synonym": "skill",
+          "sentence": "His prowess in chess amazed his friends."
+        },
+        {
+          "id": 24,
+          "word": "schism",
+          "synonym": "division",
+          "sentence": "The church suffered a schism over doctrinal differences."
+        },
+        {
+          "id": 25,
+          "word": "slander",
+          "synonym": "defame",
+          "sentence": "He was sued for slander after spreading lies."
+        },
+        {
+          "id": 26,
+          "word": "stalwart",
+          "synonym": "loyal",
+          "sentence": "She was a stalwart supporter of the team."
+        },
+        {
+          "id": 27,
+          "word": "supplicate",
+          "synonym": "plead",
+          "sentence": "The villagers supplicated the king for mercy."
+        },
+        {
+          "id": 28,
+          "word": "terse",
+          "synonym": "concise",
+          "sentence": "His terse reply left no room for argument."
+        },
+        {
+          "id": 29,
+          "word": "tirade",
+          "synonym": "rant",
+          "sentence": "The coach gave a tirade after the team lost."
+        },
+        {
+          "id": 30,
+          "word": "universal",
+          "synonym": "global",
+          "sentence": "Music is a universal language."
+        },
+        {
+          "id": 31,
+          "word": "vanquish",
+          "synonym": "defeat",
+          "sentence": "The hero vanquished the villain."
+        },
+        {
+          "id": 32,
+          "word": "woeful",
+          "synonym": "sad",
+          "sentence": "He had a woeful expression at the funeral."
+        },
+        {
+          "id": 33,
+          "word": "woeful",
+          "synonym": "poor",
+          "sentence": "The team’s performance was woeful in the match."
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Set 21",
+      "words": [
+        {
+          "id": 1,
+          "word": "abject",
+          "synonym": "miserable",
+          "sentence": "He lived in abject poverty all his life."
+        },
+        {
+          "id": 2,
+          "word": "amicable",
+          "synonym": "friendly",
+          "sentence": "They reached an amicable agreement after the discussion."
+        },
+        {
+          "id": 3,
+          "word": "animosity",
+          "synonym": "hostility",
+          "sentence": "There was deep animosity between the rival teams."
+        },
+        {
+          "id": 4,
+          "word": "aver",
+          "synonym": "assert",
+          "sentence": "She averred that she had completed the assignment."
+        },
+        {
+          "id": 5,
+          "word": "barrage",
+          "synonym": "bombardment",
+          "sentence": "The army faced a barrage of artillery fire."
+        },
+        {
+          "id": 6,
+          "word": "cathartic",
+          "synonym": "purging",
+          "sentence": "Writing in her journal was a cathartic experience."
+        },
+        {
+          "id": 7,
+          "word": "decipher",
+          "synonym": "decode",
+          "sentence": "He tried to decipher the encrypted message."
+        },
+        {
+          "id": 8,
+          "word": "delusion",
+          "synonym": "misbelief",
+          "sentence": "He was under the delusion that he could win easily."
+        },
+        {
+          "id": 9,
+          "word": "dispense",
+          "synonym": "distribute",
+          "sentence": "The machine can dispense snacks and drinks."
+        },
+        {
+          "id": 10,
+          "word": "dispense",
+          "synonym": "do without",
+          "sentence": "We can dispense with formalities in this meeting."
+        },
+        {
+          "id": 11,
+          "word": "eloquent",
+          "synonym": "articulate",
+          "sentence": "Her speech was eloquent and persuasive."
+        },
+        {
+          "id": 12,
+          "word": "enthrall",
+          "synonym": "captivate",
+          "sentence": "The magician's performance enthralled the audience."
+        },
+        {
+          "id": 13,
+          "word": "eradicate",
+          "synonym": "eliminate",
+          "sentence": "The campaign aims to eradicate illiteracy."
+        },
+        {
+          "id": 14,
+          "word": "fledgling",
+          "synonym": "beginner",
+          "sentence": "The fledgling startup is showing promising growth."
+        },
+        {
+          "id": 15,
+          "word": "fortitude",
+          "synonym": "courage",
+          "sentence": "She showed great fortitude during the crisis."
+        },
+        {
+          "id": 16,
+          "word": "fortuitous",
+          "synonym": "lucky",
+          "sentence": "It was fortuitous that they met at the cafe."
+        },
+        {
+          "id": 17,
+          "word": "goad",
+          "synonym": "provoke",
+          "sentence": "He tried to goad his friend into joining the race."
+        },
+        {
+          "id": 18,
+          "word": "imminent",
+          "synonym": "impending",
+          "sentence": "The storm is imminent, so we should take shelter."
+        },
+        {
+          "id": 19,
+          "word": "incontrovertible",
+          "synonym": "undeniable",
+          "sentence": "The evidence was incontrovertible."
+        },
+        {
+          "id": 20,
+          "word": "itinerant",
+          "synonym": "traveling",
+          "sentence": "The itinerant worker moved from city to city."
+        },
+        {
+          "id": 21,
+          "word": "magnanimous",
+          "synonym": "generous",
+          "sentence": "She was magnanimous in forgiving her enemies."
+        },
+        {
+          "id": 22,
+          "word": "meritorious",
+          "synonym": "praiseworthy",
+          "sentence": "He received an award for his meritorious service."
+        },
+        {
+          "id": 23,
+          "word": "mutiny",
+          "synonym": "rebellion",
+          "sentence": "The sailors staged a mutiny against the captain."
+        },
+        {
+          "id": 24,
+          "word": "paradoxical",
+          "synonym": "contradictory",
+          "sentence": "His behavior was paradoxical, both kind and cruel."
+        },
+        {
+          "id": 25,
+          "word": "perseverance",
+          "synonym": "persistence",
+          "sentence": "Her perseverance helped her complete the marathon."
+        },
+        {
+          "id": 26,
+          "word": "render",
+          "synonym": "provide",
+          "sentence": "The service rendered was exceptional."
+        },
+        {
+          "id": 27,
+          "word": "render",
+          "synonym": "depict",
+          "sentence": "The artist rendered the landscape beautifully."
+        },
+        {
+          "id": 28,
+          "word": "repertoire",
+          "synonym": "collection",
+          "sentence": "The pianist has a vast repertoire of classical pieces."
+        },
+        {
+          "id": 29,
+          "word": "resilient",
+          "synonym": "tough",
+          "sentence": "Children are often resilient in difficult situations."
+        },
+        {
+          "id": 30,
+          "word": "resolute",
+          "synonym": "determined",
+          "sentence": "She was resolute in achieving her goals."
+        },
+        {
+          "id": 31,
+          "word": "supple",
+          "synonym": "flexible",
+          "sentence": "The gymnast’s body was remarkably supple."
+        },
+        {
+          "id": 32,
+          "word": "valor",
+          "synonym": "bravery",
+          "sentence": "The soldier was awarded for his valor."
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Set 22",
+      "words": [
+        {
+          "id": 1,
+          "word": "arresting",
+          "synonym": "captivating",
+          "sentence": "The painting was so arresting that everyone stopped to admire it."
+        },
+        {
+          "id": 2,
+          "word": "chastise",
+          "synonym": "scold",
+          "sentence": "The teacher chastised the students for being late."
+        },
+        {
+          "id": 3,
+          "word": "cumbersome",
+          "synonym": "unwieldy",
+          "sentence": "The old computer system was too cumbersome to use efficiently."
+        },
+        {
+          "id": 4,
+          "word": "economy",
+          "synonym": "thrift",
+          "sentence": "She practiced economy by reusing old materials."
+        },
+        {
+          "id": 5,
+          "word": "elementary",
+          "synonym": "basic",
+          "sentence": "The guide explains the process in elementary terms."
+        },
+        {
+          "id": 6,
+          "word": "embellish",
+          "synonym": "decorate",
+          "sentence": "She embellished her dress with golden threads."
+        },
+        {
+          "id": 7,
+          "word": "embellish",
+          "synonym": "exaggerate",
+          "sentence": "He embellished the story to make it more exciting."
+        },
+        {
+          "id": 8,
+          "word": "euphoric",
+          "synonym": "elated",
+          "sentence": "The team felt euphoric after winning the championship."
+        },
+        {
+          "id": 9,
+          "word": "exonerate",
+          "synonym": "exculpate",
+          "sentence": "The evidence helped exonerate the wrongly accused man."
+        },
+        {
+          "id": 10,
+          "word": "extrapolate",
+          "synonym": "project",
+          "sentence": "Scientists can extrapolate future trends from current data."
+        },
+        {
+          "id": 11,
+          "word": "falter",
+          "synonym": "hesitate",
+          "sentence": "He began to falter when he saw the large audience."
+        },
+        {
+          "id": 12,
+          "word": "fervent",
+          "synonym": "zealous",
+          "sentence": "She is a fervent supporter of environmental protection."
+        },
+        {
+          "id": 13,
+          "word": "foment",
+          "synonym": "instigate",
+          "sentence": "They accused him of trying to foment rebellion."
+        },
+        {
+          "id": 14,
+          "word": "gaffe",
+          "synonym": "blunder",
+          "sentence": "The politician’s gaffe during the debate went viral."
+        },
+        {
+          "id": 15,
+          "word": "heterodox",
+          "synonym": "unorthodox",
+          "sentence": "His heterodox ideas challenged traditional beliefs."
+        },
+        {
+          "id": 16,
+          "word": "histrionic",
+          "synonym": "dramatic",
+          "sentence": "Her histrionic reaction made everyone uncomfortable."
+        },
+        {
+          "id": 17,
+          "word": "implicit",
+          "synonym": "implied",
+          "sentence": "There was an implicit agreement between the two parties."
+        },
+        {
+          "id": 18,
+          "word": "inviolate",
+          "synonym": "untouched",
+          "sentence": "The ancient shrine remained inviolate for centuries."
+        },
+        {
+          "id": 19,
+          "word": "liability",
+          "synonym": "responsibility",
+          "sentence": "The company took full liability for the damages."
+        },
+        {
+          "id": 20,
+          "word": "obstinate",
+          "synonym": "stubborn",
+          "sentence": "The child was too obstinate to admit his mistake."
+        },
+        {
+          "id": 21,
+          "word": "painstaking",
+          "synonym": "meticulous",
+          "sentence": "The artist took painstaking effort to perfect every detail."
+        },
+        {
+          "id": 22,
+          "word": "phlegmatic",
+          "synonym": "calm",
+          "sentence": "He remained phlegmatic even in the face of danger."
+        },
+        {
+          "id": 23,
+          "word": "prodigious",
+          "synonym": "immense",
+          "sentence": "The scientist made prodigious progress in his research."
+        },
+        {
+          "id": 24,
+          "word": "propensity",
+          "synonym": "tendency",
+          "sentence": "He has a natural propensity for leadership."
+        },
+        {
+          "id": 25,
+          "word": "qualm",
+          "synonym": "doubt",
+          "sentence": "She had no qualms about speaking her mind."
+        },
+        {
+          "id": 26,
+          "word": "renege",
+          "synonym": "retract",
+          "sentence": "He reneged on his promise to support the project."
+        },
+        {
+          "id": 27,
+          "word": "stint",
+          "synonym": "term",
+          "sentence": "He completed a short stint as a volunteer teacher."
+        },
+        {
+          "id": 28,
+          "word": "temper",
+          "synonym": "moderate",
+          "sentence": "She tried to temper her criticism with kindness."
+        },
+        {
+          "id": 29,
+          "word": "tentative",
+          "synonym": "uncertain",
+          "sentence": "They made a tentative plan for the weekend."
+        },
+        {
+          "id": 30,
+          "word": "unprecedented",
+          "synonym": "extraordinary",
+          "sentence": "The company experienced unprecedented growth this year."
+        },
+        {
+          "id": 31,
+          "word": "vivacious",
+          "synonym": "lively",
+          "sentence": "Her vivacious personality lit up the entire room."
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Set 23",
+      "words": [
+        {
+          "id": 1,
+          "word": "allusive",
+          "synonym": "indirect",
+          "sentence": "Her allusive comments hinted at secrets she wouldn’t share."
+        },
+        {
+          "id": 2,
+          "word": "astute",
+          "synonym": "shrewd",
+          "sentence": "The astute investor spotted the opportunity early."
+        },
+        {
+          "id": 3,
+          "word": "commence",
+          "synonym": "begin",
+          "sentence": "The ceremony will commence at sunrise."
+        },
+        {
+          "id": 4,
+          "word": "convalescent",
+          "synonym": "recovering",
+          "sentence": "After surgery, she stayed in a convalescent home for rest."
+        },
+        {
+          "id": 5,
+          "word": "curb",
+          "synonym": "restrain",
+          "sentence": "He tried to curb his anger during the argument."
+        },
+        {
+          "id": 6,
+          "word": "decry",
+          "synonym": "condemn",
+          "sentence": "Activists decried the unfair treatment of workers."
+        },
+        {
+          "id": 7,
+          "word": "duress",
+          "synonym": "coercion",
+          "sentence": "He confessed under duress, not of his own free will."
+        },
+        {
+          "id": 8,
+          "word": "evoke",
+          "synonym": "elicit",
+          "sentence": "The painting evokes memories of my childhood."
+        },
+        {
+          "id": 9,
+          "word": "fawn",
+          "synonym": "flatter",
+          "sentence": "The employees fawned over their boss for promotion."
+        },
+        {
+          "id": 10,
+          "word": "fret",
+          "synonym": "worry",
+          "sentence": "Don’t fret about things beyond your control."
+        },
+        {
+          "id": 11,
+          "word": "glib",
+          "synonym": "superficial",
+          "sentence": "His glib remarks made him sound insincere."
+        },
+        {
+          "id": 12,
+          "word": "headstrong",
+          "synonym": "stubborn",
+          "sentence": "The headstrong teenager refused to listen to advice."
+        },
+        {
+          "id": 13,
+          "word": "intermittent",
+          "synonym": "sporadic",
+          "sentence": "We experienced intermittent rain throughout the day."
+        },
+        {
+          "id": 14,
+          "word": "ire",
+          "synonym": "anger",
+          "sentence": "His careless words drew the ire of his coworkers."
+        },
+        {
+          "id": 15,
+          "word": "languid",
+          "synonym": "sluggish",
+          "sentence": "After the meal, he felt languid and ready for a nap."
+        },
+        {
+          "id": 16,
+          "word": "languid",
+          "synonym": "sickly",
+          "sentence": "After the fever, she felt languid and weak."
+        },
+        {
+          "id": 17,
+          "word": "lull",
+          "synonym": "soothe",
+          "sentence": "The sound of rain lulled him to sleep."
+        },
+        {
+          "id": 18,
+          "word": "lull",
+          "synonym": "pause",
+          "sentence": "There was a lull in conversation before she spoke again."
+        },
+        {
+          "id": 19,
+          "word": "mettlesome",
+          "synonym": "spirited",
+          "sentence": "The mettlesome horse refused to be tamed."
+        },
+        {
+          "id": 20,
+          "word": "mollify",
+          "synonym": "pacify",
+          "sentence": "She tried to mollify the angry customer with an apology."
+        },
+        {
+          "id": 21,
+          "word": "neutralize",
+          "synonym": "counteract",
+          "sentence": "The medicine helped neutralize the acid in his stomach."
+        },
+        {
+          "id": 22,
+          "word": "nonplussed",
+          "synonym": "confused",
+          "sentence": "He looked nonplussed when asked the unexpected question."
+        },
+        {
+          "id": 23,
+          "word": "precipitous",
+          "synonym": "steep",
+          "sentence": "They climbed the precipitous path to the mountain top."
+        },
+        {
+          "id": 24,
+          "word": "precipitous",
+          "synonym": "sudden",
+          "sentence": "The company’s precipitous decline shocked investors."
+        },
+        {
+          "id": 25,
+          "word": "pretentious",
+          "synonym": "showy",
+          "sentence": "His pretentious attitude annoyed everyone at the party."
+        },
+        {
+          "id": 26,
+          "word": "profound",
+          "synonym": "deep",
+          "sentence": "Her speech had a profound effect on the audience."
+        },
+        {
+          "id": 27,
+          "word": "profound",
+          "synonym": "insightful",
+          "sentence": "He made a profound observation about human nature."
+        },
+        {
+          "id": 28,
+          "word": "propagate",
+          "synonym": "spread",
+          "sentence": "The scientist worked to propagate the rare plant species."
+        },
+        {
+          "id": 29,
+          "word": "recourse",
+          "synonym": "option",
+          "sentence": "If the plan fails, we have no other recourse."
+        },
+        {
+          "id": 30,
+          "word": "refute",
+          "synonym": "disprove",
+          "sentence": "She refuted the false claims with solid evidence."
+        },
+        {
+          "id": 31,
+          "word": "regress",
+          "synonym": "relapse",
+          "sentence": "After months of progress, he began to regress."
+        },
+        {
+          "id": 32,
+          "word": "repercussion",
+          "synonym": "consequence",
+          "sentence": "The scandal had serious repercussions for the company."
+        },
+        {
+          "id": 33,
+          "word": "replenish",
+          "synonym": "refill",
+          "sentence": "He stopped to replenish his water bottle during the hike."
+        },
+        {
+          "id": 34,
+          "word": "vigilant",
+          "synonym": "watchful",
+          "sentence": "Guards remained vigilant throughout the night."
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Set 24",
+      "words": [
+        {
+          "id": 1,
+          "word": "assail",
+          "synonym": "attack",
+          "sentence": "The critics assailed the movie for its weak plot."
+        },
+        {
+          "id": 2,
+          "word": "benevolent",
+          "synonym": "kind",
+          "sentence": "She was known for her benevolent actions in the community."
+        },
+        {
+          "id": 3,
+          "word": "berate",
+          "synonym": "scold",
+          "sentence": "The coach berated the players for their mistakes."
+        },
+        {
+          "id": 4,
+          "word": "buoyant",
+          "synonym": "cheerful",
+          "sentence": "He felt buoyant after receiving the good news."
+        },
+        {
+          "id": 5,
+          "word": "buttress",
+          "synonym": "support",
+          "sentence": "The scientist's findings buttress the theory."
+        },
+        {
+          "id": 6,
+          "word": "condone",
+          "synonym": "overlook",
+          "sentence": "The teacher could not condone cheating."
+        },
+        {
+          "id": 7,
+          "word": "contravene",
+          "synonym": "violate",
+          "sentence": "His actions contravened the company's policies."
+        },
+        {
+          "id": 8,
+          "word": "denounce",
+          "synonym": "criticize",
+          "sentence": "The government denounced the illegal activities."
+        },
+        {
+          "id": 9,
+          "word": "despotic",
+          "synonym": "tyrannical",
+          "sentence": "The despotic ruler imposed strict laws on his people."
+        },
+        {
+          "id": 10,
+          "word": "deviate",
+          "synonym": "diverge",
+          "sentence": "He deviated from the original plan to try a new approach."
+        },
+        {
+          "id": 11,
+          "word": "disinterested",
+          "synonym": "impartial",
+          "sentence": "A judge must remain disinterested when hearing a case."
+        },
+        {
+          "id": 12,
+          "word": "escalate",
+          "synonym": "intensify",
+          "sentence": "Tensions began to escalate after the argument."
+        },
+        {
+          "id": 13,
+          "word": "exorcise",
+          "synonym": "banish",
+          "sentence": "The priest was called to exorcise the spirit from the house."
+        },
+        {
+          "id": 14,
+          "word": "finicky",
+          "synonym": "fussy",
+          "sentence": "The baby is very finicky about what he eats."
+        },
+        {
+          "id": 15,
+          "word": "foil",
+          "synonym": "thwart",
+          "sentence": "The security guard foiled the robbery attempt."
+        },
+        {
+          "id": 16,
+          "word": "intertwined",
+          "synonym": "connected",
+          "sentence": "Their lives were deeply intertwined after years of friendship."
+        },
+        {
+          "id": 17,
+          "word": "inundate",
+          "synonym": "overwhelm",
+          "sentence": "The office was inundated with phone calls after the announcement."
+        },
+        {
+          "id": 18,
+          "word": "ironclad",
+          "synonym": "unbreakable",
+          "sentence": "They had an ironclad contract that could not be broken."
+        },
+        {
+          "id": 19,
+          "word": "jeopardize",
+          "synonym": "endanger",
+          "sentence": "Neglecting safety protocols could jeopardize the project."
+        },
+        {
+          "id": 20,
+          "word": "mercurial",
+          "synonym": "volatile",
+          "sentence": "His mercurial mood swings kept everyone on edge."
+        },
+        {
+          "id": 21,
+          "word": "oblivious",
+          "synonym": "unaware",
+          "sentence": "She was oblivious to the fact that everyone was staring at her."
+        },
+        {
+          "id": 22,
+          "word": "perpetrate",
+          "synonym": "commit",
+          "sentence": "They perpetrated a series of thefts in the city."
+        },
+        {
+          "id": 23,
+          "word": "plaintive",
+          "synonym": "mournful",
+          "sentence": "The plaintive song brought tears to their eyes."
+        },
+        {
+          "id": 24,
+          "word": "poignant",
+          "synonym": "touching",
+          "sentence": "The movie’s ending was poignant and unforgettable."
+        },
+        {
+          "id": 25,
+          "word": "quiescent",
+          "synonym": "inactive",
+          "sentence": "The volcano had been quiescent for decades."
+        },
+        {
+          "id": 26,
+          "word": "reiterate",
+          "synonym": "repeat",
+          "sentence": "The teacher had to reiterate the instructions several times."
+        },
+        {
+          "id": 27,
+          "word": "subside",
+          "synonym": "diminish",
+          "sentence": "The floodwaters began to subside after the rain stopped."
+        },
+        {
+          "id": 28,
+          "word": "subsume",
+          "synonym": "include",
+          "sentence": "These smaller tasks are subsumed under the main project."
+        },
+        {
+          "id": 29,
+          "word": "surmount",
+          "synonym": "overcome",
+          "sentence": "They managed to surmount all the obstacles in their path."
+        },
+        {
+          "id": 30,
+          "word": "tangential",
+          "synonym": "irrelevant",
+          "sentence": "His comments were tangential and didn’t address the main topic."
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Set 25",
+      "words": [
+        {
+          "id": 1,
+          "word": "adept",
+          "synonym": "skilled",
+          "sentence": "She is adept at solving complex mathematical problems."
+        },
+        {
+          "id": 2,
+          "word": "adverse",
+          "synonym": "unfavorable",
+          "sentence": "The hikers faced adverse weather conditions."
+        },
+        {
+          "id": 3,
+          "word": "appropriate",
+          "synonym": "suitable",
+          "sentence": "It’s important to wear appropriate attire to a wedding."
+        },
+        {
+          "id": 4,
+          "word": "appropriate",
+          "synonym": "take",
+          "sentence": "The government may appropriate funds for public projects."
+        },
+        {
+          "id": 5,
+          "word": "archetype",
+          "synonym": "model",
+          "sentence": "She is the archetype of a modern entrepreneur."
+        },
+        {
+          "id": 6,
+          "word": "articulate",
+          "synonym": "eloquent",
+          "sentence": "He is very articulate and conveys his ideas clearly."
+        },
+        {
+          "id": 7,
+          "word": "auspicious",
+          "synonym": "favorable",
+          "sentence": "The clear sky was an auspicious start to the festival."
+        },
+        {
+          "id": 8,
+          "word": "bereft",
+          "synonym": "deprived",
+          "sentence": "He was bereft of hope after the tragic event."
+        },
+        {
+          "id": 9,
+          "word": "captious",
+          "synonym": "critical",
+          "sentence": "Her captious remarks annoyed everyone at the meeting."
+        },
+        {
+          "id": 10,
+          "word": "conclusive",
+          "synonym": "decisive",
+          "sentence": "The DNA evidence was conclusive in the investigation."
+        },
+        {
+          "id": 11,
+          "word": "conspire",
+          "synonym": "plot",
+          "sentence": "The officials conspired to cover up the scandal."
+        },
+        {
+          "id": 12,
+          "word": "delineate",
+          "synonym": "describe",
+          "sentence": "The map delineates the borders of the region clearly."
+        },
+        {
+          "id": 13,
+          "word": "disentangle",
+          "synonym": "unravel",
+          "sentence": "It took hours to disentangle the complex problem."
+        },
+        {
+          "id": 14,
+          "word": "exhort",
+          "synonym": "urge",
+          "sentence": "The teacher exhorted the students to study diligently."
+        },
+        {
+          "id": 15,
+          "word": "frailty",
+          "synonym": "weakness",
+          "sentence": "The old man’s frailty made it hard for him to walk."
+        },
+        {
+          "id": 16,
+          "word": "grievance",
+          "synonym": "complaint",
+          "sentence": "The workers voiced their grievance over unfair pay."
+        },
+        {
+          "id": 17,
+          "word": "harangue",
+          "synonym": "diatribe",
+          "sentence": "He delivered a long harangue about poor customer service."
+        },
+        {
+          "id": 18,
+          "word": "ploy",
+          "synonym": "tactic",
+          "sentence": "It was a clever ploy to distract the opponent."
+        },
+        {
+          "id": 19,
+          "word": "poise",
+          "synonym": "composure",
+          "sentence": "She maintained her poise even under pressure."
+        },
+        {
+          "id": 20,
+          "word": "pomposity",
+          "synonym": "arrogance",
+          "sentence": "His pomposity irritated his colleagues."
+        },
+        {
+          "id": 21,
+          "word": "proxy",
+          "synonym": "substitute",
+          "sentence": "She voted by proxy since she could not attend the meeting."
+        },
+        {
+          "id": 22,
+          "word": "relent",
+          "synonym": "yield",
+          "sentence": "The storm did not relent for hours."
+        },
+        {
+          "id": 23,
+          "word": "relent",
+          "synonym": "abate",
+          "sentence": "He finally relented and allowed his child to stay out late."
+        },
+        {
+          "id": 24,
+          "word": "rhetoric",
+          "synonym": "speech",
+          "sentence": "The politician’s rhetoric was persuasive but shallow."
+        },
+        {
+          "id": 25,
+          "word": "rigor",
+          "synonym": "strictness",
+          "sentence": "The professor’s class is known for its rigor."
+        },
+        {
+          "id": 26,
+          "word": "sparse",
+          "synonym": "scant",
+          "sentence": "The vegetation was sparse in the desert."
+        },
+        {
+          "id": 27,
+          "word": "steadfast",
+          "synonym": "steady",
+          "sentence": "She remained steadfast in her beliefs."
+        },
+        {
+          "id": 28,
+          "word": "suspect",
+          "synonym": "questionable",
+          "sentence": "The data in the report looked suspect, so the manager double-checked it."
+        },
+        {
+          "id": 29,
+          "word": "tedious",
+          "synonym": "boring",
+          "sentence": "Filing paperwork is a tedious task."
+        },
+        {
+          "id": 30,
+          "word": "vitality",
+          "synonym": "energy",
+          "sentence": "Her vitality made her the life of the party."
+        },
+        {
+          "id": 31,
+          "word": "whimsical",
+          "synonym": "playful",
+          "sentence": "The artist’s paintings are whimsical and fun."
+        },
+        {
+          "id": 32,
+          "word": "whimsical",
+          "synonym": "capricious",
+          "sentence": "Her whimsical decisions often surprised everyone at the team meetings."
+        },
+        {
+          "id": 33,
+          "word": "yield",
+          "synonym": "produce",
+          "sentence": "The farm yields fresh vegetables every season."
+        },
+        {
+          "id": 34,
+          "word": "yield",
+          "synonym": "surrender",
+          "sentence": "Despite his initial resistance, he eventually yielded to their requests."
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Set 26",
+      "words": [
+        {
+          "id": 1,
+          "word": "apprehension",
+          "synonym": "anxiety",
+          "sentence": "She felt a sense of apprehension before the exam."
+        },
+        {
+          "id": 2,
+          "word": "ardent",
+          "synonym": "zealous",
+          "sentence": "He was an ardent supporter of renewable energy."
+        },
+        {
+          "id": 3,
+          "word": "axiomatic",
+          "synonym": "self-evident",
+          "sentence": "It is axiomatic that honesty is the best policy."
+        },
+        {
+          "id": 4,
+          "word": "cease",
+          "synonym": "stop",
+          "sentence": "The factory will cease operations next month."
+        },
+        {
+          "id": 5,
+          "word": "conducive",
+          "synonym": "helpful",
+          "sentence": "A quiet room is conducive to studying."
+        },
+        {
+          "id": 6,
+          "word": "corporeal",
+          "synonym": "physical",
+          "sentence": "Ghosts are often described as having no corporeal form."
+        },
+        {
+          "id": 7,
+          "word": "doctrinaire",
+          "synonym": "rigid",
+          "sentence": "His doctrinaire approach frustrated his colleagues."
+        },
+        {
+          "id": 8,
+          "word": "eclectic",
+          "synonym": "diverse",
+          "sentence": "Her music collection was eclectic, spanning many genres."
+        },
+        {
+          "id": 9,
+          "word": "equanimity",
+          "synonym": "composure",
+          "sentence": "He faced the crisis with remarkable equanimity."
+        },
+        {
+          "id": 10,
+          "word": "exorbitant",
+          "synonym": "excessive",
+          "sentence": "The restaurant charged an exorbitant price for the meal."
+        },
+        {
+          "id": 11,
+          "word": "fickle",
+          "synonym": "volatile",
+          "sentence": "The weather in spring can be very fickle."
+        },
+        {
+          "id": 12,
+          "word": "figurative",
+          "synonym": "symbolic",
+          "sentence": "The author used figurative language to convey emotion."
+        },
+        {
+          "id": 13,
+          "word": "flustered",
+          "synonym": "confused",
+          "sentence": "She was flustered by the unexpected question."
+        },
+        {
+          "id": 14,
+          "word": "gullible",
+          "synonym": "naive",
+          "sentence": "Young children are often gullible and easily tricked."
+        },
+        {
+          "id": 15,
+          "word": "idiosyncratic",
+          "synonym": "peculiar",
+          "sentence": "He has an idiosyncratic way of organizing his desk."
+        },
+        {
+          "id": 16,
+          "word": "incidental",
+          "synonym": "secondary",
+          "sentence": "She mentioned it as an incidental detail in her story."
+        },
+        {
+          "id": 17,
+          "word": "ingrained",
+          "synonym": "entrenched",
+          "sentence": "Old habits are often deeply ingrained."
+        },
+        {
+          "id": 18,
+          "word": "insolent",
+          "synonym": "rude",
+          "sentence": "The student received a warning for his insolent behavior."
+        },
+        {
+          "id": 19,
+          "word": "lampoon",
+          "synonym": "mock",
+          "sentence": "The comedian lampooned the politician in his act."
+        },
+        {
+          "id": 20,
+          "word": "lavish",
+          "synonym": "extravagant",
+          "sentence": "They hosted a lavish wedding for their daughter."
+        },
+        {
+          "id": 21,
+          "word": "lavish",
+          "synonym": "abundant",
+          "sentence": "The garden was filled with lavish blooms."
+        },
+        {
+          "id": 22,
+          "word": "lugubrious",
+          "synonym": "mournful",
+          "sentence": "He had a lugubrious expression after hearing the news."
+        },
+        {
+          "id": 23,
+          "word": "macabre",
+          "synonym": "gruesome",
+          "sentence": "The movie had a macabre scene that frightened the audience."
+        },
+        {
+          "id": 24,
+          "word": "morose",
+          "synonym": "gloomy",
+          "sentence": "She became morose after losing her job."
+        },
+        {
+          "id": 25,
+          "word": "officious",
+          "synonym": "meddlesome",
+          "sentence": "The officious clerk kept giving unsolicited advice."
+        },
+        {
+          "id": 26,
+          "word": "ramification",
+          "synonym": "consequence",
+          "sentence": "The new law had many unforeseen ramifications."
+        },
+        {
+          "id": 27,
+          "word": "serene",
+          "synonym": "calm",
+          "sentence": "The lake looked serene in the morning light."
+        },
+        {
+          "id": 28,
+          "word": "supplant",
+          "synonym": "replace",
+          "sentence": "Digital books have begun to supplant traditional ones."
+        },
+        {
+          "id": 29,
+          "word": "tacit",
+          "synonym": "implied",
+          "sentence": "Their agreement was tacit, without any formal contract."
+        },
+        {
+          "id": 30,
+          "word": "transcend",
+          "synonym": "surpass",
+          "sentence": "Great art can transcend cultural boundaries."
+        },
+        {
+          "id": 31,
+          "word": "treatise",
+          "synonym": "dissertation",
+          "sentence": "He wrote a treatise on ancient philosophy."
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Set 27",
+      "words": [
+        {
+          "id": 1,
+          "word": "antagonize",
+          "synonym": "provoke",
+          "sentence": "He didn't mean to antagonize his coworkers with his jokes."
+        },
+        {
+          "id": 2,
+          "word": "barren",
+          "synonym": "sterile",
+          "sentence": "The desert was barren and devoid of life."
+        },
+        {
+          "id": 3,
+          "word": "bombastic",
+          "synonym": "pompous",
+          "sentence": "His bombastic speech annoyed the audience."
+        },
+        {
+          "id": 4,
+          "word": "cajole",
+          "synonym": "persuade",
+          "sentence": "She tried to cajole him into attending the party."
+        },
+        {
+          "id": 5,
+          "word": "chary",
+          "synonym": "cautious",
+          "sentence": "He was chary of investing in risky ventures."
+        },
+        {
+          "id": 6,
+          "word": "curmudgeon",
+          "synonym": "grump",
+          "sentence": "The old curmudgeon complained about the noisy neighbors."
+        },
+        {
+          "id": 7,
+          "word": "dirge",
+          "synonym": "lament",
+          "sentence": "The choir sang a dirge at the funeral."
+        },
+        {
+          "id": 8,
+          "word": "estimable",
+          "synonym": "admirable",
+          "sentence": "She is an estimable scholar respected by all."
+        },
+        {
+          "id": 9,
+          "word": "euphemism",
+          "synonym": "substitute",
+          "sentence": "‘Passed away’ is a common euphemism for death."
+        },
+        {
+          "id": 10,
+          "word": "excoriate",
+          "synonym": "criticize",
+          "sentence": "The editor excoriated the article for its errors."
+        },
+        {
+          "id": 11,
+          "word": "exigent",
+          "synonym": "urgent",
+          "sentence": "The exigent situation required immediate action."
+        },
+        {
+          "id": 12,
+          "word": "haughty",
+          "synonym": "arrogant",
+          "sentence": "The haughty manager ignored the suggestions of his team."
+        },
+        {
+          "id": 13,
+          "word": "heady",
+          "synonym": "intoxicating",
+          "sentence": "The heady aroma of the spices filled the kitchen."
+        },
+        {
+          "id": 14,
+          "word": "imperturbable",
+          "synonym": "calm",
+          "sentence": "She remained imperturbable despite the chaos."
+        },
+        {
+          "id": 15,
+          "word": "implacable",
+          "synonym": "unyielding",
+          "sentence": "He was an implacable critic of the policy."
+        },
+        {
+          "id": 16,
+          "word": "lambaste",
+          "synonym": "scold",
+          "sentence": "The coach lambasted the team after their poor performance."
+        },
+        {
+          "id": 17,
+          "word": "miscreant",
+          "synonym": "villain",
+          "sentence": "The police captured the miscreant responsible for the theft."
+        },
+        {
+          "id": 18,
+          "word": "peccadillo",
+          "synonym": "minor fault",
+          "sentence": "Everyone overlooked his peccadillo and forgave him."
+        },
+        {
+          "id": 19,
+          "word": "philistine",
+          "synonym": "uncultured",
+          "sentence": "He was a philistine who scorned art and literature."
+        },
+        {
+          "id": 20,
+          "word": "relegate",
+          "synonym": "demote",
+          "sentence": "The company decided to relegate him to a junior position."
+        },
+        {
+          "id": 21,
+          "word": "repugnant",
+          "synonym": "disgusting",
+          "sentence": "The idea of cheating was repugnant to her."
+        },
+        {
+          "id": 22,
+          "word": "sentimental",
+          "synonym": "emotional",
+          "sentence": "She kept the letters for sentimental reasons."
+        },
+        {
+          "id": 23,
+          "word": "squander",
+          "synonym": "waste",
+          "sentence": "He squandered his inheritance on luxury cars."
+        },
+        {
+          "id": 24,
+          "word": "swindle",
+          "synonym": "cheat",
+          "sentence": "The scammer tried to swindle people out of their money."
+        },
+        {
+          "id": 25,
+          "word": "tangible",
+          "synonym": "real",
+          "sentence": "There was tangible evidence of the crime."
+        },
+        {
+          "id": 26,
+          "word": "turpitude",
+          "synonym": "wickedness",
+          "sentence": "The villain was punished for his moral turpitude."
+        },
+        {
+          "id": 27,
+          "word": "unalloyed",
+          "synonym": "pure",
+          "sentence": "She felt unalloyed joy at her child's success."
+        },
+        {
+          "id": 28,
+          "word": "undercut",
+          "synonym": "undermine",
+          "sentence": "The new competitor tried to undercut our prices."
+        },
+        {
+          "id": 29,
+          "word": "wheedle",
+          "synonym": "coax",
+          "sentence": "He tried to wheedle extra dessert from his mother."
+        },
+        {
+          "id": 30,
+          "word": "xenophobic",
+          "synonym": "prejudiced",
+          "sentence": "His xenophobic comments offended everyone."
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Set 28",
+      "words": [
+        {
+          "id": 1,
+          "word": "abeyance",
+          "synonym": "suspension",
+          "sentence": "The project was held in abeyance until further funding was available."
+        },
+        {
+          "id": 2,
+          "word": "abstract",
+          "synonym": "theoretical",
+          "sentence": "His abstract ideas were difficult for others to grasp."
+        },
+        {
+          "id": 3,
+          "word": "abstract",
+          "synonym": "remove",
+          "sentence": "The thief abstracted the painting from the gallery without notice."
+        },
+        {
+          "id": 4,
+          "word": "affront",
+          "synonym": "insult",
+          "sentence": "She took his rude comment as a personal affront."
+        },
+        {
+          "id": 5,
+          "word": "agitate",
+          "synonym": "stir up",
+          "sentence": "The activists agitated for better working conditions."
+        },
+        {
+          "id": 6,
+          "word": "august",
+          "synonym": "majestic",
+          "sentence": "The august ceremony was attended by dignitaries from around the world."
+        },
+        {
+          "id": 7,
+          "word": "burnish",
+          "synonym": "polish",
+          "sentence": "He burnished his reputation through years of honest work."
+        },
+        {
+          "id": 8,
+          "word": "coy",
+          "synonym": "shy",
+          "sentence": "She gave a coy smile when he complimented her."
+        },
+        {
+          "id": 9,
+          "word": "deprecate",
+          "synonym": "disapprove",
+          "sentence": "He deprecated the use of violence in resolving disputes."
+        },
+        {
+          "id": 10,
+          "word": "disdain",
+          "synonym": "contempt",
+          "sentence": "She looked at the messy room with open disdain."
+        },
+        {
+          "id": 11,
+          "word": "disperse",
+          "synonym": "scatter",
+          "sentence": "The crowd began to disperse after the concert ended."
+        },
+        {
+          "id": 12,
+          "word": "distend",
+          "synonym": "swell",
+          "sentence": "His stomach distended painfully after the heavy meal."
+        },
+        {
+          "id": 13,
+          "word": "endemic",
+          "synonym": "native",
+          "sentence": "This plant species is endemic to the tropical islands."
+        },
+        {
+          "id": 14,
+          "word": "enmity",
+          "synonym": "hostility",
+          "sentence": "Decades of enmity divided the two nations."
+        },
+        {
+          "id": 15,
+          "word": "gauche",
+          "synonym": "awkward",
+          "sentence": "His gauche manners embarrassed everyone at the table."
+        },
+        {
+          "id": 16,
+          "word": "hysterical",
+          "synonym": "frantic",
+          "sentence": "She became hysterical when she lost her phone."
+        },
+        {
+          "id": 17,
+          "word": "impudent",
+          "synonym": "rude",
+          "sentence": "The impudent child spoke back to his teacher."
+        },
+        {
+          "id": 18,
+          "word": "inchoate",
+          "synonym": "undeveloped",
+          "sentence": "The plan was still in an inchoate stage and needed refinement."
+        },
+        {
+          "id": 19,
+          "word": "penchant",
+          "synonym": "liking",
+          "sentence": "He has a penchant for collecting rare books."
+        },
+        {
+          "id": 20,
+          "word": "quandary",
+          "synonym": "dilemma",
+          "sentence": "She was in a quandary about whether to accept the offer."
+        },
+        {
+          "id": 21,
+          "word": "quarantine",
+          "synonym": "isolation",
+          "sentence": "The infected animals were kept in quarantine."
+        },
+        {
+          "id": 22,
+          "word": "quash",
+          "synonym": "suppress",
+          "sentence": "The court quashed the false rumors about him."
+        },
+        {
+          "id": 23,
+          "word": "quibble",
+          "synonym": "argue",
+          "sentence": "They quibbled over trivial details instead of solving the main issue."
+        },
+        {
+          "id": 24,
+          "word": "ravage",
+          "synonym": "devastate",
+          "sentence": "The hurricane ravaged the coastal villages."
+        },
+        {
+          "id": 25,
+          "word": "recant",
+          "synonym": "withdraw",
+          "sentence": "Under pressure, the witness recanted his earlier statement."
+        },
+        {
+          "id": 26,
+          "word": "redoubtable",
+          "synonym": "formidable",
+          "sentence": "The boxer faced a redoubtable opponent in the ring."
+        },
+        {
+          "id": 27,
+          "word": "retiring",
+          "synonym": "shy",
+          "sentence": "Despite her talent, she was of a retiring nature and avoided the spotlight."
+        },
+        {
+          "id": 28,
+          "word": "shrill",
+          "synonym": "piercing",
+          "sentence": "The shrill sound of the alarm woke everyone up."
+        },
+        {
+          "id": 29,
+          "word": "sophistry",
+          "synonym": "deception",
+          "sentence": "His argument was pure sophistry meant to confuse listeners."
+        },
+        {
+          "id": 30,
+          "word": "substantiate",
+          "synonym": "prove",
+          "sentence": "She could not substantiate her claim with evidence."
+        },
+        {
+          "id": 31,
+          "word": "wily",
+          "synonym": "crafty",
+          "sentence": "The wily fox escaped the trap easily."
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Set 29",
+      "words": [
+        {
+          "id": 1,
+          "word": "abscond",
+          "synonym": "escape",
+          "sentence": "The thief absconded with the stolen jewels before dawn."
+        },
+        {
+          "id": 2,
+          "word": "apogee",
+          "synonym": "peak",
+          "sentence": "At the apogee of his career, he was admired by everyone."
+        },
+        {
+          "id": 3,
+          "word": "aspersion",
+          "synonym": "slander",
+          "sentence": "He cast aspersions on her honesty without any proof."
+        },
+        {
+          "id": 4,
+          "word": "bawdy",
+          "synonym": "indecent",
+          "sentence": "The comedian’s bawdy jokes made the audience blush."
+        },
+        {
+          "id": 5,
+          "word": "chagrin",
+          "synonym": "embarrassment",
+          "sentence": "To his chagrin, he forgot his lines on stage."
+        },
+        {
+          "id": 6,
+          "word": "collude",
+          "synonym": "conspire",
+          "sentence": "The two companies were found to have colluded to fix prices."
+        },
+        {
+          "id": 7,
+          "word": "commiserate",
+          "synonym": "sympathize",
+          "sentence": "Friends came to commiserate with her after the loss."
+        },
+        {
+          "id": 8,
+          "word": "conflagration",
+          "synonym": "fire",
+          "sentence": "The massive conflagration destroyed half the town."
+        },
+        {
+          "id": 9,
+          "word": "contretemps",
+          "synonym": "disagreement",
+          "sentence": "A minor contretemps between the partners delayed the project."
+        },
+        {
+          "id": 10,
+          "word": "conviction",
+          "synonym": "belief",
+          "sentence": "She spoke with deep conviction about equality."
+        },
+        {
+          "id": 11,
+          "word": "croon",
+          "synonym": "sing softly",
+          "sentence": "He crooned a lullaby to calm the baby."
+        },
+        {
+          "id": 12,
+          "word": "depose",
+          "synonym": "remove",
+          "sentence": "The revolutionaries deposed the corrupt king."
+        },
+        {
+          "id": 13,
+          "word": "detente",
+          "synonym": "peace",
+          "sentence": "The treaty marked a period of detente between the rival nations."
+        },
+        {
+          "id": 14,
+          "word": "dowdy",
+          "synonym": "unfashionable",
+          "sentence": "Her dowdy outfit made her stand out at the glamorous party."
+        },
+        {
+          "id": 15,
+          "word": "echelon",
+          "synonym": "rank",
+          "sentence": "He quickly rose through the upper echelons of the company."
+        },
+        {
+          "id": 16,
+          "word": "ennui",
+          "synonym": "boredom",
+          "sentence": "After months of routine, she was overcome with ennui."
+        },
+        {
+          "id": 17,
+          "word": "expatiate",
+          "synonym": "elaborate",
+          "sentence": "He expatiated on his travel experiences for hours."
+        },
+        {
+          "id": 18,
+          "word": "fraught",
+          "synonym": "filled",
+          "sentence": "The negotiations were fraught with tension."
+        },
+        {
+          "id": 19,
+          "word": "fulcrum",
+          "synonym": "pivot",
+          "sentence": "The idea became the fulcrum of the new theory."
+        },
+        {
+          "id": 20,
+          "word": "imbroglio",
+          "synonym": "entanglement",
+          "sentence": "The scandal created a political imbroglio for the government."
+        },
+        {
+          "id": 21,
+          "word": "jocund",
+          "synonym": "cheerful",
+          "sentence": "His jocund nature made him popular among friends."
+        },
+        {
+          "id": 22,
+          "word": "languish",
+          "synonym": "weaken",
+          "sentence": "The soldiers languished in the heat without supplies."
+        },
+        {
+          "id": 23,
+          "word": "languish",
+          "synonym": "pine",
+          "sentence": "She languished for her hometown after moving abroad."
+        },
+        {
+          "id": 24,
+          "word": "nadir",
+          "synonym": "lowest point",
+          "sentence": "Losing his job marked the nadir of his career."
+        },
+        {
+          "id": 25,
+          "word": "nimble",
+          "synonym": "supple",
+          "sentence": "The nimble dancer leaped across the stage effortlessly."
+        },
+        {
+          "id": 26,
+          "word": "ominous",
+          "synonym": "threatening",
+          "sentence": "Dark clouds gave an ominous warning of the coming storm."
+        },
+        {
+          "id": 27,
+          "word": "outlandish",
+          "synonym": "bizarre",
+          "sentence": "His outlandish outfit drew everyone’s attention."
+        },
+        {
+          "id": 28,
+          "word": "propitious",
+          "synonym": "favorable",
+          "sentence": "The weather was propitious for the outdoor event."
+        },
+        {
+          "id": 29,
+          "word": "prurient",
+          "synonym": "lustful",
+          "sentence": "The film was criticized for its prurient scenes."
+        },
+        {
+          "id": 30,
+          "word": "sadistic",
+          "synonym": "cruel",
+          "sentence": "The villain’s sadistic pleasure in others’ pain horrified everyone."
+        },
+        {
+          "id": 31,
+          "word": "zenith",
+          "synonym": "summit",
+          "sentence": "At the zenith of her fame, she retired from acting."
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Set 30",
+      "words": [
+        {
+          "id": 1,
+          "word": "aberrant",
+          "synonym": "atypical",
+          "sentence": "His aberrant behavior at the meeting surprised everyone."
+        },
+        {
+          "id": 2,
+          "word": "abide",
+          "synonym": "tolerate",
+          "sentence": "She couldn’t abide his constant complaining."
+        },
+        {
+          "id": 3,
+          "word": "bravado",
+          "synonym": "swagger",
+          "sentence": "His speech was full of bravado but lacked real substance."
+        },
+        {
+          "id": 4,
+          "word": "callow",
+          "synonym": "naive",
+          "sentence": "The callow intern made several mistakes during his first week."
+        },
+        {
+          "id": 5,
+          "word": "capitulate",
+          "synonym": "yield",
+          "sentence": "After a long siege, the army was forced to capitulate."
+        },
+        {
+          "id": 6,
+          "word": "cogitate",
+          "synonym": "ponder",
+          "sentence": "He sat alone, cogitating on the meaning of life."
+        },
+        {
+          "id": 7,
+          "word": "deportment",
+          "synonym": "demeanor",
+          "sentence": "Her graceful deportment impressed the judges."
+        },
+        {
+          "id": 8,
+          "word": "extemporize",
+          "synonym": "improvise",
+          "sentence": "The teacher asked him to extemporize a short speech on honesty."
+        },
+        {
+          "id": 9,
+          "word": "factious",
+          "synonym": "divisive",
+          "sentence": "The factious committee members delayed the decision."
+        },
+        {
+          "id": 10,
+          "word": "fallow",
+          "synonym": "dormant",
+          "sentence": "After years of hard work, he let his creativity lie fallow."
+        },
+        {
+          "id": 11,
+          "word": "feint",
+          "synonym": "bluff",
+          "sentence": "The boxer’s feint tricked his opponent into lowering his guard."
+        },
+        {
+          "id": 12,
+          "word": "flagrant",
+          "synonym": "blatant",
+          "sentence": "His flagrant disregard for the rules angered the coach."
+        },
+        {
+          "id": 13,
+          "word": "gratuitous",
+          "synonym": "unwarranted",
+          "sentence": "The movie was criticized for its gratuitous violence."
+        },
+        {
+          "id": 14,
+          "word": "grovel",
+          "synonym": "beg",
+          "sentence": "He groveled before his boss to get his job back."
+        },
+        {
+          "id": 15,
+          "word": "indecorous",
+          "synonym": "improper",
+          "sentence": "His indecorous joke offended the audience."
+        },
+        {
+          "id": 16,
+          "word": "intrigue",
+          "synonym": "fascinate",
+          "sentence": "The mystery novel intrigued her from the first page."
+        },
+        {
+          "id": 17,
+          "word": "nominal",
+          "synonym": "symbolic",
+          "sentence": "He was the nominal leader, but others held real power."
+        },
+        {
+          "id": 18,
+          "word": "obdurate",
+          "synonym": "stubborn",
+          "sentence": "The obdurate judge refused to reduce the sentence."
+        },
+        {
+          "id": 19,
+          "word": "obstreperous",
+          "synonym": "unruly",
+          "sentence": "The obstreperous students disrupted the whole class."
+        },
+        {
+          "id": 20,
+          "word": "odious",
+          "synonym": "disgusting",
+          "sentence": "The dictator’s odious crimes shocked the world."
+        },
+        {
+          "id": 21,
+          "word": "plucky",
+          "synonym": "courageous",
+          "sentence": "The plucky little girl stood up to the bully."
+        },
+        {
+          "id": 22,
+          "word": "precocious",
+          "synonym": "gifted",
+          "sentence": "The precocious child was reading novels at six."
+        },
+        {
+          "id": 23,
+          "word": "remuneration",
+          "synonym": "salary",
+          "sentence": "He received fair remuneration for his services."
+        },
+        {
+          "id": 24,
+          "word": "slovenly",
+          "synonym": "unkempt",
+          "sentence": "His slovenly room was filled with dirty clothes."
+        },
+        {
+          "id": 25,
+          "word": "soliloquy",
+          "synonym": "monologue",
+          "sentence": "Hamlet’s 'To be or not to be' is a famous soliloquy."
+        },
+        {
+          "id": 26,
+          "word": "spurn",
+          "synonym": "reject",
+          "sentence": "She spurned his offer of help."
+        },
+        {
+          "id": 27,
+          "word": "stolid",
+          "synonym": "impassive",
+          "sentence": "His stolid expression revealed nothing of his feelings."
+        },
+        {
+          "id": 28,
+          "word": "temerity",
+          "synonym": "audacity",
+          "sentence": "He had the temerity to question his boss’s decision."
+        },
+        {
+          "id": 29,
+          "word": "tenuous",
+          "synonym": "flimsy",
+          "sentence": "His argument was based on tenuous evidence."
+        },
+        {
+          "id": 30,
+          "word": "verve",
+          "synonym": "vigor",
+          "sentence": "She sang the final song with great verve and confidence."
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Set 31",
+      "words": [
+        {
+          "id": 1,
+          "word": "abrogate",
+          "synonym": "revoke",
+          "sentence": "The government decided to abrogate the outdated law."
+        },
+        {
+          "id": 2,
+          "word": "aghast",
+          "synonym": "shocked",
+          "sentence": "She was aghast at the news of the accident."
+        },
+        {
+          "id": 3,
+          "word": "apprise",
+          "synonym": "inform",
+          "sentence": "Please apprise me of any changes in the schedule."
+        },
+        {
+          "id": 4,
+          "word": "beguile",
+          "synonym": "charm",
+          "sentence": "He tried to beguile the audience with his stories."
+        },
+        {
+          "id": 5,
+          "word": "boon",
+          "synonym": "benefit",
+          "sentence": "The new park is a boon to the local community."
+        },
+        {
+          "id": 6,
+          "word": "callous",
+          "synonym": "insensitive",
+          "sentence": "His callous remarks hurt everyone in the room."
+        },
+        {
+          "id": 7,
+          "word": "coddle",
+          "synonym": "pamper",
+          "sentence": "Parents should not coddle their children excessively."
+        },
+        {
+          "id": 8,
+          "word": "crescendo",
+          "synonym": "climax",
+          "sentence": "The music reached a dramatic crescendo before the finale."
+        },
+        {
+          "id": 9,
+          "word": "extenuating",
+          "synonym": "excusing",
+          "sentence": "The judge considered the extenuating circumstances in the case."
+        },
+        {
+          "id": 10,
+          "word": "frenetic",
+          "synonym": "frantic",
+          "sentence": "The city streets were filled with frenetic activity during rush hour."
+        },
+        {
+          "id": 11,
+          "word": "fringe",
+          "synonym": "marginal",
+          "sentence": "The policy was supported by only a fringe group of activists."
+        },
+        {
+          "id": 12,
+          "word": "hapless",
+          "synonym": "unlucky",
+          "sentence": "The hapless traveler missed his flight twice."
+        },
+        {
+          "id": 13,
+          "word": "immaculate",
+          "synonym": "spotless",
+          "sentence": "Her kitchen was immaculate and perfectly organized."
+        },
+        {
+          "id": 14,
+          "word": "obfuscate",
+          "synonym": "confuse",
+          "sentence": "The professor’s convoluted explanation only served to obfuscate the concept."
+        },
+        {
+          "id": 15,
+          "word": "ossify",
+          "synonym": "harden",
+          "sentence": "His outdated opinions began to ossify over the years."
+        },
+        {
+          "id": 16,
+          "word": "pastiche",
+          "synonym": "medley",
+          "sentence": "The film was a pastiche of various classic genres."
+        },
+        {
+          "id": 17,
+          "word": "perspicacious",
+          "synonym": "insightful",
+          "sentence": "The perspicacious detective solved the case quickly."
+        },
+        {
+          "id": 18,
+          "word": "ponderous",
+          "synonym": "heavy",
+          "sentence": "His ponderous lecture made it difficult to stay awake."
+        },
+        {
+          "id": 19,
+          "word": "recluse",
+          "synonym": "hermit",
+          "sentence": "After the scandal, he became a recluse in his home."
+        },
+        {
+          "id": 20,
+          "word": "retaliate",
+          "synonym": "revenge",
+          "sentence": "The team decided to retaliate after losing the first match."
+        },
+        {
+          "id": 21,
+          "word": "rhapsody",
+          "synonym": "ecstasy",
+          "sentence": "She sang a rhapsody that captivated everyone in the audience."
+        },
+        {
+          "id": 22,
+          "word": "serendipitous",
+          "synonym": "fortunate",
+          "sentence": "Their meeting was completely serendipitous but life-changing."
+        },
+        {
+          "id": 23,
+          "word": "shirk",
+          "synonym": "avoid",
+          "sentence": "He tried to shirk responsibility for the mistake."
+        },
+        {
+          "id": 24,
+          "word": "sinecure",
+          "synonym": "easy job",
+          "sentence": "He enjoyed a sinecure that required little effort."
+        },
+        {
+          "id": 25,
+          "word": "sinuous",
+          "synonym": "winding",
+          "sentence": "The sinuous river curved through the valley gracefully."
+        },
+        {
+          "id": 26,
+          "word": "sordid",
+          "synonym": "filthy",
+          "sentence": "The sordid details of the scandal shocked the public."
+        },
+        {
+          "id": 27,
+          "word": "sordid",
+          "synonym": "immoral",
+          "sentence": "He was involved in a sordid scheme to cheat investors."
+        },
+        {
+          "id": 28,
+          "word": "stanch",
+          "synonym": "stop",
+          "sentence": "The nurse tried to stanch the bleeding quickly."
+        },
+        {
+          "id": 29,
+          "word": "surfeit",
+          "synonym": "excess",
+          "sentence": "There was a surfeit of food at the banquet."
+        },
+        {
+          "id": 30,
+          "word": "ulterior",
+          "synonym": "hidden",
+          "sentence": "He had an ulterior motive for helping her."
+        },
+        {
+          "id": 31,
+          "word": "voluble",
+          "synonym": "talkative",
+          "sentence": "The voluble host kept the audience entertained all evening."
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Set 32",
+      "words": [
+        {
+          "id": 1,
+          "word": "abstruse",
+          "synonym": "complex",
+          "sentence": "The professor’s lecture on quantum mechanics was abstruse and difficult to follow."
+        },
+        {
+          "id": 2,
+          "word": "auxiliary",
+          "synonym": "supporting",
+          "sentence": "The army set up auxiliary units to assist in the relief efforts."
+        },
+        {
+          "id": 3,
+          "word": "caricature",
+          "synonym": "exaggeration",
+          "sentence": "The cartoonist drew a caricature of the politician that highlighted his quirks."
+        },
+        {
+          "id": 4,
+          "word": "depravity",
+          "synonym": "corruption",
+          "sentence": "The novel depicted the moral depravity of the corrupt aristocracy."
+        },
+        {
+          "id": 5,
+          "word": "dilettante",
+          "synonym": "amateur",
+          "sentence": "He was a dilettante who dabbled in painting but never took it seriously."
+        },
+        {
+          "id": 6,
+          "word": "effrontery",
+          "synonym": "audacity",
+          "sentence": "She had the effrontery to question the judge’s ruling openly."
+        },
+        {
+          "id": 7,
+          "word": "encroach",
+          "synonym": "intrude",
+          "sentence": "The new building seemed to encroach on the neighbor’s property."
+        },
+        {
+          "id": 8,
+          "word": "endow",
+          "synonym": "grant",
+          "sentence": "The university was endowed with a large donation for scholarships."
+        },
+        {
+          "id": 9,
+          "word": "entreat",
+          "synonym": "plead",
+          "sentence": "He entreated his parents to let him attend the concert."
+        },
+        {
+          "id": 10,
+          "word": "gregarious",
+          "synonym": "sociable",
+          "sentence": "She was a gregarious person who loved hosting parties."
+        },
+        {
+          "id": 11,
+          "word": "indictment",
+          "synonym": "accusation",
+          "sentence": "The prosecutor issued an indictment against the corrupt official."
+        },
+        {
+          "id": 12,
+          "word": "indignant",
+          "synonym": "angry",
+          "sentence": "He was indignant at being unfairly blamed for the mistake."
+        },
+        {
+          "id": 13,
+          "word": "ineluctable",
+          "synonym": "inevitable",
+          "sentence": "Change is ineluctable; we must learn to adapt."
+        },
+        {
+          "id": 14,
+          "word": "inquisitive",
+          "synonym": "curious",
+          "sentence": "The inquisitive child asked questions about everything she saw."
+        },
+        {
+          "id": 15,
+          "word": "latitude",
+          "synonym": "freedom",
+          "sentence": "The manager allowed some latitude in completing the project."
+        },
+        {
+          "id": 16,
+          "word": "levity",
+          "synonym": "lightness",
+          "sentence": "His jokes added levity to an otherwise serious meeting."
+        },
+        {
+          "id": 17,
+          "word": "malevolent",
+          "synonym": "malicious",
+          "sentence": "The malevolent villain plotted to take over the kingdom."
+        },
+        {
+          "id": 18,
+          "word": "mediate",
+          "synonym": "arbitrate",
+          "sentence": "The UN was called to mediate the peace talks."
+        },
+        {
+          "id": 19,
+          "word": "occlude",
+          "synonym": "block",
+          "sentence": "The fallen tree occluded the road, stopping traffic."
+        },
+        {
+          "id": 20,
+          "word": "pacify",
+          "synonym": "calm",
+          "sentence": "The mother tried to pacify her crying baby."
+        },
+        {
+          "id": 21,
+          "word": "paragon",
+          "synonym": "model",
+          "sentence": "He was considered a paragon of virtue and integrity."
+        },
+        {
+          "id": 22,
+          "word": "patronize",
+          "synonym": "support",
+          "sentence": "She decided to patronize local businesses to help the community."
+        },
+        {
+          "id": 23,
+          "word": "patronize",
+          "synonym": "condescend",
+          "sentence": "He tended to patronize his employees, which annoyed them."
+        },
+        {
+          "id": 24,
+          "word": "penurious",
+          "synonym": "poor",
+          "sentence": "The penurious artist struggled to pay his rent."
+        },
+        {
+          "id": 25,
+          "word": "piquant",
+          "synonym": "spicy",
+          "sentence": "The dish had a piquant flavor that delighted the diners."
+        },
+        {
+          "id": 26,
+          "word": "rampant",
+          "synonym": "widespread",
+          "sentence": "Corruption was rampant in the government offices."
+        },
+        {
+          "id": 27,
+          "word": "remote",
+          "synonym": "distant",
+          "sentence": "The village was located in a remote corner of the country."
+        },
+        {
+          "id": 28,
+          "word": "reprobate",
+          "synonym": "villain",
+          "sentence": "The notorious reprobate caused trouble in every town he visited."
+        },
+        {
+          "id": 29,
+          "word": "turbid",
+          "synonym": "muddy",
+          "sentence": "The river was turbid after the heavy rains."
+        },
+        {
+          "id": 30,
+          "word": "turbid",
+          "synonym": "confused",
+          "sentence": "The report was turbid and hard to understand."
+        },
+        {
+          "id": 31,
+          "word": "turgid",
+          "synonym": "swollen",
+          "sentence": "The river became turgid after the flood."
+        },
+        {
+          "id": 32,
+          "word": "turgid",
+          "synonym": "inflated",
+          "sentence": "The politician’s turgid speech bored the audience."
+        },
+        {
+          "id": 33,
+          "word": "vacuous",
+          "synonym": "empty",
+          "sentence": "His vacuous expression revealed no understanding of the situation."
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Set 33",
+      "words": [
+        {
+          "id": 1,
+          "word": "affluent",
+          "synonym": "wealthy",
+          "sentence": "The affluent neighborhood had large mansions and luxury cars."
+        },
+        {
+          "id": 2,
+          "word": "allegorical",
+          "synonym": "symbolic",
+          "sentence": "The story was allegorical, representing deeper social issues."
+        },
+        {
+          "id": 3,
+          "word": "allude",
+          "synonym": "refer",
+          "sentence": "He alluded to his past mistakes without giving details."
+        },
+        {
+          "id": 4,
+          "word": "amplify",
+          "synonym": "increase",
+          "sentence": "The speaker used gestures to amplify his message."
+        },
+        {
+          "id": 5,
+          "word": "catastrophic",
+          "synonym": "disastrous",
+          "sentence": "The earthquake had catastrophic effects on the city."
+        },
+        {
+          "id": 6,
+          "word": "contemporary",
+          "synonym": "modern",
+          "sentence": "The museum features contemporary art from local artists."
+        },
+        {
+          "id": 7,
+          "word": "contemporary",
+          "synonym": "peer",
+          "sentence": "She was respected by her contemporary writers."
+        },
+        {
+          "id": 8,
+          "word": "conundrum",
+          "synonym": "puzzle",
+          "sentence": "Solving the conundrum took the team several hours."
+        },
+        {
+          "id": 9,
+          "word": "defame",
+          "synonym": "slander",
+          "sentence": "He tried to defame the celebrity with false rumors."
+        },
+        {
+          "id": 10,
+          "word": "detract",
+          "synonym": "lessen",
+          "sentence": "His rude comments detracted from the main point of the speech."
+        },
+        {
+          "id": 11,
+          "word": "detrimental",
+          "synonym": "harmful",
+          "sentence": "Smoking is detrimental to your health."
+        },
+        {
+          "id": 12,
+          "word": "devious",
+          "synonym": "sly",
+          "sentence": "The devious plan worked without anyone noticing."
+        },
+        {
+          "id": 13,
+          "word": "dormant",
+          "synonym": "inactive",
+          "sentence": "The volcano has been dormant for centuries."
+        },
+        {
+          "id": 14,
+          "word": "draconian",
+          "synonym": "severe",
+          "sentence": "The government implemented draconian measures to control the outbreak."
+        },
+        {
+          "id": 15,
+          "word": "egalitarian",
+          "synonym": "equal",
+          "sentence": "The organization promoted an egalitarian approach to opportunities."
+        },
+        {
+          "id": 16,
+          "word": "elusive",
+          "synonym": "hard to grasp",
+          "sentence": "The solution remained elusive despite repeated attempts."
+        },
+        {
+          "id": 17,
+          "word": "erstwhile",
+          "synonym": "former",
+          "sentence": "His erstwhile colleagues missed his presence at the office."
+        },
+        {
+          "id": 18,
+          "word": "gloat",
+          "synonym": "rejoice",
+          "sentence": "He couldn’t help but gloat over his victory."
+        },
+        {
+          "id": 19,
+          "word": "harrowing",
+          "synonym": "distressing",
+          "sentence": "The survivors recounted the harrowing experiences of the flood."
+        },
+        {
+          "id": 20,
+          "word": "indefinite",
+          "synonym": "uncertain",
+          "sentence": "The project was postponed for an indefinite period."
+        },
+        {
+          "id": 21,
+          "word": "indefinite",
+          "synonym": "limitless",
+          "sentence": "He had an indefinite sense of curiosity about life."
+        },
+        {
+          "id": 22,
+          "word": "ingenious",
+          "synonym": "clever",
+          "sentence": "The engineer devised an ingenious solution to the problem."
+        },
+        {
+          "id": 23,
+          "word": "keen",
+          "synonym": "eager",
+          "sentence": "She was keen to learn new languages."
+        },
+        {
+          "id": 24,
+          "word": "keen",
+          "synonym": "sharp",
+          "sentence": "He had a keen sense of observation."
+        },
+        {
+          "id": 25,
+          "word": "multifaceted",
+          "synonym": "complex",
+          "sentence": "Her multifaceted personality made her an interesting friend."
+        },
+        {
+          "id": 26,
+          "word": "omniscient",
+          "synonym": "all-knowing",
+          "sentence": "The narrator in the story was omniscient and described all characters’ thoughts."
+        },
+        {
+          "id": 27,
+          "word": "remarkable",
+          "synonym": "extraordinary",
+          "sentence": "She accomplished a remarkable feat by climbing the mountain alone."
+        },
+        {
+          "id": 28,
+          "word": "sober",
+          "synonym": "serious",
+          "sentence": "He gave a sober speech about the dangers of reckless driving."
+        },
+        {
+          "id": 29,
+          "word": "sober",
+          "synonym": "moderate",
+          "sentence": "The room was decorated in sober colors and simple furniture."
+        },
+        {
+          "id": 30,
+          "word": "stem from",
+          "synonym": "originate",
+          "sentence": "Many of his problems stem from poor time management."
+        },
+        {
+          "id": 31,
+          "word": "subdued",
+          "synonym": "restrained",
+          "sentence": "The audience remained subdued during the somber performance."
+        },
+        {
+          "id": 32,
+          "word": "subdued",
+          "synonym": "quiet",
+          "sentence": "The lighting in the room was subdued, creating a calm atmosphere."
+        },
+        {
+          "id": 33,
+          "word": "token",
+          "synonym": "symbolic",
+          "sentence": "He gave her a token gift to show appreciation."
+        },
+        {
+          "id": 34,
+          "word": "unravel",
+          "synonym": "untangle",
+          "sentence": "The detective tried to unravel the mystery of the missing jewel."
+        },
+        {
+          "id": 35,
+          "word": "withstand",
+          "synonym": "endure",
+          "sentence": "The bridge was built to withstand strong winds and heavy traffic."
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Set 34",
+      "words": [
+        {
+          "id": 1,
+          "word": "abrasive",
+          "synonym": "rough",
+          "sentence": "The surface was abrasive and could scratch the paint."
+        },
+        {
+          "id": 2,
+          "word": "abrasive",
+          "synonym": "harsh",
+          "sentence": "His abrasive manner made it difficult for people to approach him."
+        },
+        {
+          "id": 3,
+          "word": "artful",
+          "synonym": "skillful",
+          "sentence": "The artist’s artful use of colors impressed everyone."
+        },
+        {
+          "id": 4,
+          "word": "artful",
+          "synonym": "cunning",
+          "sentence": "He used artful tricks to win the competition."
+        },
+        {
+          "id": 5,
+          "word": "avert",
+          "synonym": "prevent",
+          "sentence": "She averted a potential disaster with quick thinking."
+        },
+        {
+          "id": 6,
+          "word": "avid",
+          "synonym": "enthusiastic",
+          "sentence": "He was an avid reader of historical novels."
+        },
+        {
+          "id": 7,
+          "word": "brevity",
+          "synonym": "conciseness",
+          "sentence": "The speech was appreciated for its brevity."
+        },
+        {
+          "id": 8,
+          "word": "brevity",
+          "synonym": "shortness",
+          "sentence": "The brevity of the meeting allowed everyone to leave early."
+        },
+        {
+          "id": 9,
+          "word": "bromide",
+          "synonym": "cliché",
+          "sentence": "His speech was full of bromides and lacked originality."
+        },
+        {
+          "id": 10,
+          "word": "circumstantial",
+          "synonym": "indirect",
+          "sentence": "The evidence against him was largely circumstantial."
+        },
+        {
+          "id": 11,
+          "word": "circumstantial",
+          "synonym": "detailed",
+          "sentence": "The report gave a circumstantial account of the events."
+        },
+        {
+          "id": 12,
+          "word": "cloying",
+          "synonym": "excessive",
+          "sentence": "The dessert was sweet but cloying after a few bites."
+        },
+        {
+          "id": 13,
+          "word": "counterfeit",
+          "synonym": "fake",
+          "sentence": "The police seized a batch of counterfeit bills."
+        },
+        {
+          "id": 14,
+          "word": "denigrate",
+          "synonym": "belittle",
+          "sentence": "He tried to denigrate her achievements unfairly."
+        },
+        {
+          "id": 15,
+          "word": "disciple",
+          "synonym": "follower",
+          "sentence": "He was a disciple of the famous philosopher."
+        },
+        {
+          "id": 16,
+          "word": "disciple",
+          "synonym": "student",
+          "sentence": "The young disciple learned the teacher’s techniques."
+        },
+        {
+          "id": 17,
+          "word": "extol",
+          "synonym": "praise",
+          "sentence": "The critics extolled the actor’s brilliant performance."
+        },
+        {
+          "id": 18,
+          "word": "forebode",
+          "synonym": "predict",
+          "sentence": "Dark clouds forebode an incoming storm."
+        },
+        {
+          "id": 19,
+          "word": "ideologue",
+          "synonym": "theorist",
+          "sentence": "He was an ideologue who followed his political beliefs strictly."
+        },
+        {
+          "id": 20,
+          "word": "impediment",
+          "synonym": "obstacle",
+          "sentence": "Her speech impediment did not stop her from becoming a teacher."
+        },
+        {
+          "id": 21,
+          "word": "imperative",
+          "synonym": "essential",
+          "sentence": "It is imperative to submit the report on time."
+        },
+        {
+          "id": 22,
+          "word": "imperative",
+          "synonym": "command",
+          "sentence": "The general issued an imperative order to all soldiers."
+        },
+        {
+          "id": 23,
+          "word": "impulsive",
+          "synonym": "spontaneous",
+          "sentence": "His impulsive decision to quit his job surprised everyone."
+        },
+        {
+          "id": 24,
+          "word": "interminable",
+          "synonym": "endless",
+          "sentence": "The lecture felt interminable and tedious."
+        },
+        {
+          "id": 25,
+          "word": "intuitive",
+          "synonym": "instinctive",
+          "sentence": "She had an intuitive understanding of people’s emotions."
+        },
+        {
+          "id": 26,
+          "word": "intuitive",
+          "synonym": "perceptive",
+          "sentence": "His intuitive grasp of the market trends impressed his colleagues."
+        },
+        {
+          "id": 27,
+          "word": "lassitude",
+          "synonym": "fatigue",
+          "sentence": "The heat left the workers in a state of lassitude."
+        },
+        {
+          "id": 28,
+          "word": "omit",
+          "synonym": "leave out",
+          "sentence": "He decided to omit unnecessary details from the report."
+        },
+        {
+          "id": 29,
+          "word": "ornate",
+          "synonym": "decorated",
+          "sentence": "The ornate ceiling was covered in intricate designs."
+        },
+        {
+          "id": 30,
+          "word": "paltry",
+          "synonym": "insignificant",
+          "sentence": "He was paid a paltry sum for his hard work."
+        },
+        {
+          "id": 31,
+          "word": "pejorative",
+          "synonym": "derogatory",
+          "sentence": "The term was used in a pejorative sense."
+        },
+        {
+          "id": 32,
+          "word": "prefigure",
+          "synonym": "foreshadow",
+          "sentence": "The early sketches prefigured the final painting."
+        },
+        {
+          "id": 33,
+          "word": "presage",
+          "synonym": "predict",
+          "sentence": "Dark clouds presage a coming storm."
+        },
+        {
+          "id": 34,
+          "word": "presage",
+          "synonym": "foretell",
+          "sentence": "The omens presage a change in leadership."
+        },
+        {
+          "id": 35,
+          "word": "prescribe",
+          "synonym": "recommend",
+          "sentence": "The doctor prescribed a new treatment for the patient."
+        },
+        {
+          "id": 36,
+          "word": "prescribe",
+          "synonym": "dictate",
+          "sentence": "The rules prescribe how students should behave in class."
+        },
+        {
+          "id": 37,
+          "word": "prevail",
+          "synonym": "win",
+          "sentence": "Justice will prevail in the end."
+        },
+        {
+          "id": 38,
+          "word": "prevail",
+          "synonym": "dominate",
+          "sentence": "This style of music continues to prevail among young people."
+        },
+        {
+          "id": 39,
+          "word": "prevail",
+          "synonym": "persuade",
+          "sentence": "Her friends tried to prevail upon her to join them."
+        },
+        {
+          "id": 40,
+          "word": "propitiate",
+          "synonym": "appease",
+          "sentence": "He tried to propitiate the angry customer with a refund."
+        },
+        {
+          "id": 41,
+          "word": "recapitulate",
+          "synonym": "summarize",
+          "sentence": "The teacher recapitulated the main points of the lesson."
+        },
+        {
+          "id": 42,
+          "word": "recapitulate",
+          "synonym": "repeat",
+          "sentence": "He recapitulated the argument to make sure everyone understood."
+        }
+      ]
+    }
+  ]
+}
