@@ -8,6 +8,8 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { RootNavigator } from "./src/navigation/RootNavigator";
 import { useResolvedNavigationTheme, useIsDarkMode } from "./src/theme/useResolvedNavigationTheme";
 import { useAppStore } from "./src/store/useAppStore";
+import { View } from "react-native";
+import { FloatingTranslatorFab } from "./src/components/FloatingTranslatorFab";
 
 const seedData = require("./src/data/words.json");
 
@@ -26,9 +28,12 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <NavigationContainer theme={navigationTheme}>
+    <NavigationContainer>
+      <View style={{ flex: 1 }}>
         <RootNavigator />
-      </NavigationContainer>
+        <FloatingTranslatorFab />
+      </View>
+    </NavigationContainer>
       <StatusBar style={isDarkMode ? "light" : "dark"} />
     </SafeAreaProvider>
   );
