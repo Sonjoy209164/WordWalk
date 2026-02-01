@@ -44,7 +44,7 @@ export function GroupDetailScreen() {
   }
 
   return (
-    <ScreenContainer>
+    <ScreenContainer edges={["left", "right", "bottom"]}>
       <ThemedText variant="title">{group.name}</ThemedText>
       <ThemedText variant="muted" style={{ marginTop: 6 }}>
         Tap a word for details. Star the ones you keep forgetting.
@@ -69,6 +69,8 @@ export function GroupDetailScreen() {
 
       <FlatList
         style={{ marginTop: 12 }}
+        contentContainerStyle={{ paddingBottom: 16 }}
+        keyboardShouldPersistTaps="handled"
         data={filteredWords}
         keyExtractor={(item) => item.id}
         ItemSeparatorComponent={() => <View style={{ height: 10 }} />}
@@ -99,7 +101,13 @@ export function GroupDetailScreen() {
                   </ThemedText>
                 </View>
 
-                <Pressable onPress={() => toggleStar(item.id)} hitSlop={10}>
+                <Pressable
+                  onPress={(e) => {
+                    e.stopPropagation();
+                    toggleStar(item.id);
+                  }}
+                  hitSlop={10}
+                >
                   <Ionicons
                     name={item.isStarred ? "star" : "star-outline"}
                     size={22}

@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { View } from "react-native";
 import { useNavigation, useTheme } from "@react-navigation/native";
+import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 
 import { ScreenContainer } from "../components/ScreenContainer";
 import { ThemedText } from "../components/ThemedText";
@@ -38,6 +39,7 @@ function buildReviewQueue(params: {
 export function ReviewScreen() {
   const theme = useTheme();
   const navigation = useNavigation<any>();
+  const tabBarHeight = useBottomTabBarHeight();
   const todayISO = toISODate(new Date());
 
   const dailyGoal = useAppStore((s) => s.settings.dailyGoal);
@@ -70,7 +72,7 @@ export function ReviewScreen() {
   }
 
   return (
-    <ScreenContainer>
+    <ScreenContainer style={{ paddingBottom: 16 + tabBarHeight }}>
       <ThemedText variant="title">Review</ThemedText>
       <ThemedText variant="muted" style={{ marginTop: 6 }}>
         Daily goal: {dailyGoal} • Done today: {todayActivity.reviewedCount}

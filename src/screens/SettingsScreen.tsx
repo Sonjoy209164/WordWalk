@@ -20,7 +20,7 @@ export function SettingsScreen() {
   const [goalDraft, setGoalDraft] = useState(String(dailyGoal));
 
   return (
-    <ScreenContainer>
+    <ScreenContainer edges={["left", "right", "bottom"]}>
       <ThemedText variant="title">Settings</ThemedText>
       <ThemedText variant="muted" style={{ marginTop: 6 }}>
         Tune difficulty. Everything else is execution.

@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Pressable, ScrollView, View } from "react-native";
 import { useNavigation, useTheme } from "@react-navigation/native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 
 import { ScreenContainer } from "../components/ScreenContainer";
 import { ThemedCard } from "../components/ThemedCard";
@@ -13,7 +13,7 @@ import { useAppStore } from "../store/useAppStore";
 export function TestSetupScreen() {
   const navigation = useNavigation<any>();
   const theme = useTheme();
-  const insets = useSafeAreaInsets();
+  const tabBarHeight = useBottomTabBarHeight();
 
   const groupList = useAppStore((s) => s.groups);
   const wordMapById = useAppStore((s) => s.wordsById);
@@ -43,14 +43,14 @@ export function TestSetupScreen() {
   const safeQuestionCount =
     availableCount === 0 ? 0 : Math.min(questionCount, availableCount);
 
-  const bottomPadding = Math.max(16, insets.bottom) + 90; // keep content above tab bar
+  const bottomPadding = 16 + tabBarHeight; // keep content above tab bar
 
   const selectedAccentBg = theme.dark
     ? "rgba(255,255,255,0.06)"
     : "rgba(0,0,0,0.04)";
 
   return (
-    <ScreenContainer style={{ padding: 0 }}>
+    <ScreenContainer style={{ padding: 0 }} edges={["left", "right", "bottom"]}>
       <ScrollView
         contentContainerStyle={{ padding: 16, paddingBottom: bottomPadding }}
         showsVerticalScrollIndicator={false}

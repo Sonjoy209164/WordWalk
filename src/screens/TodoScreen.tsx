@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { FlatList, TextInput, View } from "react-native";
 import { useTheme } from "@react-navigation/native";
+import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 
 import { ScreenContainer } from "../components/ScreenContainer";
 import { ThemedText } from "../components/ThemedText";
@@ -13,6 +14,7 @@ import { toISODate } from "../utils/date";
 
 export function TodoScreen() {
   const theme = useTheme();
+  const tabBarHeight = useBottomTabBarHeight();
   const todos = useAppStore((s) => s.todos);
   const addTodo = useAppStore((s) => s.addTodo);
   const toggleTodoCompletion = useAppStore((s) => s.toggleTodoCompletion);
@@ -76,6 +78,8 @@ export function TodoScreen() {
 
       <FlatList
         style={{ marginTop: 16 }}
+        contentContainerStyle={{ paddingBottom: 16 + tabBarHeight }}
+        keyboardShouldPersistTaps="handled"
         data={visibleTodos}
         keyExtractor={(item) => item.id}
         ItemSeparatorComponent={() => <View style={{ height: 10 }} />}

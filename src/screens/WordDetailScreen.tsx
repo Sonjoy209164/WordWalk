@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { ScrollView, View } from "react-native";
 import { useNavigation, useRoute, useTheme } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -40,62 +40,83 @@ export function WordDetailScreen() {
   }
 
   return (
-    <ScreenContainer>
-      <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
-        <ThemedText variant="title" style={{ textTransform: "lowercase" }}>
-          {word.word}
-        </ThemedText>
-        <Ionicons
-          name={word.isStarred ? "star" : "star-outline"}
-          size={24}
-          color={word.isStarred ? theme.colors.primary : theme.colors.text}
-          onPress={() => toggleStar(wordId)}
-        />
-      </View>
-
-      <ThemedText variant="subtitle" style={{ marginTop: 8 }}>
-        {word.synonym}
-      </ThemedText>
-      <ThemedText variant="muted" style={{ marginTop: 8, lineHeight: 20 }}>
-        {word.sentence}
-      </ThemedText>
-
-      <ThemedCard style={{ marginTop: 16 }}>
-        <ThemedText variant="subtitle">Spaced repetition</ThemedText>
-        <ThemedText variant="muted" style={{ marginTop: 6 }}>
-          Status: {word.srs.isNew ? "New" : "Learning"}
-        </ThemedText>
-        <ThemedText variant="muted" style={{ marginTop: 4 }}>
-          Next due: {word.srs.dueDateISO}
-        </ThemedText>
-        <ThemedText variant="muted" style={{ marginTop: 4 }}>
-          Interval: {word.srs.intervalDays} day(s) • Ease: {word.srs.easeFactor.toFixed(2)}
-        </ThemedText>
-        <ThemedText variant="muted" style={{ marginTop: 4 }}>
-          Times reviewed: {word.stats.timesReviewed}
-        </ThemedText>
-      </ThemedCard>
-
-      <ThemedCard style={{ marginTop: 14 }}>
-        <ThemedText variant="subtitle">Quick review (counts toward streak)</ThemedText>
-        <ThemedText variant="muted" style={{ marginTop: 6 }}>
-          Be honest about recall quality.
-        </ThemedText>
-
-        <View style={{ flexDirection: "row", gap: 10, marginTop: 12, flexWrap: "wrap" }}>
-          <PrimaryButton label="Again" variant="outline" onPress={() => quickReview("again")} style={{ flex: 1, minWidth: 120 }} />
-          <PrimaryButton label="Hard" variant="outline" onPress={() => quickReview("hard")} style={{ flex: 1, minWidth: 120 }} />
-          <PrimaryButton label="Good" variant="outline" onPress={() => quickReview("good")} style={{ flex: 1, minWidth: 120 }} />
-          <PrimaryButton label="Easy" onPress={() => quickReview("easy")} style={{ flex: 1, minWidth: 120 }} />
+    <ScreenContainer style={{ padding: 0 }} edges={["left", "right", "bottom"]}>
+      <ScrollView
+        contentContainerStyle={{ padding: 16, paddingBottom: 16 }}
+        showsVerticalScrollIndicator={false}
+        keyboardShouldPersistTaps="handled"
+      >
+        <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
+          <ThemedText variant="title" style={{ textTransform: "lowercase" }}>
+            {word.word}
+          </ThemedText>
+          <Ionicons
+            name={word.isStarred ? "star" : "star-outline"}
+            size={24}
+            color={word.isStarred ? theme.colors.primary : theme.colors.text}
+            onPress={() => toggleStar(wordId)}
+          />
         </View>
-      </ThemedCard>
 
-      <PrimaryButton
-        label="Back to set"
-        variant="outline"
-        onPress={() => navigation.goBack()}
-        style={{ marginTop: 14 }}
-      />
+        <ThemedText variant="subtitle" style={{ marginTop: 8 }}>
+          {word.synonym}
+        </ThemedText>
+        <ThemedText variant="muted" style={{ marginTop: 8, lineHeight: 20 }}>
+          {word.sentence}
+        </ThemedText>
+
+        <ThemedCard style={{ marginTop: 16 }}>
+          <ThemedText variant="subtitle">Spaced repetition</ThemedText>
+          <ThemedText variant="muted" style={{ marginTop: 6 }}>
+            Status: {word.srs.isNew ? "New" : "Learning"}
+          </ThemedText>
+          <ThemedText variant="muted" style={{ marginTop: 4 }}>
+            Next due: {word.srs.dueDateISO}
+          </ThemedText>
+          <ThemedText variant="muted" style={{ marginTop: 4 }}>
+            Interval: {word.srs.intervalDays} day(s) • Ease: {word.srs.easeFactor.toFixed(2)}
+          </ThemedText>
+          <ThemedText variant="muted" style={{ marginTop: 4 }}>
+            Times reviewed: {word.stats.timesReviewed}
+          </ThemedText>
+        </ThemedCard>
+
+        <ThemedCard style={{ marginTop: 14 }}>
+          <ThemedText variant="subtitle">Quick review (counts toward streak)</ThemedText>
+          <ThemedText variant="muted" style={{ marginTop: 6 }}>
+            Be honest about recall quality.
+          </ThemedText>
+
+          <View style={{ flexDirection: "row", gap: 10, marginTop: 12, flexWrap: "wrap" }}>
+            <PrimaryButton
+              label="Again"
+              variant="outline"
+              onPress={() => quickReview("again")}
+              style={{ flex: 1, minWidth: 120 }}
+            />
+            <PrimaryButton
+              label="Hard"
+              variant="outline"
+              onPress={() => quickReview("hard")}
+              style={{ flex: 1, minWidth: 120 }}
+            />
+            <PrimaryButton
+              label="Good"
+              variant="outline"
+              onPress={() => quickReview("good")}
+              style={{ flex: 1, minWidth: 120 }}
+            />
+            <PrimaryButton label="Easy" onPress={() => quickReview("easy")} style={{ flex: 1, minWidth: 120 }} />
+          </View>
+        </ThemedCard>
+
+        <PrimaryButton
+          label="Back to set"
+          variant="outline"
+          onPress={() => navigation.goBack()}
+          style={{ marginTop: 14 }}
+        />
+      </ScrollView>
     </ScreenContainer>
   );
 }

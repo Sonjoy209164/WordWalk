@@ -1,7 +1,8 @@
 import React, { useMemo, useState } from "react";
-import { Modal, Pressable, TextInput, View } from "react-native";
+import { Modal, Pressable, ScrollView, TextInput, View } from "react-native";
 import { useNavigation, useTheme } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
+import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 
 import { ScreenContainer } from "../components/ScreenContainer";
 import { ThemedText } from "../components/ThemedText";
@@ -17,6 +18,7 @@ import { toISODate } from "../utils/date";
 export function HomeScreen() {
   const theme = useTheme();
   const navigation = useNavigation<any>();
+  const tabBarHeight = useBottomTabBarHeight();
 
   const dailyGoal = useAppStore((s) => s.settings.dailyGoal);
   const todayActivity = useAppStore((s) => s.getTodayActivity());
@@ -43,79 +45,89 @@ export function HomeScreen() {
   const [todoDraft, setTodoDraft] = useState("");
 
   return (
-    <ScreenContainer>
-      <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
-        <ThemedText variant="title">WordWalk</ThemedText>
-        <Pressable onPress={() => navigation.navigate("Settings")} hitSlop={10}>
-          <Ionicons name="settings-outline" size={22} color={theme.colors.text} />
-        </Pressable>
-      </View>
-
-      <ThemedText variant="muted" style={{ marginTop: 6 }}>
-        Build consistency. Let the streak do the heavy lifting.
-      </ThemedText>
-
-      <ThemedCard style={{ marginTop: 16 }}>
-        <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start" }}>
-          <View style={{ flex: 1, paddingRight: 10 }}>
-            <ThemedText variant="subtitle">Today’s review</ThemedText>
-            <ThemedText variant="muted" style={{ marginTop: 4 }}>
-              {todayActivity.reviewedCount} / {dailyGoal} reviewed • {dueWordIds.length} due • {newWordIds.length} new
-            </ThemedText>
-          </View>
-          <Ionicons name={todayActivity.didHitGoal ? "checkmark-circle" : "time-outline"} size={22} color={theme.colors.primary} />
+    <ScreenContainer style={{ padding: 0 }}>
+      <ScrollView
+        contentContainerStyle={{ padding: 16, paddingBottom: 16 + tabBarHeight }}
+        showsVerticalScrollIndicator={false}
+        keyboardShouldPersistTaps="handled"
+      >
+        <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
+          <ThemedText variant="title">WordWalk</ThemedText>
+          <Pressable onPress={() => navigation.navigate("Settings")} hitSlop={10}>
+            <Ionicons name="settings-outline" size={22} color={theme.colors.text} />
+          </Pressable>
         </View>
 
-        <View style={{ marginTop: 12 }}>
-          <ProgressBar progress={reviewProgress} />
-        </View>
+        <ThemedText variant="muted" style={{ marginTop: 6 }}>
+          Build consistency. Let the streak do the heavy lifting.
+        </ThemedText>
 
-        <View style={{ flexDirection: "row", gap: 10, marginTop: 14 }}>
-          <PrimaryButton label="Start Review" onPress={() => navigation.navigate("Review")} style={{ flex: 1 }} />
-          <PrimaryButton
-            label="Sets"
-            variant="outline"
-            onPress={() => navigation.navigate("Groups")}
-            style={{ width: 110 }}
-          />
-        </View>
-      </ThemedCard>
-
-      <View style={{ flexDirection: "row", gap: 10, marginTop: 14, flexWrap: "wrap" }}>
-        <StatPill label="Streak" value={`${streak.currentStreak} day${streak.currentStreak === 1 ? "" : "s"}`} />
-        <StatPill label="Best" value={`${streak.bestStreak}`} />
-        <StatPill label="Coins" value={`${wallet.coins}`} />
-      </View>
-
-      <View style={{ marginTop: 18, flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
-        <ThemedText variant="subtitle">Today’s To‑Dos</ThemedText>
-        <Pressable onPress={() => setIsAddTodoOpen(true)} hitSlop={10}>
-          <Ionicons name="add-circle-outline" size={24} color={theme.colors.primary} />
-        </Pressable>
-      </View>
-
-      <ThemedCard style={{ marginTop: 10 }}>
-        {todaysTodos.length === 0 ? (
-          <ThemedText variant="muted">No tasks for today. Add one to stay intentional.</ThemedText>
-        ) : (
-          todaysTodos.map((todo) => (
-            <TodoRow
-              key={todo.id}
-              title={todo.title}
-              isCompleted={todo.isCompleted}
-              onToggle={() => toggleTodoCompletion(todo.id)}
-              onDelete={() => deleteTodo(todo.id)}
+        <ThemedCard style={{ marginTop: 16 }}>
+          <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start" }}>
+            <View style={{ flex: 1, paddingRight: 10 }}>
+              <ThemedText variant="subtitle">Today’s review</ThemedText>
+              <ThemedText variant="muted" style={{ marginTop: 4 }}>
+                {todayActivity.reviewedCount} / {dailyGoal} reviewed • {dueWordIds.length} due • {newWordIds.length} new
+              </ThemedText>
+            </View>
+            <Ionicons
+              name={todayActivity.didHitGoal ? "checkmark-circle" : "time-outline"}
+              size={22}
+              color={theme.colors.primary}
             />
-          ))
-        )}
+          </View>
 
-        <PrimaryButton
-          label="Open full to‑do list"
-          variant="outline"
-          onPress={() => navigation.navigate("Todo")}
-          style={{ marginTop: 10 }}
-        />
-      </ThemedCard>
+          <View style={{ marginTop: 12 }}>
+            <ProgressBar progress={reviewProgress} />
+          </View>
+
+          <View style={{ flexDirection: "row", gap: 10, marginTop: 14 }}>
+            <PrimaryButton label="Start Review" onPress={() => navigation.navigate("Review")} style={{ flex: 1 }} />
+            <PrimaryButton
+              label="Sets"
+              variant="outline"
+              onPress={() => navigation.navigate("Groups")}
+              style={{ width: 110 }}
+            />
+          </View>
+        </ThemedCard>
+
+        <View style={{ flexDirection: "row", gap: 10, marginTop: 14, flexWrap: "wrap" }}>
+          <StatPill label="Streak" value={`${streak.currentStreak} day${streak.currentStreak === 1 ? "" : "s"}`} />
+          <StatPill label="Best" value={`${streak.bestStreak}`} />
+          <StatPill label="Coins" value={`${wallet.coins}`} />
+        </View>
+
+        <View style={{ marginTop: 18, flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
+          <ThemedText variant="subtitle">Today’s To‑Dos</ThemedText>
+          <Pressable onPress={() => setIsAddTodoOpen(true)} hitSlop={10}>
+            <Ionicons name="add-circle-outline" size={24} color={theme.colors.primary} />
+          </Pressable>
+        </View>
+
+        <ThemedCard style={{ marginTop: 10 }}>
+          {todaysTodos.length === 0 ? (
+            <ThemedText variant="muted">No tasks for today. Add one to stay intentional.</ThemedText>
+          ) : (
+            todaysTodos.map((todo) => (
+              <TodoRow
+                key={todo.id}
+                title={todo.title}
+                isCompleted={todo.isCompleted}
+                onToggle={() => toggleTodoCompletion(todo.id)}
+                onDelete={() => deleteTodo(todo.id)}
+              />
+            ))
+          )}
+
+          <PrimaryButton
+            label="Open full to‑do list"
+            variant="outline"
+            onPress={() => navigation.navigate("Todo")}
+            style={{ marginTop: 10 }}
+          />
+        </ThemedCard>
+      </ScrollView>
 
       <Modal visible={isAddTodoOpen} transparent animationType="fade" onRequestClose={() => setIsAddTodoOpen(false)}>
         <Pressable

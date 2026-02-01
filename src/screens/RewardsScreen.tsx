@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import { FlatList, View } from "react-native";
+import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 
 import { ScreenContainer } from "../components/ScreenContainer";
 import { ThemedText } from "../components/ThemedText";
@@ -10,6 +11,7 @@ import { useAppStore } from "../store/useAppStore";
 import { BADGES } from "../utils/rewards";
 
 export function RewardsScreen() {
+  const tabBarHeight = useBottomTabBarHeight();
   const streak = useAppStore((s) => s.streak);
   const wallet = useAppStore((s) => s.wallet);
 
@@ -40,6 +42,7 @@ export function RewardsScreen() {
 
       <FlatList
         style={{ marginTop: 12 }}
+        contentContainerStyle={{ paddingBottom: 16 + tabBarHeight }}
         data={badgeRows}
         keyExtractor={(item) => item.id}
         ItemSeparatorComponent={() => <View style={{ height: 10 }} />}

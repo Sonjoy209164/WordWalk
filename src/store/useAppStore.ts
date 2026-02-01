@@ -11,6 +11,7 @@ import type { DailyActivity, GroupEntity, SeedData, TodoEntity, WordEntity } fro
 type ThemeMode = "system" | "light" | "dark";
 
 export interface AppState {
+  hasHydrated: boolean;
   isBootstrapped: boolean;
 
   groups: GroupEntity[];
@@ -39,9 +40,23 @@ export interface AppState {
   // ---- Test mode (GRE-style)
   activeTestSession?: GreTestSession;
 
+  setHasHydrated: (hasHydrated: boolean) => void;
+
   bootstrapFromSeed: (seed: SeedData) => void;
   recordReview: (wordId: string, rating: ReviewRating, todayISO?: string) => void;
   toggleStar: (wordId: string) => void;
+
+  createGroup: (
+    name: string,
+    preferredGroupId?: number
+  ) => { ok: true; groupId: number } | { ok: false; error: string };
+  addWordToGroup: (params: {
+    groupId: number;
+    word: string;
+    synonym: string;
+    sentence: string;
+    todayISO?: string;
+  }) => { ok: true; wordId: string } | { ok: false; error: string };
 
   addTodo: (title: string, dueDateISO?: string) => void;
   toggleTodoCompletion: (todoId: string) => void;
@@ -79,6 +94,17 @@ function normalizeGoal(goal: number): number {
   return Math.max(5, Math.min(80, Math.round(goal)));
 }
 
+function normalizeWordKey(word: string): string {
+  return word.trim().toLowerCase();
+}
+
+function pickFirstMissingPositiveInt(used: Set<number>): number {
+  for (let i = 1; i < Number.MAX_SAFE_INTEGER; i++) {
+    if (!used.has(i)) return i;
+  }
+  return Date.now();
+}
+
 // ---- Derived snapshot caches (prevents React 18 + Zustand getSnapshot loops)
 const DEFAULT_DAILY_ACTIVITY: DailyActivity = { reviewedCount: 0, didHitGoal: false };
 
@@ -96,6 +122,7 @@ let cachedNewIdsRef: string[] = [];
 export const useAppStore = create<AppState>()(
   persist(
     (set, get) => ({
+      hasHydrated: false,
       isBootstrapped: false,
 
       groups: [],
@@ -122,6 +149,8 @@ export const useAppStore = create<AppState>()(
       },
 
       activeTestSession: undefined,
+
+      setHasHydrated: (hasHydrated) => set({ hasHydrated }),
 
       bootstrapFromSeed: (seed) => {
         const existingWordCount = Object.keys(get().wordsById).length;
@@ -259,6 +288,76 @@ export const useAppStore = create<AppState>()(
             },
           },
         });
+      },
+
+      createGroup: (name, preferredGroupId) => {
+        const trimmedName = name.trim();
+        if (!trimmedName) return { ok: false, error: "Set name is required." };
+
+        const state = get();
+        const usedIds = new Set(state.groups.map((g) => g.id));
+
+        let groupId: number;
+        if (typeof preferredGroupId === "number") {
+          if (!Number.isFinite(preferredGroupId) || preferredGroupId <= 0) {
+            return { ok: false, error: "Set number must be a positive number." };
+          }
+          if (usedIds.has(preferredGroupId)) {
+            return { ok: false, error: `Set ${preferredGroupId} already exists.` };
+          }
+          groupId = Math.floor(preferredGroupId);
+        } else {
+          groupId = pickFirstMissingPositiveInt(usedIds);
+        }
+
+        const nextGroups = [...state.groups, { id: groupId, name: trimmedName, wordIds: [] }].sort(
+          (a, b) => a.id - b.id
+        );
+        set({ groups: nextGroups });
+        return { ok: true, groupId };
+      },
+
+      addWordToGroup: ({ groupId, word, synonym, sentence, todayISO = toISODate(new Date()) }) => {
+        const trimmedWord = word.trim();
+        const trimmedSynonym = synonym.trim();
+        const trimmedSentence = sentence.trim();
+
+        if (!trimmedWord) return { ok: false, error: "Word is required." };
+        if (!trimmedSentence) return { ok: false, error: "Sentence is required (needed for tests)." };
+
+        const state = get();
+        const group = state.groups.find((g) => g.id === groupId);
+        if (!group) return { ok: false, error: `Set ${groupId} not found.` };
+
+        const newKey = normalizeWordKey(trimmedWord);
+        const existing = Object.values(state.wordsById).find((w) => normalizeWordKey(w.word) === newKey);
+        if (existing) {
+          return {
+            ok: false,
+            error: `Duplicate word “${trimmedWord}” already exists in Set ${existing.groupId}.`,
+          };
+        }
+
+        const wordId = `${groupId}-u-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+
+        const nextWord: WordEntity = {
+          id: wordId,
+          groupId,
+          groupName: group.name,
+          word: trimmedWord,
+          synonym: trimmedSynonym,
+          sentence: trimmedSentence,
+          isStarred: false,
+          srs: makeNewSrsState(todayISO),
+          stats: { timesReviewed: 0, lastReviewedAtISO: undefined },
+        };
+
+        set({
+          wordsById: { ...state.wordsById, [wordId]: nextWord },
+          groups: state.groups.map((g) => (g.id === groupId ? { ...g, wordIds: [wordId, ...g.wordIds] } : g)),
+        });
+
+        return { ok: true, wordId };
       },
 
       addTodo: (title, dueDateISO = toISODate(new Date())) => {
@@ -534,6 +633,13 @@ export const useAppStore = create<AppState>()(
     {
       name: "gre-word-streak-app-store-v2",
       storage: createJSONStorage(() => AsyncStorage),
+      onRehydrateStorage: () => (state, error) => {
+        if (error) {
+          // If AsyncStorage read fails, still allow the app to continue with a fresh state.
+          console.warn("Failed to rehydrate store", error);
+        }
+        state?.setHasHydrated(true);
+      },
       partialize: (state) => ({
         isBootstrapped: state.isBootstrapped,
         groups: state.groups,
