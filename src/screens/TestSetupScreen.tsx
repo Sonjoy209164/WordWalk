@@ -36,7 +36,10 @@ export function TestSetupScreen() {
   const availableCount = useMemo(() => {
     if (!selectedGroup) return 0;
     return selectedGroup.wordIds.reduce((count, wordId) => {
-      return wordMapById[wordId] ? count + 1 : count;
+      const w = wordMapById[wordId];
+      // GRE-style questions need a real sentence context. Seeded sets 4–19 from message.txt
+      // are word-only until you provide sentences.
+      return w && w.sentence.trim().length > 0 ? count + 1 : count;
     }, 0);
   }, [selectedGroup, wordMapById]);
 
@@ -172,8 +175,9 @@ export function TestSetupScreen() {
 
         {selectedGroup && availableCount === 0 ? (
           <ThemedText variant="muted" style={{ marginTop: 10 }}>
-            No words are loaded for this set yet. If this persists, use Settings
-            → Reset All.
+            This set doesn’t have example sentences yet, so GRE-style tests are disabled. Add
+            words with sentences in the Set screen, or import a richer dataset (word + synonym +
+            sentence).
           </ThemedText>
         ) : null}
       </ScrollView>

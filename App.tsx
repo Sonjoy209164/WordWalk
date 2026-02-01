@@ -20,13 +20,17 @@ export default function App() {
   // If AsyncStorage ended up in a stale state (e.g., isBootstrapped=true but wordsById is empty),
   // force-seed again so Review/Test screens always have data.
   const wordsCount = useAppStore((s) => Object.keys(s.wordsById).length);
+  const groupsCount = useAppStore((s) => s.groups.length);
   const navigationTheme = useResolvedNavigationTheme();
   const isDarkMode = useIsDarkMode();
+  const seedGroupsCount = seedData.groups?.length ?? 0;
 
   useEffect(() => {
     if (!hasHydrated) return;
-    if (!isBootstrapped || wordsCount === 0) bootstrapFromSeed(seedData);
-  }, [bootstrapFromSeed, hasHydrated, isBootstrapped, wordsCount]);
+    // Always attempt to reconcile seed data (cheap when up-to-date).
+    // This allows shipping new seed sets (e.g., Set 4–19) without forcing a full reset.
+    if (!isBootstrapped || wordsCount === 0 || groupsCount < seedGroupsCount) bootstrapFromSeed(seedData);
+  }, [bootstrapFromSeed, groupsCount, hasHydrated, isBootstrapped, seedGroupsCount, wordsCount]);
 
   if (!hasHydrated) return null;
 

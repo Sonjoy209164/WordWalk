@@ -145,6 +145,7 @@ export function GroupsScreen() {
         renderItem={({ item }) => {
           const groupWords = item.wordIds.map((id) => wordsById[id]).filter(Boolean);
           const learnedCount = groupWords.filter((w) => !w.srs.isNew).length;
+          const testReadyCount = groupWords.filter((w) => w.sentence.trim().length > 0).length;
           const totalCount = groupWords.length;
           const progress = totalCount === 0 ? 0 : Math.round((learnedCount / totalCount) * 100);
 
@@ -166,7 +167,7 @@ export function GroupsScreen() {
                 <View style={{ flex: 1, paddingRight: 12 }}>
                   <ThemedText variant="subtitle">{item.name}</ThemedText>
                   <ThemedText variant="muted" style={{ marginTop: 4 }}>
-                    {learnedCount} learned • {totalCount} total • {progress}%
+                    {learnedCount} learned • {totalCount} total • {testReadyCount} test‑ready • {progress}%
                   </ThemedText>
                 </View>
                 <Ionicons name="chevron-forward" size={20} color={theme.colors.text} />
