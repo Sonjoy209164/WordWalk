@@ -9,7 +9,7 @@ import { ThemedText } from "../components/ThemedText";
 import { PrimaryButton } from "../components/PrimaryButton";
 
 import { useAppStore } from "../store/useAppStore";
-import { computeTestScore } from "../utils/greTest";
+import { computeTestScore, estimateGre170Score } from "../utils/greTest";
 
 type FilterKey = "all" | "incorrect" | "unanswered" | "marked";
 
@@ -96,6 +96,11 @@ export function TestResultScreen() {
             ? `${summary.correct}/${summary.total} (${summary.percent}%)`
             : `In progress • Answered ${summary.answered}/${summary.total}`}
         </ThemedText>
+        {session.isSubmitted ? (
+          <ThemedText variant="caption" style={{ marginTop: 6 }}>
+            Estimated GRE score: {estimateGre170Score({ correct: summary.correct, total: summary.total })}/170
+          </ThemedText>
+        ) : null}
 
         {!session.isSubmitted ? (
           <ThemedCard style={{ marginTop: 14 }}>

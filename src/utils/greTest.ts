@@ -378,6 +378,17 @@ export function computeTestScore(session: GreTestSession): {
   return { correct, total: session.questions.length };
 }
 
+// GRE Verbal/Quant are reported on a 130–170 scale. Real scoring is not linear (equating),
+// so this is a simple estimate for UX purposes.
+export function estimateGre170Score(params: { correct: number; total: number }): number {
+  const total = Math.max(0, params.total);
+  const correct = Math.max(0, Math.min(params.correct, total));
+  if (total === 0) return 130;
+  const ratio = correct / total;
+  const estimated = 130 + Math.round(40 * ratio);
+  return Math.max(130, Math.min(170, estimated));
+}
+
 export function getWrongQuestions(session: GreTestSession): GreChoiceQuestion[] {
   return session.questions.filter((q) => {
     const chosen = session.answersByQuestionId[q.id];

@@ -1,10 +1,12 @@
 import React, { useMemo, useState } from "react";
-import { FlatList, Pressable, TextInput, View } from "react-native";
+import { Alert, FlatList, Modal, Pressable, TextInput, View } from "react-native";
 import { useNavigation, useRoute, useTheme } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 
 import { ScreenContainer } from "../components/ScreenContainer";
 import { ThemedText } from "../components/ThemedText";
+import { ThemedCard } from "../components/ThemedCard";
+import { PrimaryButton } from "../components/PrimaryButton";
 import { useAppStore } from "../store/useAppStore";
 
 type RouteParams = { groupId: number };
@@ -18,8 +20,13 @@ export function GroupDetailScreen() {
   const group = useAppStore((s) => s.groups.find((g) => g.id === groupId));
   const wordsById = useAppStore((s) => s.wordsById);
   const toggleStar = useAppStore((s) => s.toggleStar);
+  const addWordToGroup = useAppStore((s) => s.addWordToGroup);
 
   const [query, setQuery] = useState("");
+  const [isAddWordOpen, setIsAddWordOpen] = useState(false);
+  const [wordDraft, setWordDraft] = useState("");
+  const [synonymDraft, setSynonymDraft] = useState("");
+  const [sentenceDraft, setSentenceDraft] = useState("");
   const filteredWords = useMemo(() => {
     if (!group) return [];
     const normalizedQuery = query.trim().toLowerCase();
@@ -45,7 +52,12 @@ export function GroupDetailScreen() {
 
   return (
     <ScreenContainer edges={["left", "right", "bottom"]}>
-      <ThemedText variant="title">{group.name}</ThemedText>
+      <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
+        <ThemedText variant="title">{group.name}</ThemedText>
+        <Pressable onPress={() => setIsAddWordOpen(true)} hitSlop={10}>
+          <Ionicons name="add-circle-outline" size={26} color={theme.colors.primary} />
+        </Pressable>
+      </View>
       <ThemedText variant="muted" style={{ marginTop: 6 }}>
         Tap a word for details. Star the ones you keep forgetting.
       </ThemedText>
@@ -119,6 +131,100 @@ export function GroupDetailScreen() {
           );
         }}
       />
+
+      <Modal visible={isAddWordOpen} transparent animationType="fade" onRequestClose={() => setIsAddWordOpen(false)}>
+        <Pressable
+          onPress={() => setIsAddWordOpen(false)}
+          style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.5)", padding: 16, justifyContent: "center" }}
+        >
+          <Pressable
+            onPress={() => null}
+            style={{ backgroundColor: theme.colors.card, borderRadius: 16, padding: 16, borderWidth: 1, borderColor: theme.colors.border }}
+          >
+            <ThemedText variant="subtitle">Add a word</ThemedText>
+            <ThemedText variant="muted" style={{ marginTop: 6 }}>
+              No duplicates across sets. A sentence is required for GRE-style tests.
+            </ThemedText>
+
+            <ThemedCard style={{ marginTop: 12, padding: 12 }}>
+              <TextInput
+                value={wordDraft}
+                onChangeText={setWordDraft}
+                placeholder="Word"
+                placeholderTextColor={theme.colors.border}
+                style={{
+                  borderWidth: 1,
+                  borderColor: theme.colors.border,
+                  borderRadius: 12,
+                  paddingHorizontal: 12,
+                  paddingVertical: 10,
+                  color: theme.colors.text,
+                  backgroundColor: theme.colors.background,
+                }}
+              />
+              <TextInput
+                value={synonymDraft}
+                onChangeText={setSynonymDraft}
+                placeholder="Synonym (optional)"
+                placeholderTextColor={theme.colors.border}
+                style={{
+                  marginTop: 10,
+                  borderWidth: 1,
+                  borderColor: theme.colors.border,
+                  borderRadius: 12,
+                  paddingHorizontal: 12,
+                  paddingVertical: 10,
+                  color: theme.colors.text,
+                  backgroundColor: theme.colors.background,
+                }}
+              />
+              <TextInput
+                value={sentenceDraft}
+                onChangeText={setSentenceDraft}
+                placeholder="Sentence (required)"
+                placeholderTextColor={theme.colors.border}
+                multiline
+                style={{
+                  marginTop: 10,
+                  minHeight: 90,
+                  borderWidth: 1,
+                  borderColor: theme.colors.border,
+                  borderRadius: 12,
+                  paddingHorizontal: 12,
+                  paddingVertical: 10,
+                  color: theme.colors.text,
+                  backgroundColor: theme.colors.background,
+                  textAlignVertical: "top",
+                }}
+              />
+            </ThemedCard>
+
+            <View style={{ flexDirection: "row", gap: 10, marginTop: 12 }}>
+              <PrimaryButton label="Cancel" variant="outline" onPress={() => setIsAddWordOpen(false)} style={{ flex: 1 }} />
+              <PrimaryButton
+                label="Add"
+                onPress={() => {
+                  const res = addWordToGroup({
+                    groupId,
+                    word: wordDraft,
+                    synonym: synonymDraft,
+                    sentence: sentenceDraft,
+                  });
+                  if (!res.ok) {
+                    Alert.alert("Could not add word", res.error);
+                    return;
+                  }
+                  setWordDraft("");
+                  setSynonymDraft("");
+                  setSentenceDraft("");
+                  setIsAddWordOpen(false);
+                }}
+                style={{ flex: 1 }}
+              />
+            </View>
+          </Pressable>
+        </Pressable>
+      </Modal>
     </ScreenContainer>
   );
 }

@@ -155,7 +155,56 @@ export const useAppStore = create<AppState>()(
       bootstrapFromSeed: (seed) => {
         const existingWordCount = Object.keys(get().wordsById).length;
         if (existingWordCount > 0) {
-          if (!get().isBootstrapped) set({ isBootstrapped: true });
+          const state = get();
+          const existingGroupIds = new Set(state.groups.map((g) => g.id));
+          const missingSeedGroups = seed.groups.filter((g) => !existingGroupIds.has(g.id));
+
+          if (missingSeedGroups.length === 0) {
+            if (!state.isBootstrapped) set({ isBootstrapped: true });
+            return;
+          }
+
+          const todayISO = toISODate(new Date());
+          const nextGroups: GroupEntity[] = [...state.groups];
+          const nextWordsById: Record<string, WordEntity> = { ...state.wordsById };
+
+          for (const group of missingSeedGroups) {
+            const wordIds: string[] = [];
+            for (const seedWord of group.words) {
+              const appWordId = `${group.id}-${seedWord.id}`;
+              if (nextWordsById[appWordId]) continue;
+              wordIds.push(appWordId);
+
+              nextWordsById[appWordId] = {
+                id: appWordId,
+                groupId: group.id,
+                groupName: group.name,
+                word: seedWord.word,
+                synonym: seedWord.synonym,
+                sentence: seedWord.sentence,
+                isStarred: false,
+                srs: makeNewSrsState(todayISO),
+                stats: {
+                  timesReviewed: 0,
+                  lastReviewedAtISO: undefined,
+                },
+              };
+            }
+
+            nextGroups.push({
+              id: group.id,
+              name: group.name,
+              wordIds,
+            });
+          }
+
+          nextGroups.sort((a, b) => a.id - b.id);
+
+          set({
+            isBootstrapped: true,
+            groups: nextGroups,
+            wordsById: nextWordsById,
+          });
           return;
         }
 
