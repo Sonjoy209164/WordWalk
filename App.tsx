@@ -28,8 +28,8 @@ export default function App() {
   useEffect(() => {
     if (!hasHydrated) return;
     // Always attempt to reconcile seed data (cheap when up-to-date).
-    // This allows shipping new seed sets (e.g., Set 4–19) without forcing a full reset.
-    if (!isBootstrapped || wordsCount === 0 || groupsCount < seedGroupsCount) bootstrapFromSeed(seedData);
+    // This allows shipping new seed sets (e.g., Set 4–19) and running maintenance (like de-duping).
+    bootstrapFromSeed(seedData);
   }, [bootstrapFromSeed, groupsCount, hasHydrated, isBootstrapped, seedGroupsCount, wordsCount]);
 
   if (!hasHydrated) return null;

@@ -9,6 +9,7 @@ import { ThemedText } from "../components/ThemedText";
 import { ThemedCard } from "../components/ThemedCard";
 import { PrimaryButton } from "../components/PrimaryButton";
 import { useAppStore } from "../store/useAppStore";
+import { speakEnglishSequence, stopSpeaking } from "../utils/speech";
 
 type ParsedGroup = {
   id: number;
@@ -170,7 +171,43 @@ export function GroupsScreen() {
                     {learnedCount} learned • {totalCount} total • {testReadyCount} test‑ready • {progress}%
                   </ThemedText>
                 </View>
-                <Ionicons name="chevron-forward" size={20} color={theme.colors.text} />
+                <View style={{ flexDirection: "row", alignItems: "center" }}>
+                  <Pressable
+                    hitSlop={10}
+                    onPress={(e) => {
+                      e.stopPropagation();
+                      const words = groupWords.map((w) => w.word).filter(Boolean);
+                      // Short preview: set name + first 10 words.
+                      speakEnglishSequence({
+                        texts: [item.name, ...words.slice(0, 10)],
+                        interrupt: true,
+                      });
+                    }}
+                    onLongPress={(e) => {
+                      e.stopPropagation();
+                      const words = groupWords.map((w) => w.word).filter(Boolean);
+                      // Full playback (can be long). Long-press again on Stop in Settings or elsewhere.
+                      speakEnglishSequence({
+                        texts: [item.name, ...words],
+                        interrupt: true,
+                      });
+                    }}
+                    style={{ paddingHorizontal: 6, paddingVertical: 6, marginRight: 6 }}
+                  >
+                    <Ionicons name="volume-high" size={20} color={theme.colors.text} />
+                  </Pressable>
+                  <Pressable
+                    hitSlop={10}
+                    onPress={(e) => {
+                      e.stopPropagation();
+                      stopSpeaking();
+                    }}
+                    style={{ paddingHorizontal: 6, paddingVertical: 6, marginRight: 2 }}
+                  >
+                    <Ionicons name="stop-circle-outline" size={20} color={theme.colors.text} />
+                  </Pressable>
+                  <Ionicons name="chevron-forward" size={20} color={theme.colors.text} />
+                </View>
               </View>
             </Pressable>
           );

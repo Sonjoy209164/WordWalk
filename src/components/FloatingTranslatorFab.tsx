@@ -46,9 +46,10 @@ export function FloatingTranslatorFab() {
       return;
 
     if (!hasInitialPosition) {
+      // Default near bottom-right so it doesn't cover headers/actions; user can drag anywhere.
       const initial = {
         x: bounds.maxX,
-        y: clamp(bounds.minY + 16, bounds.minY, bounds.maxY),
+        y: clamp(bounds.maxY - 140, bounds.minY + 16, bounds.maxY),
       };
       pan.setValue(initial);
       setHasInitialPosition(true);

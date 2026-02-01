@@ -87,26 +87,28 @@ export function WordDetailScreen() {
             Be honest about recall quality.
           </ThemedText>
 
-          <View style={{ flexDirection: "row", gap: 10, marginTop: 12, flexWrap: "wrap" }}>
-            <PrimaryButton
-              label="Again"
-              variant="outline"
-              onPress={() => quickReview("again")}
-              style={{ flex: 1, minWidth: 120 }}
-            />
-            <PrimaryButton
-              label="Hard"
-              variant="outline"
-              onPress={() => quickReview("hard")}
-              style={{ flex: 1, minWidth: 120 }}
-            />
-            <PrimaryButton
-              label="Good"
-              variant="outline"
-              onPress={() => quickReview("good")}
-              style={{ flex: 1, minWidth: 120 }}
-            />
-            <PrimaryButton label="Easy" onPress={() => quickReview("easy")} style={{ flex: 1, minWidth: 120 }} />
+          <View style={{ marginTop: 12 }}>
+            <View style={{ flexDirection: "row" }}>
+              <PrimaryButton
+                label="Again"
+                variant="outline"
+                onPress={() => quickReview("again")}
+                style={{ flex: 1, marginRight: 10 }}
+              />
+              <PrimaryButton
+                label="Hard"
+                variant="outline"
+                onPress={() => quickReview("hard")}
+                style={{ flex: 1, marginRight: 10 }}
+              />
+              <PrimaryButton
+                label="Good"
+                variant="outline"
+                onPress={() => quickReview("good")}
+                style={{ flex: 1 }}
+              />
+            </View>
+            <PrimaryButton label="Easy" onPress={() => quickReview("easy")} style={{ marginTop: 10 }} />
           </View>
         </ThemedCard>
 

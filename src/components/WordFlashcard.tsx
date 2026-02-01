@@ -4,7 +4,7 @@ import { useTheme } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 
 import { ThemedText } from "./ThemedText";
-import { speakEnglishWord, stopSpeaking } from "../utils/speech";
+import { speakEnglishSequence, speakEnglishWord, stopSpeaking } from "../utils/speech";
 
 export function WordFlashcard(props: {
   word: string;
@@ -60,7 +60,16 @@ export function WordFlashcard(props: {
 
       {/* Pronounce button */}
       <Pressable
-        onPress={() => speakEnglishWord({ text: props.word })}
+        onPress={() => {
+          if (props.isRevealed) {
+            speakEnglishSequence({
+              texts: [props.word, props.synonym, props.sentence],
+              interrupt: true,
+            });
+          } else {
+            speakEnglishWord({ text: props.word });
+          }
+        }}
         onLongPress={() => stopSpeaking()}
         style={({ pressed }) => ({
           position: "absolute",

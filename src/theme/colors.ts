@@ -1,7 +1,7 @@
 export const BrandColors = {
   primary: "#7C3AED",
   primarySoft: "#A78BFA",
-  success: "#22C55E",
+  success: "#9525d6ff",
   warning: "#F59E0B",
   danger: "#EF4444",
 };

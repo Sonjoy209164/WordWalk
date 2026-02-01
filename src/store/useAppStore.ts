@@ -9,6 +9,7 @@ import { generateTestForSet, type GreTestSession } from "../utils/greTest";
 import type { DailyActivity, GroupEntity, SeedData, TodoEntity, WordEntity } from "./types";
 
 type ThemeMode = "system" | "light" | "dark";
+type SpeechLanguage = "system" | "en-US" | "en-GB";
 
 export interface AppState {
   hasHydrated: boolean;
@@ -35,6 +36,12 @@ export interface AppState {
   settings: {
     dailyGoal: number;
     themeMode: ThemeMode;
+    speech: {
+      language: SpeechLanguage;
+      voiceId?: string;
+      rate: number;
+      pitch: number;
+    };
   };
 
   // ---- Test mode (GRE-style)
@@ -64,6 +71,10 @@ export interface AppState {
 
   setDailyGoal: (dailyGoal: number) => void;
   setThemeMode: (themeMode: ThemeMode) => void;
+  setSpeechLanguage: (language: SpeechLanguage) => void;
+  setSpeechVoiceId: (voiceId?: string) => void;
+  setSpeechRate: (rate: number) => void;
+  setSpeechPitch: (pitch: number) => void;
 
   // Test actions
   startHardTestForGroup: (groupId: number, questionCount: number, todayISO?: string) => void;
@@ -85,6 +96,18 @@ export interface AppState {
   getNewWordIds: () => string[];
 }
 
+type PersistedAppState = Pick<
+  AppState,
+  | "isBootstrapped"
+  | "groups"
+  | "wordsById"
+  | "todos"
+  | "activityByDateISO"
+  | "streak"
+  | "wallet"
+  | "settings"
+>;
+
 function makeId(prefix: string): string {
   return `${prefix}-${Date.now()}-${Math.random().toString(16).slice(2)}`;
 }
@@ -105,6 +128,69 @@ function pickFirstMissingPositiveInt(used: Set<number>): number {
   return Date.now();
 }
 
+function scoreForDedupe(word: WordEntity): number {
+  const times = word.stats?.timesReviewed ?? 0;
+  const hasSentence = Boolean(word.sentence?.trim());
+  const hasSynonym = Boolean(word.synonym?.trim());
+  const starred = word.isStarred ? 1 : 0;
+  const groupBonus = Math.max(0, 200 - word.groupId); // prefer earlier sets when ties
+  return times * 1_000_000 + (hasSentence ? 1_000 : 0) + (hasSynonym ? 200 : 0) + starred * 50 + groupBonus;
+}
+
+function dedupeWordsState(state: Pick<AppState, "groups" | "wordsById">): {
+  didChange: boolean;
+  groups: GroupEntity[];
+  wordsById: Record<string, WordEntity>;
+} {
+  const bestByKey = new Map<string, WordEntity>();
+  const droppedIds = new Set<string>();
+
+  for (const w of Object.values(state.wordsById)) {
+    const key = normalizeWordKey(w.word);
+    if (!key) continue;
+
+    const prev = bestByKey.get(key);
+    if (!prev) {
+      bestByKey.set(key, w);
+      continue;
+    }
+
+    const prevScore = scoreForDedupe(prev);
+    const nextScore = scoreForDedupe(w);
+
+    if (nextScore > prevScore) {
+      bestByKey.set(key, w);
+      droppedIds.add(prev.id);
+      droppedIds.delete(w.id);
+    } else {
+      droppedIds.add(w.id);
+    }
+  }
+
+  if (droppedIds.size === 0) {
+    // Still normalize group wordIds (in case any stale ids exist).
+    const knownIds = new Set(Object.keys(state.wordsById));
+    const normalizedGroups = state.groups.map((g) => ({
+      ...g,
+      wordIds: g.wordIds.filter((id) => knownIds.has(id)),
+    }));
+    return { didChange: false, groups: normalizedGroups, wordsById: state.wordsById };
+  }
+
+  const nextWordsById: Record<string, WordEntity> = {};
+  for (const w of bestByKey.values()) {
+    nextWordsById[w.id] = w;
+  }
+
+  const keptIds = new Set(Object.keys(nextWordsById));
+  const nextGroups = state.groups.map((g) => ({
+    ...g,
+    wordIds: g.wordIds.filter((id) => keptIds.has(id)),
+  }));
+
+  return { didChange: true, groups: nextGroups, wordsById: nextWordsById };
+}
+
 // ---- Derived snapshot caches (prevents React 18 + Zustand getSnapshot loops)
 const DEFAULT_DAILY_ACTIVITY: DailyActivity = { reviewedCount: 0, didHitGoal: false };
 
@@ -120,7 +206,7 @@ let cachedWordsRefForNew: AppState["wordsById"] | null = null;
 let cachedNewIdsRef: string[] = [];
 
 export const useAppStore = create<AppState>()(
-  persist(
+  persist<AppState, [], [], PersistedAppState>(
     (set, get) => ({
       hasHydrated: false,
       isBootstrapped: false,
@@ -146,6 +232,12 @@ export const useAppStore = create<AppState>()(
       settings: {
         dailyGoal: 20,
         themeMode: "system",
+        speech: {
+          language: "system",
+          voiceId: undefined,
+          rate: 0.95,
+          pitch: 1.0,
+        },
       },
 
       activeTestSession: undefined,
@@ -155,7 +247,15 @@ export const useAppStore = create<AppState>()(
       bootstrapFromSeed: (seed) => {
         const existingWordCount = Object.keys(get().wordsById).length;
         if (existingWordCount > 0) {
-          const state = get();
+          let state = get();
+
+          // Maintenance: clean duplicates & stale references in persisted state.
+          const deduped = dedupeWordsState({ groups: state.groups, wordsById: state.wordsById });
+          if (deduped.didChange) {
+            set({ groups: deduped.groups, wordsById: deduped.wordsById });
+            state = { ...state, groups: deduped.groups, wordsById: deduped.wordsById };
+          }
+
           const existingGroupIds = new Set(state.groups.map((g) => g.id));
           const missingSeedGroups = seed.groups.filter((g) => !existingGroupIds.has(g.id));
 
@@ -167,13 +267,17 @@ export const useAppStore = create<AppState>()(
           const todayISO = toISODate(new Date());
           const nextGroups: GroupEntity[] = [...state.groups];
           const nextWordsById: Record<string, WordEntity> = { ...state.wordsById };
+          const seenGlobal = new Set(Object.values(nextWordsById).map((w) => normalizeWordKey(w.word)));
 
           for (const group of missingSeedGroups) {
             const wordIds: string[] = [];
             for (const seedWord of group.words) {
+              const key = normalizeWordKey(seedWord.word);
+              if (!key || seenGlobal.has(key)) continue;
               const appWordId = `${group.id}-${seedWord.id}`;
               if (nextWordsById[appWordId]) continue;
               wordIds.push(appWordId);
+              seenGlobal.add(key);
 
               nextWordsById[appWordId] = {
                 id: appWordId,
@@ -212,12 +316,16 @@ export const useAppStore = create<AppState>()(
 
         const groups: GroupEntity[] = [];
         const wordsById: Record<string, WordEntity> = {};
+        const seenGlobal = new Set<string>();
 
         for (const group of seed.groups) {
           const wordIds: string[] = [];
           for (const seedWord of group.words) {
+            const key = normalizeWordKey(seedWord.word);
+            if (!key || seenGlobal.has(key)) continue;
             const appWordId = `${group.id}-${seedWord.id}`;
             wordIds.push(appWordId);
+            seenGlobal.add(key);
 
             wordsById[appWordId] = {
               id: appWordId,
@@ -453,6 +561,32 @@ export const useAppStore = create<AppState>()(
         }));
       },
 
+      setSpeechLanguage: (language) => {
+        set((state) => ({
+          settings: { ...state.settings, speech: { ...state.settings.speech, language } },
+        }));
+      },
+
+      setSpeechVoiceId: (voiceId) => {
+        set((state) => ({
+          settings: { ...state.settings, speech: { ...state.settings.speech, voiceId } },
+        }));
+      },
+
+      setSpeechRate: (rate) => {
+        const safe = Number.isFinite(rate) ? Math.max(0.5, Math.min(1.2, rate)) : 0.95;
+        set((state) => ({
+          settings: { ...state.settings, speech: { ...state.settings.speech, rate: safe } },
+        }));
+      },
+
+      setSpeechPitch: (pitch) => {
+        const safe = Number.isFinite(pitch) ? Math.max(0.5, Math.min(1.5, pitch)) : 1.0;
+        set((state) => ({
+          settings: { ...state.settings, speech: { ...state.settings.speech, pitch: safe } },
+        }));
+      },
+
       startHardTestForGroup: (groupId, questionCount, todayISO = toISODate(new Date())) => {
         const state = get();
         const group = state.groups.find((g) => g.id === groupId);
@@ -618,7 +752,11 @@ export const useAppStore = create<AppState>()(
           activityByDateISO: {},
           streak: { currentStreak: 0, bestStreak: 0, lastGoalHitISO: undefined },
           wallet: { coins: 0, xp: 0, totalReviewed: 0 },
-          settings: { dailyGoal: 20, themeMode: "system" },
+          settings: {
+            dailyGoal: 20,
+            themeMode: "system",
+            speech: { language: "system", voiceId: undefined, rate: 0.95, pitch: 1.0 },
+          },
           activeTestSession: undefined,
         });
       },
@@ -681,13 +819,23 @@ export const useAppStore = create<AppState>()(
     }),
     {
       name: "gre-word-streak-app-store-v2",
-      storage: createJSONStorage(() => AsyncStorage),
+      storage: createJSONStorage<PersistedAppState>(() => AsyncStorage),
       onRehydrateStorage: () => (state, error) => {
         if (error) {
           // If AsyncStorage read fails, still allow the app to continue with a fresh state.
           console.warn("Failed to rehydrate store", error);
         }
         state?.setHasHydrated(true);
+      },
+      merge: (persistedState: any, currentState: any) => {
+        const merged = { ...currentState, ...persistedState };
+        const persistedSettings = persistedState?.settings ?? {};
+        merged.settings = { ...currentState.settings, ...persistedSettings };
+        merged.settings.speech = {
+          ...currentState.settings.speech,
+          ...(persistedSettings.speech ?? {}),
+        };
+        return merged;
       },
       partialize: (state) => ({
         isBootstrapped: state.isBootstrapped,

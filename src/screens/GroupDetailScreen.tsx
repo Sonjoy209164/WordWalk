@@ -8,6 +8,7 @@ import { ThemedText } from "../components/ThemedText";
 import { ThemedCard } from "../components/ThemedCard";
 import { PrimaryButton } from "../components/PrimaryButton";
 import { useAppStore } from "../store/useAppStore";
+import { speakEnglishSequence, speakEnglishWord, stopSpeaking } from "../utils/speech";
 
 type RouteParams = { groupId: number };
 
@@ -35,9 +36,26 @@ export function GroupDetailScreen() {
       .filter(Boolean)
       .sort((a, b) => a.word.localeCompare(b.word));
 
-    if (!normalizedQuery) return words;
+    const score = (w: any) =>
+      (w.stats?.timesReviewed ?? 0) * 1_000_000 +
+      (w.sentence?.trim() ? 1_000 : 0) +
+      (w.synonym?.trim() ? 200 : 0) +
+      (w.isStarred ? 50 : 0);
 
-    return words.filter((w) =>
+    // Hide duplicates (same word, different synonym/sentence) and keep best candidate.
+    const bestByKey = new Map<string, any>();
+    for (const w of words) {
+      const key = (w.word ?? "").trim().toLowerCase();
+      if (!key) continue;
+      const prev = bestByKey.get(key);
+      if (!prev || score(w) > score(prev)) bestByKey.set(key, w);
+    }
+
+    const uniqueWords = Array.from(bestByKey.values()).sort((a, b) => a.word.localeCompare(b.word));
+
+    if (!normalizedQuery) return uniqueWords;
+
+    return uniqueWords.filter((w) =>
       `${w.word} ${w.synonym} ${w.sentence}`.toLowerCase().includes(normalizedQuery)
     );
   }, [group, wordsById, query]);
@@ -114,6 +132,21 @@ export function GroupDetailScreen() {
                 </View>
 
                 <Pressable
+                  hitSlop={10}
+                  onPress={(e) => {
+                    e.stopPropagation();
+                    speakEnglishWord({ text: item.word });
+                  }}
+                  onLongPress={(e) => {
+                    e.stopPropagation();
+                    speakEnglishSequence({ texts: [item.word, item.synonym, item.sentence], interrupt: true });
+                  }}
+                  style={{ paddingHorizontal: 8, paddingVertical: 6 }}
+                >
+                  <Ionicons name="volume-high" size={20} color={theme.colors.text} />
+                </Pressable>
+
+                <Pressable
                   onPress={(e) => {
                     e.stopPropagation();
                     toggleStar(item.id);
@@ -125,6 +158,17 @@ export function GroupDetailScreen() {
                     size={22}
                     color={item.isStarred ? theme.colors.primary : theme.colors.text}
                   />
+                </Pressable>
+
+                <Pressable
+                  hitSlop={10}
+                  onPress={(e) => {
+                    e.stopPropagation();
+                    stopSpeaking();
+                  }}
+                  style={{ paddingHorizontal: 6, paddingVertical: 6 }}
+                >
+                  <Ionicons name="stop-circle-outline" size={20} color={theme.colors.text} />
                 </Pressable>
               </View>
             </Pressable>

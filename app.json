@@ -1,5 +1,30 @@
 {
-  "plugins": [
-    "expo-web-browser"
-  ]
+  "expo": {
+    "name": "WordWalk",
+    "slug": "wordwalk",
+    "icon": "./assets/wardwalk.png",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "android": {
+      "package": "com.sonjoy209164.wordwalk",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/wardwalk.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-web-browser"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "12c6295b-558c-48a8-a115-9fc0bf2d3892"
+      }
+    }
+  }
 }
