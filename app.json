@@ -2,7 +2,7 @@
   "expo": {
     "name": "WordWalk",
     "slug": "wordwalk",
-    "icon": "./assets/wardwalk.png",
+    "icon": "./assets/wordwalk-icon-cutout-1024.png",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
@@ -11,7 +11,7 @@
     "android": {
       "package": "com.sonjoy209164.wordwalk",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/wardwalk.png",
+        "foregroundImage": "./assets/wordwalk-icon-cutout-1024.png",
         "backgroundColor": "#ffffff"
       }
     },

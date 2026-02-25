@@ -204,6 +204,7 @@
         }
       ]
     },
+
     {
       "id": 2,
       "name": "Set 2",
@@ -426,6 +427,7 @@
         }
       ]
     },
+
     {
       "id": 3,
       "name": "Set 3",
@@ -660,2976 +662,598 @@
         }
       ]
     },
+
     {
       "id": 4,
       "name": "Set 4",
       "words": [
-        {
-          "id": 1,
-          "word": "abstain",
-          "synonym": "refrain",
-          "sentence": "After new evidence emerged, she decided to abstain the decision—to refrain it."
-        },
-        {
-          "id": 2,
-          "word": "approbation",
-          "synonym": "approval",
-          "sentence": "Her approbation reflected deep approval, even under pressure."
-        },
-        {
-          "id": 3,
-          "word": "cherish",
-          "synonym": "treasure",
-          "sentence": "Her cherish tone was treasure, even when criticized."
-        },
-        {
-          "id": 4,
-          "word": "corroborate",
-          "synonym": "substantiate",
-          "sentence": "After new evidence emerged, she decided to corroborate the decision—to substantiate it."
-        },
-        {
-          "id": 5,
-          "word": "disparate",
-          "synonym": "dissimilar",
-          "sentence": "After new evidence emerged, she decided to disparate the decision—to dissimilar it."
-        },
-        {
-          "id": 6,
-          "word": "emulate",
-          "synonym": "imitate",
-          "sentence": "After new evidence emerged, she decided to emulate the decision—to imitate it."
-        },
-        {
-          "id": 7,
-          "word": "enervate",
-          "synonym": "weaken",
-          "sentence": "After new evidence emerged, she decided to enervate the decision—to weaken it."
-        },
-        {
-          "id": 8,
-          "word": "ephemeral",
-          "synonym": "fleeting",
-          "sentence": "It was an ephemeral response—clearly fleeting to everyone present."
-        },
-        {
-          "id": 9,
-          "word": "fervid",
-          "synonym": "passionate",
-          "sentence": "It was a fervid response—clearly passionate to everyone present."
-        },
-        {
-          "id": 10,
-          "word": "garrulous",
-          "synonym": "loquacious",
-          "sentence": "It was a garrulous response—clearly loquacious to everyone present."
-        },
-        {
-          "id": 11,
-          "word": "incendiary",
-          "synonym": "inflammatory",
-          "sentence": "The situation demanded incendiary, a kind of inflammatory few people showed."
-        },
-        {
-          "id": 12,
-          "word": "inimical",
-          "synonym": "hostile",
-          "sentence": "It was an inimical response—clearly hostile to everyone present."
-        },
-        {
-          "id": 13,
-          "word": "intimate",
-          "synonym": "suggest",
-          "sentence": "The team tried to intimate the report, meaning to suggest it before release."
-        },
-        {
-          "id": 14,
-          "word": "invigorate",
-          "synonym": "energize",
-          "sentence": "The team tried to invigorate the report, meaning to energize it before release."
-        },
-        {
-          "id": 15,
-          "word": "mitigate",
-          "synonym": "alleviate",
-          "sentence": "After new evidence emerged, she decided to mitigate the decision—to alleviate it."
-        },
-        {
-          "id": 16,
-          "word": "obsolete",
-          "synonym": "outdated",
-          "sentence": "It was an obsolete response—clearly outdated to everyone present."
-        },
-        {
-          "id": 17,
-          "word": "opaque",
-          "synonym": "obscure",
-          "sentence": "Her opaque tone was obscure, even when criticized."
-        },
-        {
-          "id": 18,
-          "word": "paradigmatic",
-          "synonym": "exemplary",
-          "sentence": "The paradigmatic remarks sounded exemplary, which raised immediate concerns."
-        },
-        {
-          "id": 19,
-          "word": "pedantic",
-          "synonym": "nitpicky",
-          "sentence": "The pedantic remarks sounded nitpicky, which raised immediate concerns."
-        },
-        {
-          "id": 20,
-          "word": "placid",
-          "synonym": "calm",
-          "sentence": "The placid remarks sounded calm, which raised immediate concerns."
-        },
-        {
-          "id": 21,
-          "word": "polemical",
-          "synonym": "controversial",
-          "sentence": "Her polemical tone was controversial, even when criticized."
-        },
-        {
-          "id": 22,
-          "word": "precipitate",
-          "synonym": "rash",
-          "sentence": "The team tried to precipitate the report, meaning to rash it before release."
-        },
-        {
-          "id": 23,
-          "word": "profundity",
-          "synonym": "depth",
-          "sentence": "Her profundity reflected deep depth, even under pressure."
-        },
-        {
-          "id": 24,
-          "word": "prophetic",
-          "synonym": "prescient",
-          "sentence": "Her prophetic tone was prescient, even when criticized."
-        },
-        {
-          "id": 25,
-          "word": "prudent",
-          "synonym": "cautious",
-          "sentence": "The prudent remarks sounded cautious, which raised immediate concerns."
-        },
-        {
-          "id": 26,
-          "word": "punctilious",
-          "synonym": "meticulous",
-          "sentence": "The punctilious remarks sounded meticulous, which raised immediate concerns."
-        },
-        {
-          "id": 27,
-          "word": "recondite",
-          "synonym": "abstruse",
-          "sentence": "Her recondite tone was abstruse, even when criticized."
-        },
-        {
-          "id": 28,
-          "word": "scrupulous",
-          "synonym": "conscientious",
-          "sentence": "It was a scrupulous response—clearly conscientious to everyone present."
-        },
-        {
-          "id": 29,
-          "word": "tranquil",
-          "synonym": "serene",
-          "sentence": "Her tranquil tone was serene, even when criticized."
-        },
-        {
-          "id": 30,
-          "word": "vacillate",
-          "synonym": "waver",
-          "sentence": "After new evidence emerged, she decided to vacillate the decision—to waver it."
-        }
+        { "id": 1, "word": "abstain", "synonym": "", "sentence": "" },
+        { "id": 2, "word": "approbation", "synonym": "", "sentence": "" },
+        { "id": 3, "word": "cherish", "synonym": "", "sentence": "" },
+        { "id": 4, "word": "corroborate", "synonym": "", "sentence": "" },
+        { "id": 5, "word": "disparate", "synonym": "", "sentence": "" },
+        { "id": 6, "word": "emulate", "synonym": "", "sentence": "" },
+        { "id": 7, "word": "enervate", "synonym": "", "sentence": "" },
+        { "id": 8, "word": "ephemeral", "synonym": "", "sentence": "" },
+        { "id": 9, "word": "fervid", "synonym": "", "sentence": "" },
+        { "id": 10, "word": "garrulous", "synonym": "", "sentence": "" },
+        { "id": 11, "word": "incendiary", "synonym": "", "sentence": "" },
+        { "id": 12, "word": "inimical", "synonym": "", "sentence": "" },
+        { "id": 13, "word": "intimate", "synonym": "", "sentence": "" },
+        { "id": 14, "word": "invigorate", "synonym": "", "sentence": "" },
+        { "id": 15, "word": "mitigate", "synonym": "", "sentence": "" },
+        { "id": 16, "word": "obsolete", "synonym": "", "sentence": "" },
+        { "id": 17, "word": "opaque", "synonym": "", "sentence": "" },
+        { "id": 18, "word": "paradigmatic", "synonym": "", "sentence": "" },
+        { "id": 19, "word": "pedantic", "synonym": "", "sentence": "" },
+        { "id": 20, "word": "placid", "synonym": "", "sentence": "" },
+        { "id": 21, "word": "polemical", "synonym": "", "sentence": "" },
+        { "id": 22, "word": "precipitate", "synonym": "", "sentence": "" },
+        { "id": 23, "word": "profundity", "synonym": "", "sentence": "" },
+        { "id": 24, "word": "prophetic", "synonym": "", "sentence": "" },
+        { "id": 25, "word": "prudent", "synonym": "", "sentence": "" },
+        { "id": 26, "word": "punctilious", "synonym": "", "sentence": "" },
+        { "id": 27, "word": "recondite", "synonym": "", "sentence": "" },
+        { "id": 28, "word": "scrupulous", "synonym": "", "sentence": "" },
+        { "id": 29, "word": "tranquil", "synonym": "", "sentence": "" },
+        { "id": 30, "word": "vacillate", "synonym": "", "sentence": "" }
       ]
     },
+
     {
       "id": 5,
       "name": "Set 5",
       "words": [
-        {
-          "id": 1,
-          "word": "aloof",
-          "synonym": "distant",
-          "sentence": "The aloof remarks sounded distant, which raised immediate concerns."
-        },
-        {
-          "id": 2,
-          "word": "clangor",
-          "synonym": "clamor",
-          "sentence": "The situation demanded clangor, a kind of clamor few people showed."
-        },
-        {
-          "id": 3,
-          "word": "conventional",
-          "synonym": "traditional",
-          "sentence": "The conventional remarks sounded traditional, which raised immediate concerns."
-        },
-        {
-          "id": 4,
-          "word": "debunk",
-          "synonym": "expose",
-          "sentence": "Her debunk tone was expose, even when criticized."
-        },
-        {
-          "id": 5,
-          "word": "diminutive",
-          "synonym": "tiny",
-          "sentence": "It was a diminutive response—clearly tiny to everyone present."
-        },
-        {
-          "id": 6,
-          "word": "discernible",
-          "synonym": "perceptible",
-          "sentence": "The discernible remarks sounded perceptible, which raised immediate concerns."
-        },
-        {
-          "id": 7,
-          "word": "enigmatic",
-          "synonym": "mysterious",
-          "sentence": "It was an enigmatic response—clearly mysterious to everyone present."
-        },
-        {
-          "id": 8,
-          "word": "estranged",
-          "synonym": "alienated",
-          "sentence": "It was an estranged response—clearly alienated to everyone present."
-        },
-        {
-          "id": 9,
-          "word": "extravagant",
-          "synonym": "excessive",
-          "sentence": "The extravagant remarks sounded excessive, which raised immediate concerns."
-        },
-        {
-          "id": 10,
-          "word": "fanciful",
-          "synonym": "imaginative",
-          "sentence": "Her fanciful tone was imaginative, even when criticized."
-        },
-        {
-          "id": 11,
-          "word": "frivolous",
-          "synonym": "trivial",
-          "sentence": "It was a frivolous response—clearly trivial to everyone present."
-        },
-        {
-          "id": 12,
-          "word": "heterogeneous",
-          "synonym": "diverse",
-          "sentence": "It was a heterogeneous response—clearly diverse to everyone present."
-        },
-        {
-          "id": 13,
-          "word": "imperious",
-          "synonym": "domineering",
-          "sentence": "Her imperious tone was domineering, even when criticized."
-        },
-        {
-          "id": 14,
-          "word": "impertinent",
-          "synonym": "insolent",
-          "sentence": "Her impertinent tone was insolent, even when criticized."
-        },
-        {
-          "id": 15,
-          "word": "invasive",
-          "synonym": "intrusive",
-          "sentence": "The invasive remarks sounded intrusive, which raised immediate concerns."
-        },
-        {
-          "id": 16,
-          "word": "irresolute",
-          "synonym": "indecisive",
-          "sentence": "The irresolute remarks sounded indecisive, which raised immediate concerns."
-        },
-        {
-          "id": 17,
-          "word": "laudable",
-          "synonym": "praiseworthy",
-          "sentence": "It was a laudable response—clearly praiseworthy to everyone present."
-        },
-        {
-          "id": 18,
-          "word": "lax",
-          "synonym": "lenient",
-          "sentence": "The lax remarks sounded lenient, which raised immediate concerns."
-        },
-        {
-          "id": 19,
-          "word": "marginalize",
-          "synonym": "sideline",
-          "sentence": "The team tried to marginalize the report, meaning to sideline it before release."
-        },
-        {
-          "id": 20,
-          "word": "panache",
-          "synonym": "flair",
-          "sentence": "Her panache tone was flair, even when criticized."
-        },
-        {
-          "id": 21,
-          "word": "plodding",
-          "synonym": "laborious",
-          "sentence": "The plodding remarks sounded laborious, which raised immediate concerns."
-        },
-        {
-          "id": 22,
-          "word": "prosaic",
-          "synonym": "mundane",
-          "sentence": "It was a prosaic response—clearly mundane to everyone present."
-        },
-        {
-          "id": 23,
-          "word": "remedial",
-          "synonym": "corrective",
-          "sentence": "The remedial remarks sounded corrective, which raised immediate concerns."
-        },
-        {
-          "id": 24,
-          "word": "restive",
-          "synonym": "uneasy",
-          "sentence": "Her restive tone was uneasy, even when criticized."
-        },
-        {
-          "id": 25,
-          "word": "sporadic",
-          "synonym": "intermittent",
-          "sentence": "The sporadic remarks sounded intermittent, which raised immediate concerns."
-        },
-        {
-          "id": 26,
-          "word": "stigmatize",
-          "synonym": "brand",
-          "sentence": "After new evidence emerged, she decided to stigmatize the decision—to brand it."
-        },
-        {
-          "id": 27,
-          "word": "undermine",
-          "synonym": "sabotage",
-          "sentence": "The undermine remarks sounded sabotage, which raised immediate concerns."
-        },
-        {
-          "id": 28,
-          "word": "utterly",
-          "synonym": "completely",
-          "sentence": "Her utterly tone was completely, even when criticized."
-        },
-        {
-          "id": 29,
-          "word": "weary",
-          "synonym": "exhausted",
-          "sentence": "His weary—simple exhausted—was obvious during the discussion."
-        },
-        {
-          "id": 30,
-          "word": "zealous",
-          "synonym": "fervent",
-          "sentence": "It was a zealous response—clearly fervent to everyone present."
-        }
+        { "id": 1, "word": "aloof", "synonym": "", "sentence": "" },
+        { "id": 2, "word": "clangor", "synonym": "", "sentence": "" },
+        { "id": 3, "word": "conventional", "synonym": "", "sentence": "" },
+        { "id": 4, "word": "debunk", "synonym": "", "sentence": "" },
+        { "id": 5, "word": "diminutive", "synonym": "", "sentence": "" },
+        { "id": 6, "word": "discernible", "synonym": "", "sentence": "" },
+        { "id": 7, "word": "enigmatic", "synonym": "", "sentence": "" },
+        { "id": 8, "word": "estranged", "synonym": "", "sentence": "" },
+        { "id": 9, "word": "extravagant", "synonym": "", "sentence": "" },
+        { "id": 10, "word": "fanciful", "synonym": "", "sentence": "" },
+        { "id": 11, "word": "frivolous", "synonym": "", "sentence": "" },
+        { "id": 12, "word": "heterogeneous", "synonym": "", "sentence": "" },
+        { "id": 13, "word": "imperious", "synonym": "", "sentence": "" },
+        { "id": 14, "word": "impertinent", "synonym": "", "sentence": "" },
+        { "id": 15, "word": "invasive", "synonym": "", "sentence": "" },
+        { "id": 16, "word": "irresolute", "synonym": "", "sentence": "" },
+        { "id": 17, "word": "laudable", "synonym": "", "sentence": "" },
+        { "id": 18, "word": "lax", "synonym": "", "sentence": "" },
+        { "id": 19, "word": "marginalize", "synonym": "", "sentence": "" },
+        { "id": 20, "word": "panache", "synonym": "", "sentence": "" },
+        { "id": 21, "word": "plodding", "synonym": "", "sentence": "" },
+        { "id": 22, "word": "prosaic", "synonym": "", "sentence": "" },
+        { "id": 23, "word": "remedial", "synonym": "", "sentence": "" },
+        { "id": 24, "word": "restive", "synonym": "", "sentence": "" },
+        { "id": 25, "word": "sporadic", "synonym": "", "sentence": "" },
+        { "id": 26, "word": "stigmatize", "synonym": "", "sentence": "" },
+        { "id": 27, "word": "undermine", "synonym": "", "sentence": "" },
+        { "id": 28, "word": "utterly", "synonym": "", "sentence": "" },
+        { "id": 29, "word": "weary", "synonym": "", "sentence": "" },
+        { "id": 30, "word": "zealous", "synonym": "", "sentence": "" }
       ]
     },
+
     {
       "id": 6,
       "name": "Set 6",
       "words": [
-        {
-          "id": 1,
-          "word": "admonish",
-          "synonym": "rebuke",
-          "sentence": "It was an admonish response—clearly rebuke to everyone present."
-        },
-        {
-          "id": 2,
-          "word": "aesthetic",
-          "synonym": "artistic",
-          "sentence": "It was an aesthetic response—clearly artistic to everyone present."
-        },
-        {
-          "id": 3,
-          "word": "affectation",
-          "synonym": "pretense",
-          "sentence": "The situation demanded affectation, a kind of pretense few people showed."
-        },
-        {
-          "id": 4,
-          "word": "alleviate",
-          "synonym": "ease",
-          "sentence": "After new evidence emerged, she decided to alleviate the decision—to ease it."
-        },
-        {
-          "id": 5,
-          "word": "analogous",
-          "synonym": "similar",
-          "sentence": "It was an analogous response—clearly similar to everyone present."
-        },
-        {
-          "id": 6,
-          "word": "bolster",
-          "synonym": "strengthen",
-          "sentence": "The bolster remarks sounded strengthen, which raised immediate concerns."
-        },
-        {
-          "id": 7,
-          "word": "chauvinistic",
-          "synonym": "bigoted",
-          "sentence": "The chauvinistic remarks sounded bigoted, which raised immediate concerns."
-        },
-        {
-          "id": 8,
-          "word": "connoisseur",
-          "synonym": "expert",
-          "sentence": "It was a connoisseur response—clearly expert to everyone present."
-        },
-        {
-          "id": 9,
-          "word": "dissemble",
-          "synonym": "conceal",
-          "sentence": "It was a dissemble response—clearly conceal to everyone present."
-        },
-        {
-          "id": 10,
-          "word": "dogged",
-          "synonym": "tenacious",
-          "sentence": "It was a dogged response—clearly tenacious to everyone present."
-        },
-        {
-          "id": 11,
-          "word": "dupe",
-          "synonym": "deceive",
-          "sentence": "It was a dupe response—clearly deceive to everyone present."
-        },
-        {
-          "id": 12,
-          "word": "empirical",
-          "synonym": "evidence-based",
-          "sentence": "The empirical remarks sounded evidence-based, which raised immediate concerns."
-        },
-        {
-          "id": 13,
-          "word": "engender",
-          "synonym": "cause",
-          "sentence": "It was an engender response—clearly cause to everyone present."
-        },
-        {
-          "id": 14,
-          "word": "entitled",
-          "synonym": "deserving",
-          "sentence": "Her entitled tone was deserving, even when criticized."
-        },
-        {
-          "id": 15,
-          "word": "pertinacious",
-          "synonym": "stubborn",
-          "sentence": "It was a pertinacious response—clearly stubborn to everyone present."
-        },
-        {
-          "id": 16,
-          "word": "presumptuous",
-          "synonym": "arrogant",
-          "sentence": "Her presumptuous tone was arrogant, even when criticized."
-        },
-        {
-          "id": 17,
-          "word": "probity",
-          "synonym": "integrity",
-          "sentence": "The situation demanded probity, a kind of integrity few people showed."
-        },
-        {
-          "id": 18,
-          "word": "proliferate",
-          "synonym": "multiply",
-          "sentence": "The team tried to proliferate the report, meaning to multiply it before release."
-        },
-        {
-          "id": 19,
-          "word": "specious",
-          "synonym": "misleading",
-          "sentence": "It was a specious response—clearly misleading to everyone present."
-        },
-        {
-          "id": 20,
-          "word": "spurious",
-          "synonym": "false",
-          "sentence": "The spurious remarks sounded false, which raised immediate concerns."
-        },
-        {
-          "id": 21,
-          "word": "subjective",
-          "synonym": "biased",
-          "sentence": "It was a subjective response—clearly biased to everyone present."
-        },
-        {
-          "id": 22,
-          "word": "subvert",
-          "synonym": "undermine",
-          "sentence": "After new evidence emerged, she decided to subvert the decision—to undermine it."
-        },
-        {
-          "id": 23,
-          "word": "timorous",
-          "synonym": "fearful",
-          "sentence": "It was a timorous response—clearly fearful to everyone present."
-        },
-        {
-          "id": 24,
-          "word": "tortuous",
-          "synonym": "convoluted",
-          "sentence": "Her tortuous tone was convoluted, even when criticized."
-        },
-        {
-          "id": 25,
-          "word": "tractable",
-          "synonym": "manageable",
-          "sentence": "It was a tractable response—clearly manageable to everyone present."
-        },
-        {
-          "id": 26,
-          "word": "transient",
-          "synonym": "fleeting",
-          "sentence": "It was a transient response—clearly fleeting to everyone present."
-        },
-        {
-          "id": 27,
-          "word": "ubiquitous",
-          "synonym": "pervasive",
-          "sentence": "It was an ubiquitous response—clearly pervasive to everyone present."
-        },
-        {
-          "id": 28,
-          "word": "underscore",
-          "synonym": "emphasize",
-          "sentence": "Her underscore tone was emphasize, even when criticized."
-        },
-        {
-          "id": 29,
-          "word": "venal",
-          "synonym": "corrupt",
-          "sentence": "Her venal tone was corrupt, even when criticized."
-        },
-        {
-          "id": 30,
-          "word": "venerate",
-          "synonym": "revere",
-          "sentence": "The team tried to venerate the report, meaning to revere it before release."
-        }
+        { "id": 1, "word": "admonish", "synonym": "", "sentence": "" },
+        { "id": 2, "word": "aesthetic", "synonym": "", "sentence": "" },
+        { "id": 3, "word": "affectation", "synonym": "", "sentence": "" },
+        { "id": 4, "word": "alleviate", "synonym": "", "sentence": "" },
+        { "id": 5, "word": "analogous", "synonym": "", "sentence": "" },
+        { "id": 6, "word": "bolster", "synonym": "", "sentence": "" },
+        { "id": 7, "word": "chauvinistic", "synonym": "", "sentence": "" },
+        { "id": 8, "word": "connoisseur", "synonym": "", "sentence": "" },
+        { "id": 9, "word": "dissemble", "synonym": "", "sentence": "" },
+        { "id": 10, "word": "dogged", "synonym": "", "sentence": "" },
+        { "id": 11, "word": "dupe", "synonym": "", "sentence": "" },
+        { "id": 12, "word": "empirical", "synonym": "", "sentence": "" },
+        { "id": 13, "word": "engender", "synonym": "", "sentence": "" },
+        { "id": 14, "word": "entitled", "synonym": "", "sentence": "" },
+        { "id": 15, "word": "pertinacious", "synonym": "", "sentence": "" },
+        { "id": 16, "word": "presumptuous", "synonym": "", "sentence": "" },
+        { "id": 17, "word": "probity", "synonym": "", "sentence": "" },
+        { "id": 18, "word": "proliferate", "synonym": "", "sentence": "" },
+        { "id": 19, "word": "specious", "synonym": "", "sentence": "" },
+        { "id": 20, "word": "spurious", "synonym": "", "sentence": "" },
+        { "id": 21, "word": "subjective", "synonym": "", "sentence": "" },
+        { "id": 22, "word": "subvert", "synonym": "", "sentence": "" },
+        { "id": 23, "word": "timorous", "synonym": "", "sentence": "" },
+        { "id": 24, "word": "tortuous", "synonym": "", "sentence": "" },
+        { "id": 25, "word": "tractable", "synonym": "", "sentence": "" },
+        { "id": 26, "word": "transient", "synonym": "", "sentence": "" },
+        { "id": 27, "word": "ubiquitous", "synonym": "", "sentence": "" },
+        { "id": 28, "word": "underscore", "synonym": "", "sentence": "" },
+        { "id": 29, "word": "venal", "synonym": "", "sentence": "" },
+        { "id": 30, "word": "venerate", "synonym": "", "sentence": "" }
       ]
     },
+
     {
       "id": 7,
       "name": "Set 7",
       "words": [
-        {
-          "id": 1,
-          "word": "appease",
-          "synonym": "pacify",
-          "sentence": "The appease remarks sounded pacify, which raised immediate concerns."
-        },
-        {
-          "id": 2,
-          "word": "arbitrary",
-          "synonym": "capricious",
-          "sentence": "Her arbitrary reflected deep capricious, even under pressure."
-        },
-        {
-          "id": 3,
-          "word": "archaic",
-          "synonym": "antiquated",
-          "sentence": "Her archaic tone was antiquated, even when criticized."
-        },
-        {
-          "id": 4,
-          "word": "clamorous",
-          "synonym": "noisy",
-          "sentence": "Her clamorous tone was noisy, even when criticized."
-        },
-        {
-          "id": 5,
-          "word": "dearth",
-          "synonym": "scarcity",
-          "sentence": "Her dearth tone was scarcity, even when criticized."
-        },
-        {
-          "id": 6,
-          "word": "explicable",
-          "synonym": "understandable",
-          "sentence": "The explicable remarks sounded understandable, which raised immediate concerns."
-        },
-        {
-          "id": 7,
-          "word": "hyperbole",
-          "synonym": "exaggeration",
-          "sentence": "His hyperbole—simple exaggeration—was obvious during the discussion."
-        },
-        {
-          "id": 8,
-          "word": "immutable",
-          "synonym": "unchangeable",
-          "sentence": "It was an immutable response—clearly unchangeable to everyone present."
-        },
-        {
-          "id": 9,
-          "word": "indefatigable",
-          "synonym": "tireless",
-          "sentence": "It was an indefatigable response—clearly tireless to everyone present."
-        },
-        {
-          "id": 10,
-          "word": "indolent",
-          "synonym": "lazy",
-          "sentence": "Her indolent tone was lazy, even when criticized."
-        },
-        {
-          "id": 11,
-          "word": "insular",
-          "synonym": "parochial",
-          "sentence": "It was an insular response—clearly parochial to everyone present."
-        },
-        {
-          "id": 12,
-          "word": "intransigent",
-          "synonym": "uncompromising",
-          "sentence": "The intransigent remarks sounded uncompromising, which raised immediate concerns."
-        },
-        {
-          "id": 13,
-          "word": "intrepid",
-          "synonym": "fearless",
-          "sentence": "The intrepid remarks sounded fearless, which raised immediate concerns."
-        },
-        {
-          "id": 14,
-          "word": "irreverent",
-          "synonym": "disrespectful",
-          "sentence": "Her irreverent tone was disrespectful, even when criticized."
-        },
-        {
-          "id": 15,
-          "word": "loathe",
-          "synonym": "detest",
-          "sentence": "The loathe remarks sounded detest, which raised immediate concerns."
-        },
-        {
-          "id": 16,
-          "word": "malign",
-          "synonym": "slander",
-          "sentence": "The malign remarks sounded slander, which raised immediate concerns."
-        },
-        {
-          "id": 17,
-          "word": "malleable",
-          "synonym": "pliable",
-          "sentence": "The malleable remarks sounded pliable, which raised immediate concerns."
-        },
-        {
-          "id": 18,
-          "word": "neophyte",
-          "synonym": "novice",
-          "sentence": "It was a neophyte response—clearly novice to everyone present."
-        },
-        {
-          "id": 19,
-          "word": "plastic",
-          "synonym": "moldable",
-          "sentence": "Her plastic tone was moldable, even when criticized."
-        },
-        {
-          "id": 20,
-          "word": "platitude",
-          "synonym": "cliché",
-          "sentence": "Her platitude reflected deep cliché, even under pressure."
-        },
-        {
-          "id": 21,
-          "word": "prescient",
-          "synonym": "foresighted",
-          "sentence": "The prescient remarks sounded foresighted, which raised immediate concerns."
-        },
-        {
-          "id": 22,
-          "word": "pristine",
-          "synonym": "unspoiled",
-          "sentence": "It was a pristine response—clearly unspoiled to everyone present."
-        },
-        {
-          "id": 23,
-          "word": "reproach",
-          "synonym": "criticize",
-          "sentence": "Her reproach tone was criticize, even when criticized."
-        },
-        {
-          "id": 24,
-          "word": "robust",
-          "synonym": "sturdy",
-          "sentence": "It was a robust response—clearly sturdy to everyone present."
-        },
-        {
-          "id": 25,
-          "word": "salubrious",
-          "synonym": "healthful",
-          "sentence": "It was a salubrious response—clearly healthful to everyone present."
-        },
-        {
-          "id": 26,
-          "word": "sanction",
-          "synonym": "authorize",
-          "sentence": "After new evidence emerged, she decided to sanction the decision—to authorize it."
-        },
-        {
-          "id": 27,
-          "word": "sedulous",
-          "synonym": "diligent",
-          "sentence": "Her sedulous tone was diligent, even when criticized."
-        },
-        {
-          "id": 28,
-          "word": "soporific",
-          "synonym": "sleep-inducing",
-          "sentence": "Her soporific tone was sleep-inducing, even when criticized."
-        },
-        {
-          "id": 29,
-          "word": "stern",
-          "synonym": "strict",
-          "sentence": "Her stern tone was strict, even when criticized."
-        },
-        {
-          "id": 30,
-          "word": "tendentious",
-          "synonym": "biased",
-          "sentence": "The tendentious remarks sounded biased, which raised immediate concerns."
-        }
+        { "id": 1, "word": "appease", "synonym": "", "sentence": "" },
+        { "id": 2, "word": "arbitrary", "synonym": "", "sentence": "" },
+        { "id": 3, "word": "archaic", "synonym": "", "sentence": "" },
+        { "id": 4, "word": "clamorous", "synonym": "", "sentence": "" },
+        { "id": 5, "word": "dearth", "synonym": "", "sentence": "" },
+        { "id": 6, "word": "explicable", "synonym": "", "sentence": "" },
+        { "id": 7, "word": "hyperbole", "synonym": "", "sentence": "" },
+        { "id": 8, "word": "immutable", "synonym": "", "sentence": "" },
+        { "id": 9, "word": "indefatigable", "synonym": "", "sentence": "" },
+        { "id": 10, "word": "indolent", "synonym": "", "sentence": "" },
+        { "id": 11, "word": "insular", "synonym": "", "sentence": "" },
+        { "id": 12, "word": "intransigent", "synonym": "", "sentence": "" },
+        { "id": 13, "word": "intrepid", "synonym": "", "sentence": "" },
+        { "id": 14, "word": "irreverent", "synonym": "", "sentence": "" },
+        { "id": 15, "word": "loathe", "synonym": "", "sentence": "" },
+        { "id": 16, "word": "malign", "synonym": "", "sentence": "" },
+        { "id": 17, "word": "malleable", "synonym": "", "sentence": "" },
+        { "id": 18, "word": "neophyte", "synonym": "", "sentence": "" },
+        { "id": 19, "word": "plastic", "synonym": "", "sentence": "" },
+        { "id": 20, "word": "platitude", "synonym": "", "sentence": "" },
+        { "id": 21, "word": "prescient", "synonym": "", "sentence": "" },
+        { "id": 22, "word": "pristine", "synonym": "", "sentence": "" },
+        { "id": 23, "word": "reproach", "synonym": "", "sentence": "" },
+        { "id": 24, "word": "robust", "synonym": "", "sentence": "" },
+        { "id": 25, "word": "salubrious", "synonym": "", "sentence": "" },
+        { "id": 26, "word": "sanction", "synonym": "", "sentence": "" },
+        { "id": 27, "word": "sedulous", "synonym": "", "sentence": "" },
+        { "id": 28, "word": "soporific", "synonym": "", "sentence": "" },
+        { "id": 29, "word": "stern", "synonym": "", "sentence": "" },
+        { "id": 30, "word": "tendentious", "synonym": "", "sentence": "" }
       ]
     },
+
     {
       "id": 8,
       "name": "Set 8",
       "words": [
-        {
-          "id": 1,
-          "word": "accentuate",
-          "synonym": "emphasize",
-          "sentence": "After new evidence emerged, she decided to accentuate the decision—to emphasize it."
-        },
-        {
-          "id": 2,
-          "word": "conjectural",
-          "synonym": "speculative",
-          "sentence": "It was a conjectural response—clearly speculative to everyone present."
-        },
-        {
-          "id": 3,
-          "word": "convivial",
-          "synonym": "sociable",
-          "sentence": "It was a convivial response—clearly sociable to everyone present."
-        },
-        {
-          "id": 4,
-          "word": "decadent",
-          "synonym": "self-indulgent",
-          "sentence": "Her decadent tone was self-indulgent, even when criticized."
-        },
-        {
-          "id": 5,
-          "word": "egregious",
-          "synonym": "outrageous",
-          "sentence": "The egregious remarks sounded outrageous, which raised immediate concerns."
-        },
-        {
-          "id": 6,
-          "word": "evanescent",
-          "synonym": "fleeting",
-          "sentence": "It was an evanescent response—clearly fleeting to everyone present."
-        },
-        {
-          "id": 7,
-          "word": "flamboyant",
-          "synonym": "showy",
-          "sentence": "It was a flamboyant response—clearly showy to everyone present."
-        },
-        {
-          "id": 8,
-          "word": "forestall",
-          "synonym": "prevent",
-          "sentence": "Her forestall tone was prevent, even when criticized."
-        },
-        {
-          "id": 9,
-          "word": "gainsay",
-          "synonym": "deny",
-          "sentence": "Her gainsay tone was deny, even when criticized."
-        },
-        {
-          "id": 10,
-          "word": "galvanize",
-          "synonym": "spur",
-          "sentence": "The team tried to galvanize the report, meaning to spur it before release."
-        },
-        {
-          "id": 11,
-          "word": "indiscriminate",
-          "synonym": "random",
-          "sentence": "The team tried to indiscriminate the report, meaning to random it before release."
-        },
-        {
-          "id": 12,
-          "word": "innocuous",
-          "synonym": "harmless",
-          "sentence": "It was an innocuous response—clearly harmless to everyone present."
-        },
-        {
-          "id": 13,
-          "word": "momentary",
-          "synonym": "brief",
-          "sentence": "Her momentary reflected deep brief, even under pressure."
-        },
-        {
-          "id": 14,
-          "word": "mundane",
-          "synonym": "ordinary",
-          "sentence": "Her mundane tone was ordinary, even when criticized."
-        },
-        {
-          "id": 15,
-          "word": "nettlesome",
-          "synonym": "annoying",
-          "sentence": "It was a nettlesome response—clearly annoying to everyone present."
-        },
-        {
-          "id": 16,
-          "word": "nullify",
-          "synonym": "invalidate",
-          "sentence": "The team tried to nullify the report, meaning to invalidate it before release."
-        },
-        {
-          "id": 17,
-          "word": "obviate",
-          "synonym": "avert",
-          "sentence": "They chose to obviate the claim; in other words, to avert it."
-        },
-        {
-          "id": 18,
-          "word": "omnipresent",
-          "synonym": "ubiquitous",
-          "sentence": "Her omnipresent tone was ubiquitous, even when criticized."
-        },
-        {
-          "id": 19,
-          "word": "oust",
-          "synonym": "depose",
-          "sentence": "After new evidence emerged, she decided to oust the decision—to depose it."
-        },
-        {
-          "id": 20,
-          "word": "palpable",
-          "synonym": "tangible",
-          "sentence": "Her palpable tone was tangible, even when criticized."
-        },
-        {
-          "id": 21,
-          "word": "perfidy",
-          "synonym": "treachery",
-          "sentence": "The situation demanded perfidy, a kind of treachery few people showed."
-        },
-        {
-          "id": 22,
-          "word": "profuse",
-          "synonym": "abundant",
-          "sentence": "The profuse remarks sounded abundant, which raised immediate concerns."
-        },
-        {
-          "id": 23,
-          "word": "pugnacious",
-          "synonym": "combative",
-          "sentence": "The pugnacious remarks sounded combative, which raised immediate concerns."
-        },
-        {
-          "id": 24,
-          "word": "sagacious",
-          "synonym": "wise",
-          "sentence": "It was a sagacious response—clearly wise to everyone present."
-        },
-        {
-          "id": 25,
-          "word": "sanguine",
-          "synonym": "optimistic",
-          "sentence": "The sanguine remarks sounded optimistic, which raised immediate concerns."
-        },
-        {
-          "id": 26,
-          "word": "scant",
-          "synonym": "meager",
-          "sentence": "It was a scant response—clearly meager to everyone present."
-        },
-        {
-          "id": 27,
-          "word": "skullduggery",
-          "synonym": "trickery",
-          "sentence": "His skullduggery—simple trickery—was obvious during the discussion."
-        },
-        {
-          "id": 28,
-          "word": "trivial",
-          "synonym": "insignificant",
-          "sentence": "The trivial remarks sounded insignificant, which raised immediate concerns."
-        },
-        {
-          "id": 29,
-          "word": "utilitarian",
-          "synonym": "practical",
-          "sentence": "The utilitarian remarks sounded practical, which raised immediate concerns."
-        },
-        {
-          "id": 30,
-          "word": "vapid",
-          "synonym": "insipid",
-          "sentence": "The vapid remarks sounded insipid, which raised immediate concerns."
-        }
+        { "id": 1, "word": "accentuate", "synonym": "", "sentence": "" },
+        { "id": 2, "word": "conjectural", "synonym": "", "sentence": "" },
+        { "id": 3, "word": "convivial", "synonym": "", "sentence": "" },
+        { "id": 4, "word": "decadent", "synonym": "", "sentence": "" },
+        { "id": 5, "word": "egregious", "synonym": "", "sentence": "" },
+        { "id": 6, "word": "evanescent", "synonym": "", "sentence": "" },
+        { "id": 7, "word": "flamboyant", "synonym": "", "sentence": "" },
+        { "id": 8, "word": "forestall", "synonym": "", "sentence": "" },
+        { "id": 9, "word": "gainsay", "synonym": "", "sentence": "" },
+        { "id": 10, "word": "galvanize", "synonym": "", "sentence": "" },
+        { "id": 11, "word": "indiscriminate", "synonym": "", "sentence": "" },
+        { "id": 12, "word": "innocuous", "synonym": "", "sentence": "" },
+        { "id": 13, "word": "momentary", "synonym": "", "sentence": "" },
+        { "id": 14, "word": "mundane", "synonym": "", "sentence": "" },
+        { "id": 15, "word": "nettlesome", "synonym": "", "sentence": "" },
+        { "id": 16, "word": "nullify", "synonym": "", "sentence": "" },
+        { "id": 17, "word": "obviate", "synonym": "", "sentence": "" },
+        { "id": 18, "word": "omnipresent", "synonym": "", "sentence": "" },
+        { "id": 19, "word": "oust", "synonym": "", "sentence": "" },
+        { "id": 20, "word": "palpable", "synonym": "", "sentence": "" },
+        { "id": 21, "word": "perfidy", "synonym": "", "sentence": "" },
+        { "id": 22, "word": "profuse", "synonym": "", "sentence": "" },
+        { "id": 23, "word": "pugnacious", "synonym": "", "sentence": "" },
+        { "id": 24, "word": "sagacious", "synonym": "", "sentence": "" },
+        { "id": 25, "word": "sanguine", "synonym": "", "sentence": "" },
+        { "id": 26, "word": "scant", "synonym": "", "sentence": "" },
+        { "id": 27, "word": "skullduggery", "synonym": "", "sentence": "" },
+        { "id": 28, "word": "trivial", "synonym": "", "sentence": "" },
+        { "id": 29, "word": "utilitarian", "synonym": "", "sentence": "" },
+        { "id": 30, "word": "vapid", "synonym": "", "sentence": "" }
       ]
     },
+
     {
       "id": 9,
       "name": "Set 9",
       "words": [
-        {
-          "id": 1,
-          "word": "boorish",
-          "synonym": "rude",
-          "sentence": "It was a boorish response—clearly rude to everyone present."
-        },
-        {
-          "id": 2,
-          "word": "brook",
-          "synonym": "tolerate",
-          "sentence": "Her brook tone was tolerate, even when criticized."
-        },
-        {
-          "id": 3,
-          "word": "circumspect",
-          "synonym": "cautious",
-          "sentence": "The circumspect remarks sounded cautious, which raised immediate concerns."
-        },
-        {
-          "id": 4,
-          "word": "comity",
-          "synonym": "civility",
-          "sentence": "Her comity reflected deep civility, even under pressure."
-        },
-        {
-          "id": 5,
-          "word": "commensurate",
-          "synonym": "proportional",
-          "sentence": "They chose to commensurate the claim; in other words, to proportional it."
-        },
-        {
-          "id": 6,
-          "word": "cordial",
-          "synonym": "friendly",
-          "sentence": "Her cordial tone was friendly, even when criticized."
-        },
-        {
-          "id": 7,
-          "word": "deleterious",
-          "synonym": "harmful",
-          "sentence": "Her deleterious tone was harmful, even when criticized."
-        },
-        {
-          "id": 8,
-          "word": "dichotomy",
-          "synonym": "division",
-          "sentence": "His dichotomy—simple division—was obvious during the discussion."
-        },
-        {
-          "id": 9,
-          "word": "edify",
-          "synonym": "enlighten",
-          "sentence": "After new evidence emerged, she decided to edify the decision—to enlighten it."
-        },
-        {
-          "id": 10,
-          "word": "elicit",
-          "synonym": "evoke",
-          "sentence": "The team tried to elicit the report, meaning to evoke it before release."
-        },
-        {
-          "id": 11,
-          "word": "erudite",
-          "synonym": "learned",
-          "sentence": "The erudite remarks sounded learned, which raised immediate concerns."
-        },
-        {
-          "id": 12,
-          "word": "fecund",
-          "synonym": "fertile",
-          "sentence": "It was a fecund response—clearly fertile to everyone present."
-        },
-        {
-          "id": 13,
-          "word": "feeble",
-          "synonym": "weak",
-          "sentence": "It was a feeble response—clearly weak to everyone present."
-        },
-        {
-          "id": 14,
-          "word": "felicitous",
-          "synonym": "apt",
-          "sentence": "It was a felicitous response—clearly apt to everyone present."
-        },
-        {
-          "id": 15,
-          "word": "forbear",
-          "synonym": "refrain",
-          "sentence": "Her forbear tone was refrain, even when criticized."
-        },
-        {
-          "id": 16,
-          "word": "haphazard",
-          "synonym": "random",
-          "sentence": "Her haphazard tone was random, even when criticized."
-        },
-        {
-          "id": 17,
-          "word": "hodgepodge",
-          "synonym": "jumble",
-          "sentence": "The hodgepodge remarks sounded jumble, which raised immediate concerns."
-        },
-        {
-          "id": 18,
-          "word": "impede",
-          "synonym": "obstruct",
-          "sentence": "It was an impede response—clearly obstruct to everyone present."
-        },
-        {
-          "id": 19,
-          "word": "impetuous",
-          "synonym": "impulsive",
-          "sentence": "It was an impetuous response—clearly impulsive to everyone present."
-        },
-        {
-          "id": 20,
-          "word": "irascible",
-          "synonym": "irritable",
-          "sentence": "The irascible remarks sounded irritable, which raised immediate concerns."
-        },
-        {
-          "id": 21,
-          "word": "mercenary",
-          "synonym": "greedy",
-          "sentence": "The situation demanded mercenary, a kind of greedy few people showed."
-        },
-        {
-          "id": 22,
-          "word": "meticulous",
-          "synonym": "painstaking",
-          "sentence": "The meticulous remarks sounded painstaking, which raised immediate concerns."
-        },
-        {
-          "id": 23,
-          "word": "mordant",
-          "synonym": "caustic",
-          "sentence": "It was a mordant response—clearly caustic to everyone present."
-        },
-        {
-          "id": 24,
-          "word": "outstrip",
-          "synonym": "surpass",
-          "sentence": "It was an outstrip response—clearly surpass to everyone present."
-        },
-        {
-          "id": 25,
-          "word": "precarious",
-          "synonym": "risky",
-          "sentence": "The precarious remarks sounded risky, which raised immediate concerns."
-        },
-        {
-          "id": 26,
-          "word": "quirky",
-          "synonym": "eccentric",
-          "sentence": "Her quirky tone was eccentric, even when criticized."
-        },
-        {
-          "id": 27,
-          "word": "repudiate",
-          "synonym": "reject",
-          "sentence": "They chose to repudiate the claim; in other words, to reject it."
-        },
-        {
-          "id": 28,
-          "word": "tact",
-          "synonym": "diplomacy",
-          "sentence": "His tact—simple diplomacy—was obvious during the discussion."
-        },
-        {
-          "id": 29,
-          "word": "trifling",
-          "synonym": "trivial",
-          "sentence": "The trifling remarks sounded trivial, which raised immediate concerns."
-        },
-        {
-          "id": 30,
-          "word": "turbulent",
-          "synonym": "tumultuous",
-          "sentence": "Her turbulent tone was tumultuous, even when criticized."
-        }
+        { "id": 1, "word": "boorish", "synonym": "", "sentence": "" },
+        { "id": 2, "word": "brook", "synonym": "", "sentence": "" },
+        { "id": 3, "word": "circumspect", "synonym": "", "sentence": "" },
+        { "id": 4, "word": "comity", "synonym": "", "sentence": "" },
+        { "id": 5, "word": "commensurate", "synonym": "", "sentence": "" },
+        { "id": 6, "word": "cordial", "synonym": "", "sentence": "" },
+        { "id": 7, "word": "deleterious", "synonym": "", "sentence": "" },
+        { "id": 8, "word": "dichotomy", "synonym": "", "sentence": "" },
+        { "id": 9, "word": "edify", "synonym": "", "sentence": "" },
+        { "id": 10, "word": "elicit", "synonym": "", "sentence": "" },
+        { "id": 11, "word": "erudite", "synonym": "", "sentence": "" },
+        { "id": 12, "word": "fecund", "synonym": "", "sentence": "" },
+        { "id": 13, "word": "feeble", "synonym": "", "sentence": "" },
+        { "id": 14, "word": "felicitous", "synonym": "", "sentence": "" },
+        { "id": 15, "word": "forbear", "synonym": "", "sentence": "" },
+        { "id": 16, "word": "haphazard", "synonym": "", "sentence": "" },
+        { "id": 17, "word": "hodgepodge", "synonym": "", "sentence": "" },
+        { "id": 18, "word": "impede", "synonym": "", "sentence": "" },
+        { "id": 19, "word": "impetuous", "synonym": "", "sentence": "" },
+        { "id": 20, "word": "irascible", "synonym": "", "sentence": "" },
+        { "id": 21, "word": "mercenary", "synonym": "", "sentence": "" },
+        { "id": 22, "word": "meticulous", "synonym": "", "sentence": "" },
+        { "id": 23, "word": "mordant", "synonym": "", "sentence": "" },
+        { "id": 24, "word": "outstrip", "synonym": "", "sentence": "" },
+        { "id": 25, "word": "precarious", "synonym": "", "sentence": "" },
+        { "id": 26, "word": "quirky", "synonym": "", "sentence": "" },
+        { "id": 27, "word": "repudiate", "synonym": "", "sentence": "" },
+        { "id": 28, "word": "tact", "synonym": "", "sentence": "" },
+        { "id": 29, "word": "trifling", "synonym": "", "sentence": "" },
+        { "id": 30, "word": "turbulent", "synonym": "", "sentence": "" }
       ]
     },
+
     {
       "id": 10,
       "name": "Set 10",
       "words": [
-        {
-          "id": 1,
-          "word": "acumen",
-          "synonym": "insight",
-          "sentence": "The situation demanded acumen, a kind of insight few people showed."
-        },
-        {
-          "id": 2,
-          "word": "antithesis",
-          "synonym": "contrast",
-          "sentence": "Her antithesis reflected deep contrast, even under pressure."
-        },
-        {
-          "id": 3,
-          "word": "ascribe",
-          "synonym": "attribute",
-          "sentence": "The team tried to ascribe the report, meaning to attribute it before release."
-        },
-        {
-          "id": 4,
-          "word": "befuddled",
-          "synonym": "confused",
-          "sentence": "Her befuddled tone was confused, even when criticized."
-        },
-        {
-          "id": 5,
-          "word": "eschew",
-          "synonym": "avoid",
-          "sentence": "The eschew remarks sounded avoid, which raised immediate concerns."
-        },
-        {
-          "id": 6,
-          "word": "esoteric",
-          "synonym": "obscure",
-          "sentence": "The esoteric remarks sounded obscure, which raised immediate concerns."
-        },
-        {
-          "id": 7,
-          "word": "evasive",
-          "synonym": "elusive",
-          "sentence": "The evasive remarks sounded elusive, which raised immediate concerns."
-        },
-        {
-          "id": 8,
-          "word": "exculpate",
-          "synonym": "absolve",
-          "sentence": "After new evidence emerged, she decided to exculpate the decision—to absolve it."
-        },
-        {
-          "id": 9,
-          "word": "expedite",
-          "synonym": "hasten",
-          "sentence": "Her expedite tone was hasten, even when criticized."
-        },
-        {
-          "id": 10,
-          "word": "fastidious",
-          "synonym": "meticulous",
-          "sentence": "Her fastidious tone was meticulous, even when criticized."
-        },
-        {
-          "id": 11,
-          "word": "feign",
-          "synonym": "pretend",
-          "sentence": "It was a feign response—clearly pretend to everyone present."
-        },
-        {
-          "id": 12,
-          "word": "furtive",
-          "synonym": "stealthy",
-          "sentence": "Her furtive tone was stealthy, even when criticized."
-        },
-        {
-          "id": 13,
-          "word": "hamper",
-          "synonym": "hinder",
-          "sentence": "Her hamper tone was hinder, even when criticized."
-        },
-        {
-          "id": 14,
-          "word": "indispensable",
-          "synonym": "essential",
-          "sentence": "Her indispensable tone was essential, even when criticized."
-        },
-        {
-          "id": 15,
-          "word": "lament",
-          "synonym": "mourn",
-          "sentence": "Her lament reflected deep mourn, even under pressure."
-        },
-        {
-          "id": 16,
-          "word": "myopic",
-          "synonym": "shortsighted",
-          "sentence": "It was a myopic response—clearly shortsighted to everyone present."
-        },
-        {
-          "id": 17,
-          "word": "nonchalant",
-          "synonym": "indifferent",
-          "sentence": "Her nonchalant tone was indifferent, even when criticized."
-        },
-        {
-          "id": 18,
-          "word": "partial",
-          "synonym": "biased",
-          "sentence": "The partial remarks sounded biased, which raised immediate concerns."
-        },
-        {
-          "id": 19,
-          "word": "pensive",
-          "synonym": "reflective",
-          "sentence": "The pensive remarks sounded reflective, which raised immediate concerns."
-        },
-        {
-          "id": 20,
-          "word": "portend",
-          "synonym": "foreshadow",
-          "sentence": "The portend remarks sounded foreshadow, which raised immediate concerns."
-        },
-        {
-          "id": 21,
-          "word": "provincial",
-          "synonym": "parochial",
-          "sentence": "It was a provincial response—clearly parochial to everyone present."
-        },
-        {
-          "id": 22,
-          "word": "rudimentary",
-          "synonym": "basic",
-          "sentence": "The situation demanded rudimentary, a kind of basic few people showed."
-        },
-        {
-          "id": 23,
-          "word": "salutary",
-          "synonym": "beneficial",
-          "sentence": "Her salutary reflected deep beneficial, even under pressure."
-        },
-        {
-          "id": 24,
-          "word": "sever",
-          "synonym": "cut",
-          "sentence": "The team tried to sever the report, meaning to cut it before release."
-        },
-        {
-          "id": 25,
-          "word": "slight",
-          "synonym": "insult",
-          "sentence": "It was a slight response—clearly insult to everyone present."
-        },
-        {
-          "id": 26,
-          "word": "somnolent",
-          "synonym": "drowsy",
-          "sentence": "It was a somnolent response—clearly drowsy to everyone present."
-        },
-        {
-          "id": 27,
-          "word": "stoic",
-          "synonym": "unemotional",
-          "sentence": "The stoic remarks sounded unemotional, which raised immediate concerns."
-        },
-        {
-          "id": 28,
-          "word": "supersede",
-          "synonym": "replace",
-          "sentence": "It was a supersede response—clearly replace to everyone present."
-        },
-        {
-          "id": 29,
-          "word": "tout",
-          "synonym": "promote",
-          "sentence": "The tout remarks sounded promote, which raised immediate concerns."
-        },
-        {
-          "id": 30,
-          "word": "wane",
-          "synonym": "diminish",
-          "sentence": "The team tried to wane the report, meaning to diminish it before release."
-        }
+        { "id": 1, "word": "acumen", "synonym": "", "sentence": "" },
+        { "id": 2, "word": "antithesis", "synonym": "", "sentence": "" },
+        { "id": 3, "word": "ascribe", "synonym": "", "sentence": "" },
+        { "id": 4, "word": "befuddled", "synonym": "", "sentence": "" },
+        { "id": 5, "word": "eschew", "synonym": "", "sentence": "" },
+        { "id": 6, "word": "esoteric", "synonym": "", "sentence": "" },
+        { "id": 7, "word": "evasive", "synonym": "", "sentence": "" },
+        { "id": 8, "word": "exculpate", "synonym": "", "sentence": "" },
+        { "id": 9, "word": "expedite", "synonym": "", "sentence": "" },
+        { "id": 10, "word": "fastidious", "synonym": "", "sentence": "" },
+        { "id": 11, "word": "feign", "synonym": "", "sentence": "" },
+        { "id": 12, "word": "furtive", "synonym": "", "sentence": "" },
+        { "id": 13, "word": "hamper", "synonym": "", "sentence": "" },
+        { "id": 14, "word": "indispensable", "synonym": "", "sentence": "" },
+        { "id": 15, "word": "lament", "synonym": "", "sentence": "" },
+        { "id": 16, "word": "myopic", "synonym": "", "sentence": "" },
+        { "id": 17, "word": "nonchalant", "synonym": "", "sentence": "" },
+        { "id": 18, "word": "partial", "synonym": "", "sentence": "" },
+        { "id": 19, "word": "pensive", "synonym": "", "sentence": "" },
+        { "id": 20, "word": "portend", "synonym": "", "sentence": "" },
+        { "id": 21, "word": "provincial", "synonym": "", "sentence": "" },
+        { "id": 22, "word": "rudimentary", "synonym": "", "sentence": "" },
+        { "id": 23, "word": "salutary", "synonym": "", "sentence": "" },
+        { "id": 24, "word": "sever", "synonym": "", "sentence": "" },
+        { "id": 25, "word": "slight", "synonym": "", "sentence": "" },
+        { "id": 26, "word": "somnolent", "synonym": "", "sentence": "" },
+        { "id": 27, "word": "stoic", "synonym": "", "sentence": "" },
+        { "id": 28, "word": "supersede", "synonym": "", "sentence": "" },
+        { "id": 29, "word": "tout", "synonym": "", "sentence": "" },
+        { "id": 30, "word": "wane", "synonym": "", "sentence": "" }
       ]
     },
+
     {
       "id": 11,
       "name": "Set 11",
       "words": [
-        {
-          "id": 1,
-          "word": "abhor",
-          "synonym": "detest",
-          "sentence": "Her abhor reflected deep detest, even under pressure."
-        },
-        {
-          "id": 2,
-          "word": "boisterous",
-          "synonym": "rowdy",
-          "sentence": "Her boisterous tone was rowdy, even when criticized."
-        },
-        {
-          "id": 3,
-          "word": "chivalrous",
-          "synonym": "gallant",
-          "sentence": "It was a chivalrous response—clearly gallant to everyone present."
-        },
-        {
-          "id": 4,
-          "word": "churlish",
-          "synonym": "surly",
-          "sentence": "The churlish remarks sounded surly, which raised immediate concerns."
-        },
-        {
-          "id": 5,
-          "word": "clandestine",
-          "synonym": "secret",
-          "sentence": "It was a clandestine response—clearly secret to everyone present."
-        },
-        {
-          "id": 6,
-          "word": "complacent",
-          "synonym": "self-satisfied",
-          "sentence": "The complacent remarks sounded self-satisfied, which raised immediate concerns."
-        },
-        {
-          "id": 7,
-          "word": "debilitating",
-          "synonym": "weakening",
-          "sentence": "It was a debilitating response—clearly weakening to everyone present."
-        },
-        {
-          "id": 8,
-          "word": "deliberate",
-          "synonym": "intentional",
-          "sentence": "They chose to deliberate the claim; in other words, to intentional it."
-        },
-        {
-          "id": 9,
-          "word": "droll",
-          "synonym": "amusing",
-          "sentence": "Her droll tone was amusing, even when criticized."
-        },
-        {
-          "id": 10,
-          "word": "eccentric",
-          "synonym": "quirky",
-          "sentence": "It was an eccentric response—clearly quirky to everyone present."
-        },
-        {
-          "id": 11,
-          "word": "fractious",
-          "synonym": "irritable",
-          "sentence": "The fractious remarks sounded irritable, which raised immediate concerns."
-        },
-        {
-          "id": 12,
-          "word": "limpid",
-          "synonym": "clear",
-          "sentence": "The limpid remarks sounded clear, which raised immediate concerns."
-        },
-        {
-          "id": 13,
-          "word": "mawkish",
-          "synonym": "sentimental",
-          "sentence": "The mawkish remarks sounded sentimental, which raised immediate concerns."
-        },
-        {
-          "id": 14,
-          "word": "obeisance",
-          "synonym": "deference",
-          "sentence": "The situation demanded obeisance, a kind of deference few people showed."
-        },
-        {
-          "id": 15,
-          "word": "ostentatious",
-          "synonym": "showy",
-          "sentence": "It was an ostentatious response—clearly showy to everyone present."
-        },
-        {
-          "id": 16,
-          "word": "panacea",
-          "synonym": "cure-all",
-          "sentence": "The situation demanded panacea, a kind of cure-all few people showed."
-        },
-        {
-          "id": 17,
-          "word": "perfunctory",
-          "synonym": "cursory",
-          "sentence": "The situation demanded perfunctory, a kind of cursory few people showed."
-        },
-        {
-          "id": 18,
-          "word": "perilous",
-          "synonym": "dangerous",
-          "sentence": "The perilous remarks sounded dangerous, which raised immediate concerns."
-        },
-        {
-          "id": 19,
-          "word": "pervasive",
-          "synonym": "widespread",
-          "sentence": "Her pervasive tone was widespread, even when criticized."
-        },
-        {
-          "id": 20,
-          "word": "preclude",
-          "synonym": "prevent",
-          "sentence": "Her preclude reflected deep prevent, even under pressure."
-        },
-        {
-          "id": 21,
-          "word": "predilection",
-          "synonym": "preference",
-          "sentence": "Her predilection reflected deep preference, even under pressure."
-        },
-        {
-          "id": 22,
-          "word": "rapacious",
-          "synonym": "greedy",
-          "sentence": "It was a rapacious response—clearly greedy to everyone present."
-        },
-        {
-          "id": 23,
-          "word": "relish",
-          "synonym": "enjoy",
-          "sentence": "Her relish tone was enjoy, even when criticized."
-        },
-        {
-          "id": 24,
-          "word": "satirical",
-          "synonym": "mocking",
-          "sentence": "Her satirical tone was mocking, even when criticized."
-        },
-        {
-          "id": 25,
-          "word": "sham",
-          "synonym": "fake",
-          "sentence": "It was a sham response—clearly fake to everyone present."
-        },
-        {
-          "id": 26,
-          "word": "skirt",
-          "synonym": "avoid",
-          "sentence": "The skirt remarks sounded avoid, which raised immediate concerns."
-        },
-        {
-          "id": 27,
-          "word": "sluggish",
-          "synonym": "lethargic",
-          "sentence": "The sluggish remarks sounded lethargic, which raised immediate concerns."
-        },
-        {
-          "id": 28,
-          "word": "spartan",
-          "synonym": "austere",
-          "sentence": "Her spartan tone was austere, even when criticized."
-        },
-        {
-          "id": 29,
-          "word": "truculent",
-          "synonym": "aggressive",
-          "sentence": "It was a truculent response—clearly aggressive to everyone present."
-        }
+        { "id": 1, "word": "abhor", "synonym": "", "sentence": "" },
+        { "id": 2, "word": "boisterous", "synonym": "", "sentence": "" },
+        { "id": 3, "word": "chivalrous", "synonym": "", "sentence": "" },
+        { "id": 4, "word": "churlish", "synonym": "", "sentence": "" },
+        { "id": 5, "word": "clandestine", "synonym": "", "sentence": "" },
+        { "id": 6, "word": "complacent", "synonym": "", "sentence": "" },
+        { "id": 7, "word": "debilitating", "synonym": "", "sentence": "" },
+        { "id": 8, "word": "deliberate", "synonym": "", "sentence": "" },
+        { "id": 9, "word": "droll", "synonym": "", "sentence": "" },
+        { "id": 10, "word": "eccentric", "synonym": "", "sentence": "" },
+        { "id": 11, "word": "fractious", "synonym": "", "sentence": "" },
+        { "id": 12, "word": "limpid", "synonym": "", "sentence": "" },
+        { "id": 13, "word": "mawkish", "synonym": "", "sentence": "" },
+        { "id": 14, "word": "obeisance", "synonym": "", "sentence": "" },
+        { "id": 15, "word": "ostentatious", "synonym": "", "sentence": "" },
+        { "id": 16, "word": "panacea", "synonym": "", "sentence": "" },
+        { "id": 17, "word": "perfunctory", "synonym": "", "sentence": "" },
+        { "id": 18, "word": "perilous", "synonym": "", "sentence": "" },
+        { "id": 19, "word": "pervasive", "synonym": "", "sentence": "" },
+        { "id": 20, "word": "preclude", "synonym": "", "sentence": "" },
+        { "id": 21, "word": "predilection", "synonym": "", "sentence": "" },
+        { "id": 22, "word": "rapacious", "synonym": "", "sentence": "" },
+        { "id": 23, "word": "relish", "synonym": "", "sentence": "" },
+        { "id": 24, "word": "satirical", "synonym": "", "sentence": "" },
+        { "id": 25, "word": "sham", "synonym": "", "sentence": "" },
+        { "id": 26, "word": "skirt", "synonym": "", "sentence": "" },
+        { "id": 27, "word": "sluggish", "synonym": "", "sentence": "" },
+        { "id": 28, "word": "spartan", "synonym": "", "sentence": "" },
+        { "id": 29, "word": "truculent", "synonym": "", "sentence": "" }
       ]
     },
+
     {
       "id": 12,
       "name": "Set 12",
       "words": [
-        {
-          "id": 1,
-          "word": "acrimonious",
-          "synonym": "bitter",
-          "sentence": "It was an acrimonious response—clearly bitter to everyone present."
-        },
-        {
-          "id": 2,
-          "word": "belligerent",
-          "synonym": "aggressive",
-          "sentence": "The belligerent remarks sounded aggressive, which raised immediate concerns."
-        },
-        {
-          "id": 3,
-          "word": "beneficent",
-          "synonym": "charitable",
-          "sentence": "The beneficent remarks sounded charitable, which raised immediate concerns."
-        },
-        {
-          "id": 4,
-          "word": "canny",
-          "synonym": "shrewd",
-          "sentence": "Her canny tone was shrewd, even when criticized."
-        },
-        {
-          "id": 5,
-          "word": "cavalier",
-          "synonym": "dismissive",
-          "sentence": "It was a cavalier response—clearly dismissive to everyone present."
-        },
-        {
-          "id": 6,
-          "word": "distressed",
-          "synonym": "troubled",
-          "sentence": "The distressed remarks sounded troubled, which raised immediate concerns."
-        },
-        {
-          "id": 7,
-          "word": "dwindling",
-          "synonym": "shrinking",
-          "sentence": "Her dwindling tone was shrinking, even when criticized."
-        },
-        {
-          "id": 8,
-          "word": "eclipse",
-          "synonym": "overshadow",
-          "sentence": "Her eclipse tone was overshadow, even when criticized."
-        },
-        {
-          "id": 9,
-          "word": "encyclopedic",
-          "synonym": "comprehensive",
-          "sentence": "It was an encyclopedic response—clearly comprehensive to everyone present."
-        },
-        {
-          "id": 10,
-          "word": "exacerbate",
-          "synonym": "worsen",
-          "sentence": "After new evidence emerged, she decided to exacerbate the decision—to worsen it."
-        },
-        {
-          "id": 11,
-          "word": "exasperated",
-          "synonym": "irritated",
-          "sentence": "Her exasperated tone was irritated, even when criticized."
-        },
-        {
-          "id": 12,
-          "word": "fungible",
-          "synonym": "interchangeable",
-          "sentence": "Her fungible tone was interchangeable, even when criticized."
-        },
-        {
-          "id": 13,
-          "word": "hackneyed",
-          "synonym": "trite",
-          "sentence": "Her hackneyed tone was trite, even when criticized."
-        },
-        {
-          "id": 14,
-          "word": "incongruous",
-          "synonym": "out-of-place",
-          "sentence": "The incongruous remarks sounded out-of-place, which raised immediate concerns."
-        },
-        {
-          "id": 15,
-          "word": "interchangeable",
-          "synonym": "substitutable",
-          "sentence": "It was an interchangeable response—clearly substitutable to everyone present."
-        },
-        {
-          "id": 16,
-          "word": "laconic",
-          "synonym": "terse",
-          "sentence": "Her laconic tone was terse, even when criticized."
-        },
-        {
-          "id": 17,
-          "word": "lucrative",
-          "synonym": "profitable",
-          "sentence": "The lucrative remarks sounded profitable, which raised immediate concerns."
-        },
-        {
-          "id": 18,
-          "word": "magisterial",
-          "synonym": "authoritative",
-          "sentence": "Her magisterial tone was authoritative, even when criticized."
-        },
-        {
-          "id": 19,
-          "word": "onerous",
-          "synonym": "burdensome",
-          "sentence": "It was an onerous response—clearly burdensome to everyone present."
-        },
-        {
-          "id": 20,
-          "word": "opprobrium",
-          "synonym": "disgrace",
-          "sentence": "His opprobrium—simple disgrace—was obvious during the discussion."
-        },
-        {
-          "id": 21,
-          "word": "parsimonious",
-          "synonym": "stingy",
-          "sentence": "The parsimonious remarks sounded stingy, which raised immediate concerns."
-        },
-        {
-          "id": 22,
-          "word": "peripheral",
-          "synonym": "marginal",
-          "sentence": "The peripheral remarks sounded marginal, which raised immediate concerns."
-        },
-        {
-          "id": 23,
-          "word": "provocative",
-          "synonym": "inflammatory",
-          "sentence": "It was a provocative response—clearly inflammatory to everyone present."
-        },
-        {
-          "id": 24,
-          "word": "renounce",
-          "synonym": "abandon",
-          "sentence": "Her renounce tone was abandon, even when criticized."
-        },
-        {
-          "id": 25,
-          "word": "tempestuous",
-          "synonym": "stormy",
-          "sentence": "The tempestuous remarks sounded stormy, which raised immediate concerns."
-        },
-        {
-          "id": 26,
-          "word": "tenable",
-          "synonym": "defensible",
-          "sentence": "Her tenable tone was defensible, even when criticized."
-        },
-        {
-          "id": 27,
-          "word": "transgression",
-          "synonym": "offense",
-          "sentence": "Her transgression reflected deep offense, even under pressure."
-        },
-        {
-          "id": 28,
-          "word": "urbane",
-          "synonym": "sophisticated",
-          "sentence": "The urbane remarks sounded sophisticated, which raised immediate concerns."
-        },
-        {
-          "id": 29,
-          "word": "verisimilitude",
-          "synonym": "realism",
-          "sentence": "The situation demanded verisimilitude, a kind of realism few people showed."
-        },
-        {
-          "id": 30,
-          "word": "vitiate",
-          "synonym": "spoil",
-          "sentence": "After new evidence emerged, she decided to vitiate the decision—to spoil it."
-        }
+        { "id": 1, "word": "acrimonious", "synonym": "", "sentence": "" },
+        { "id": 2, "word": "belligerent", "synonym": "", "sentence": "" },
+        { "id": 3, "word": "beneficent", "synonym": "", "sentence": "" },
+        { "id": 4, "word": "canny", "synonym": "", "sentence": "" },
+        { "id": 5, "word": "cavalier", "synonym": "", "sentence": "" },
+        { "id": 6, "word": "distressed", "synonym": "", "sentence": "" },
+        { "id": 7, "word": "dwindling", "synonym": "", "sentence": "" },
+        { "id": 8, "word": "eclipse", "synonym": "", "sentence": "" },
+        { "id": 9, "word": "encyclopedic", "synonym": "", "sentence": "" },
+        { "id": 10, "word": "exacerbate", "synonym": "", "sentence": "" },
+        { "id": 11, "word": "exasperated", "synonym": "", "sentence": "" },
+        { "id": 12, "word": "fungible", "synonym": "", "sentence": "" },
+        { "id": 13, "word": "hackneyed", "synonym": "", "sentence": "" },
+        { "id": 14, "word": "incongruous", "synonym": "", "sentence": "" },
+        { "id": 15, "word": "interchangeable", "synonym": "", "sentence": "" },
+        { "id": 16, "word": "laconic", "synonym": "", "sentence": "" },
+        { "id": 17, "word": "lucrative", "synonym": "", "sentence": "" },
+        { "id": 18, "word": "magisterial", "synonym": "", "sentence": "" },
+        { "id": 19, "word": "onerous", "synonym": "", "sentence": "" },
+        { "id": 20, "word": "opprobrium", "synonym": "", "sentence": "" },
+        { "id": 21, "word": "parsimonious", "synonym": "", "sentence": "" },
+        { "id": 22, "word": "peripheral", "synonym": "", "sentence": "" },
+        { "id": 23, "word": "provocative", "synonym": "", "sentence": "" },
+        { "id": 24, "word": "renounce", "synonym": "", "sentence": "" },
+        { "id": 25, "word": "tempestuous", "synonym": "", "sentence": "" },
+        { "id": 26, "word": "tenable", "synonym": "", "sentence": "" },
+        { "id": 27, "word": "transgression", "synonym": "", "sentence": "" },
+        { "id": 28, "word": "urbane", "synonym": "", "sentence": "" },
+        { "id": 29, "word": "verisimilitude", "synonym": "", "sentence": "" },
+        { "id": 30, "word": "vitiate", "synonym": "", "sentence": "" }
       ]
     },
+
     {
       "id": 13,
       "name": "Set 13",
       "words": [
-        {
-          "id": 1,
-          "word": "affinity",
-          "synonym": "kinship",
-          "sentence": "His affinity—simple kinship—was obvious during the discussion."
-        },
-        {
-          "id": 2,
-          "word": "altruistic",
-          "synonym": "selfless",
-          "sentence": "The altruistic remarks sounded selfless, which raised immediate concerns."
-        },
-        {
-          "id": 3,
-          "word": "baroque",
-          "synonym": "ornate",
-          "sentence": "The baroque remarks sounded ornate, which raised immediate concerns."
-        },
-        {
-          "id": 4,
-          "word": "byzantine",
-          "synonym": "convoluted",
-          "sentence": "It was a byzantine response—clearly convoluted to everyone present."
-        },
-        {
-          "id": 5,
-          "word": "compromise",
-          "synonym": "settle",
-          "sentence": "They chose to compromise the claim; in other words, to settle it."
-        },
-        {
-          "id": 6,
-          "word": "conciliatory",
-          "synonym": "appeasing",
-          "sentence": "His conciliatory—simple appeasing—was obvious during the discussion."
-        },
-        {
-          "id": 7,
-          "word": "countenance",
-          "synonym": "tolerate",
-          "sentence": "His countenance—simple tolerate—was obvious during the discussion."
-        },
-        {
-          "id": 8,
-          "word": "covert",
-          "synonym": "secret",
-          "sentence": "They chose to covert the claim; in other words, to secret it."
-        },
-        {
-          "id": 9,
-          "word": "credible",
-          "synonym": "believable",
-          "sentence": "It was a credible response—clearly believable to everyone present."
-        },
-        {
-          "id": 10,
-          "word": "diffuse",
-          "synonym": "spread",
-          "sentence": "Her diffuse tone was spread, even when criticized."
-        },
-        {
-          "id": 11,
-          "word": "documentary",
-          "synonym": "factual",
-          "sentence": "His documentary—simple factual—was obvious during the discussion."
-        },
-        {
-          "id": 12,
-          "word": "exhaustive",
-          "synonym": "thorough",
-          "sentence": "Her exhaustive tone was thorough, even when criticized."
-        },
-        {
-          "id": 13,
-          "word": "exhilarating",
-          "synonym": "thrilling",
-          "sentence": "Her exhilarating tone was thrilling, even when criticized."
-        },
-        {
-          "id": 14,
-          "word": "extraneous",
-          "synonym": "irrelevant",
-          "sentence": "It was an extraneous response—clearly irrelevant to everyone present."
-        },
-        {
-          "id": 15,
-          "word": "fervor",
-          "synonym": "zeal",
-          "sentence": "Her fervor reflected deep zeal, even under pressure."
-        },
-        {
-          "id": 16,
-          "word": "futile",
-          "synonym": "pointless",
-          "sentence": "The futile remarks sounded pointless, which raised immediate concerns."
-        },
-        {
-          "id": 17,
-          "word": "illusory",
-          "synonym": "deceptive",
-          "sentence": "Her illusory reflected deep deceptive, even under pressure."
-        },
-        {
-          "id": 18,
-          "word": "invidious",
-          "synonym": "offensive",
-          "sentence": "It was an invidious response—clearly offensive to everyone present."
-        },
-        {
-          "id": 19,
-          "word": "lethargic",
-          "synonym": "sluggish",
-          "sentence": "Her lethargic tone was sluggish, even when criticized."
-        },
-        {
-          "id": 20,
-          "word": "metaphorical",
-          "synonym": "figurative",
-          "sentence": "Her metaphorical tone was figurative, even when criticized."
-        },
-        {
-          "id": 21,
-          "word": "mimic",
-          "synonym": "imitate",
-          "sentence": "The mimic remarks sounded imitate, which raised immediate concerns."
-        },
-        {
-          "id": 22,
-          "word": "numinous",
-          "synonym": "spiritual",
-          "sentence": "Her numinous tone was spiritual, even when criticized."
-        },
-        {
-          "id": 23,
-          "word": "obscure",
-          "synonym": "conceal",
-          "sentence": "It was an obscure response—clearly conceal to everyone present."
-        },
-        {
-          "id": 24,
-          "word": "overt",
-          "synonym": "obvious",
-          "sentence": "After new evidence emerged, she decided to overt the decision—to obvious it."
-        },
-        {
-          "id": 25,
-          "word": "pellucid",
-          "synonym": "clear",
-          "sentence": "It was a pellucid response—clearly clear to everyone present."
-        },
-        {
-          "id": 26,
-          "word": "perpetuate",
-          "synonym": "maintain",
-          "sentence": "The team tried to perpetuate the report, meaning to maintain it before release."
-        },
-        {
-          "id": 27,
-          "word": "rational",
-          "synonym": "logical",
-          "sentence": "The rational remarks sounded logical, which raised immediate concerns."
-        },
-        {
-          "id": 28,
-          "word": "scathing",
-          "synonym": "biting",
-          "sentence": "It was a scathing response—clearly biting to everyone present."
-        },
-        {
-          "id": 29,
-          "word": "subtle",
-          "synonym": "nuanced",
-          "sentence": "The subtle remarks sounded nuanced, which raised immediate concerns."
-        },
-        {
-          "id": 30,
-          "word": "superficial",
-          "synonym": "shallow",
-          "sentence": "The superficial remarks sounded shallow, which raised immediate concerns."
-        }
+        { "id": 1, "word": "affinity", "synonym": "", "sentence": "" },
+        { "id": 2, "word": "altruistic", "synonym": "", "sentence": "" },
+        { "id": 3, "word": "baroque", "synonym": "", "sentence": "" },
+        { "id": 4, "word": "byzantine", "synonym": "", "sentence": "" },
+        { "id": 5, "word": "compromise", "synonym": "", "sentence": "" },
+        { "id": 6, "word": "conciliatory", "synonym": "", "sentence": "" },
+        { "id": 7, "word": "countenance", "synonym": "", "sentence": "" },
+        { "id": 8, "word": "covert", "synonym": "", "sentence": "" },
+        { "id": 9, "word": "credible", "synonym": "", "sentence": "" },
+        { "id": 10, "word": "diffuse", "synonym": "", "sentence": "" },
+        { "id": 11, "word": "documentary", "synonym": "", "sentence": "" },
+        { "id": 12, "word": "exhaustive", "synonym": "", "sentence": "" },
+        { "id": 13, "word": "exhilarating", "synonym": "", "sentence": "" },
+        { "id": 14, "word": "extraneous", "synonym": "", "sentence": "" },
+        { "id": 15, "word": "fervor", "synonym": "", "sentence": "" },
+        { "id": 16, "word": "futile", "synonym": "", "sentence": "" },
+        { "id": 17, "word": "illusory", "synonym": "", "sentence": "" },
+        { "id": 18, "word": "invidious", "synonym": "", "sentence": "" },
+        { "id": 19, "word": "lethargic", "synonym": "", "sentence": "" },
+        { "id": 20, "word": "metaphorical", "synonym": "", "sentence": "" },
+        { "id": 21, "word": "mimic", "synonym": "", "sentence": "" },
+        { "id": 22, "word": "numinous", "synonym": "", "sentence": "" },
+        { "id": 23, "word": "obscure", "synonym": "", "sentence": "" },
+        { "id": 24, "word": "overt", "synonym": "", "sentence": "" },
+        { "id": 25, "word": "pellucid", "synonym": "", "sentence": "" },
+        { "id": 26, "word": "perpetuate", "synonym": "", "sentence": "" },
+        { "id": 27, "word": "rational", "synonym": "", "sentence": "" },
+        { "id": 28, "word": "scathing", "synonym": "", "sentence": "" },
+        { "id": 29, "word": "subtle", "synonym": "", "sentence": "" },
+        { "id": 30, "word": "superficial", "synonym": "", "sentence": "" }
       ]
     },
+
     {
       "id": 14,
       "name": "Set 14",
       "words": [
-        {
-          "id": 1,
-          "word": "acquiesce",
-          "synonym": "comply",
-          "sentence": "The acquiesce remarks sounded comply, which raised immediate concerns."
-        },
-        {
-          "id": 2,
-          "word": "adroit",
-          "synonym": "skillful",
-          "sentence": "Her adroit tone was skillful, even when criticized."
-        },
-        {
-          "id": 3,
-          "word": "amend",
-          "synonym": "revise",
-          "sentence": "Her amend tone was revise, even when criticized."
-        },
-        {
-          "id": 4,
-          "word": "animus",
-          "synonym": "hostility",
-          "sentence": "Her animus reflected deep hostility, even under pressure."
-        },
-        {
-          "id": 5,
-          "word": "apologist",
-          "synonym": "defender",
-          "sentence": "The apologist remarks sounded defender, which raised immediate concerns."
-        },
-        {
-          "id": 6,
-          "word": "astringent",
-          "synonym": "harsh",
-          "sentence": "It was an astringent response—clearly harsh to everyone present."
-        },
-        {
-          "id": 7,
-          "word": "collaborate",
-          "synonym": "cooperate",
-          "sentence": "After new evidence emerged, she decided to collaborate the decision—to cooperate it."
-        },
-        {
-          "id": 8,
-          "word": "competent",
-          "synonym": "capable",
-          "sentence": "Her competent tone was capable, even when criticized."
-        },
-        {
-          "id": 9,
-          "word": "correlate",
-          "synonym": "link",
-          "sentence": "The team tried to correlate the report, meaning to link it before release."
-        },
-        {
-          "id": 10,
-          "word": "deride",
-          "synonym": "mock",
-          "sentence": "It was a deride response—clearly mock to everyone present."
-        },
-        {
-          "id": 11,
-          "word": "dictate",
-          "synonym": "prescribe",
-          "sentence": "They chose to dictate the claim; in other words, to prescribe it."
-        },
-        {
-          "id": 12,
-          "word": "discreet",
-          "synonym": "prudent",
-          "sentence": "Her discreet tone was prudent, even when criticized."
-        },
-        {
-          "id": 13,
-          "word": "divorced",
-          "synonym": "separated",
-          "sentence": "It was a divorced response—clearly separated to everyone present."
-        },
-        {
-          "id": 14,
-          "word": "elitist",
-          "synonym": "snobbish",
-          "sentence": "Her elitist tone was snobbish, even when criticized."
-        },
-        {
-          "id": 15,
-          "word": "exacting",
-          "synonym": "demanding",
-          "sentence": "The exacting remarks sounded demanding, which raised immediate concerns."
-        },
-        {
-          "id": 16,
-          "word": "flummoxed",
-          "synonym": "perplexed",
-          "sentence": "The flummoxed remarks sounded perplexed, which raised immediate concerns."
-        },
-        {
-          "id": 17,
-          "word": "fruitful",
-          "synonym": "productive",
-          "sentence": "It was a fruitful response—clearly productive to everyone present."
-        },
-        {
-          "id": 18,
-          "word": "inborn",
-          "synonym": "innate",
-          "sentence": "It was an inborn response—clearly innate to everyone present."
-        },
-        {
-          "id": 19,
-          "word": "polymath",
-          "synonym": "scholar",
-          "sentence": "It was a polymath response—clearly scholar to everyone present."
-        },
-        {
-          "id": 20,
-          "word": "reticent",
-          "synonym": "reserved",
-          "sentence": "It was a reticent response—clearly reserved to everyone present."
-        },
-        {
-          "id": 21,
-          "word": "stringent",
-          "synonym": "strict",
-          "sentence": "It was a stringent response—clearly strict to everyone present."
-        },
-        {
-          "id": 22,
-          "word": "subservient",
-          "synonym": "obedient",
-          "sentence": "It was a subservient response—clearly obedient to everyone present."
-        },
-        {
-          "id": 23,
-          "word": "surreptitious",
-          "synonym": "secretive",
-          "sentence": "The surreptitious remarks sounded secretive, which raised immediate concerns."
-        },
-        {
-          "id": 24,
-          "word": "tantalizing",
-          "synonym": "tempting",
-          "sentence": "It was a tantalizing response—clearly tempting to everyone present."
-        },
-        {
-          "id": 25,
-          "word": "tantamount",
-          "synonym": "equivalent",
-          "sentence": "It was a tantamount response—clearly equivalent to everyone present."
-        },
-        {
-          "id": 26,
-          "word": "torpor",
-          "synonym": "lethargy",
-          "sentence": "Her torpor reflected deep lethargy, even under pressure."
-        },
-        {
-          "id": 27,
-          "word": "trenchant",
-          "synonym": "incisive",
-          "sentence": "Her trenchant tone was incisive, even when criticized."
-        },
-        {
-          "id": 28,
-          "word": "umbrage",
-          "synonym": "offense",
-          "sentence": "His umbrage—simple offense—was obvious during the discussion."
-        },
-        {
-          "id": 29,
-          "word": "versatile",
-          "synonym": "adaptable",
-          "sentence": "It was a versatile response—clearly adaptable to everyone present."
-        },
-        {
-          "id": 30,
-          "word": "wayward",
-          "synonym": "errant",
-          "sentence": "The wayward remarks sounded errant, which raised immediate concerns."
-        }
+        { "id": 1, "word": "acquiesce", "synonym": "", "sentence": "" },
+        { "id": 2, "word": "adroit", "synonym": "", "sentence": "" },
+        { "id": 3, "word": "amend", "synonym": "", "sentence": "" },
+        { "id": 4, "word": "animus", "synonym": "", "sentence": "" },
+        { "id": 5, "word": "apologist", "synonym": "", "sentence": "" },
+        { "id": 6, "word": "astringent", "synonym": "", "sentence": "" },
+        { "id": 7, "word": "collaborate", "synonym": "", "sentence": "" },
+        { "id": 8, "word": "competent", "synonym": "", "sentence": "" },
+        { "id": 9, "word": "correlate", "synonym": "", "sentence": "" },
+        { "id": 10, "word": "deride", "synonym": "", "sentence": "" },
+        { "id": 11, "word": "dictate", "synonym": "", "sentence": "" },
+        { "id": 12, "word": "discreet", "synonym": "", "sentence": "" },
+        { "id": 13, "word": "divorced", "synonym": "", "sentence": "" },
+        { "id": 14, "word": "elitist", "synonym": "", "sentence": "" },
+        { "id": 15, "word": "exacting", "synonym": "", "sentence": "" },
+        { "id": 16, "word": "flummoxed", "synonym": "", "sentence": "" },
+        { "id": 17, "word": "fruitful", "synonym": "", "sentence": "" },
+        { "id": 18, "word": "inborn", "synonym": "", "sentence": "" },
+        { "id": 19, "word": "polymath", "synonym": "", "sentence": "" },
+        { "id": 20, "word": "reticent", "synonym": "", "sentence": "" },
+        { "id": 21, "word": "stringent", "synonym": "", "sentence": "" },
+        { "id": 22, "word": "subservient", "synonym": "", "sentence": "" },
+        { "id": 23, "word": "surreptitious", "synonym": "", "sentence": "" },
+        { "id": 24, "word": "tantalizing", "synonym": "", "sentence": "" },
+        { "id": 25, "word": "tantamount", "synonym": "", "sentence": "" },
+        { "id": 26, "word": "torpor", "synonym": "", "sentence": "" },
+        { "id": 27, "word": "trenchant", "synonym": "", "sentence": "" },
+        { "id": 28, "word": "umbrage", "synonym": "", "sentence": "" },
+        { "id": 29, "word": "versatile", "synonym": "", "sentence": "" },
+        { "id": 30, "word": "wayward", "synonym": "", "sentence": "" }
       ]
     },
+
     {
       "id": 15,
       "name": "Set 15",
       "words": [
-        {
-          "id": 1,
-          "word": "alienate",
-          "synonym": "estrange",
-          "sentence": "They chose to alienate the claim; in other words, to estrange it."
-        },
-        {
-          "id": 2,
-          "word": "apathy",
-          "synonym": "indifference",
-          "sentence": "It was an apathy response—clearly indifference to everyone present."
-        },
-        {
-          "id": 3,
-          "word": "apropos",
-          "synonym": "relevant",
-          "sentence": "Her apropos tone was relevant, even when criticized."
-        },
-        {
-          "id": 4,
-          "word": "apt",
-          "synonym": "suitable",
-          "sentence": "The apt remarks sounded suitable, which raised immediate concerns."
-        },
-        {
-          "id": 5,
-          "word": "cloak",
-          "synonym": "conceal",
-          "sentence": "The cloak remarks sounded conceal, which raised immediate concerns."
-        },
-        {
-          "id": 6,
-          "word": "consensus",
-          "synonym": "agreement",
-          "sentence": "The consensus remarks sounded agreement, which raised immediate concerns."
-        },
-        {
-          "id": 7,
-          "word": "distort",
-          "synonym": "misrepresent",
-          "sentence": "The distort remarks sounded misrepresent, which raised immediate concerns."
-        },
-        {
-          "id": 8,
-          "word": "divergent",
-          "synonym": "differing",
-          "sentence": "It was a divergent response—clearly differing to everyone present."
-        },
-        {
-          "id": 9,
-          "word": "elated",
-          "synonym": "overjoyed",
-          "sentence": "Her elated tone was overjoyed, even when criticized."
-        },
-        {
-          "id": 10,
-          "word": "enchant",
-          "synonym": "delight",
-          "sentence": "The enchant remarks sounded delight, which raised immediate concerns."
-        },
-        {
-          "id": 11,
-          "word": "entrenched",
-          "synonym": "established",
-          "sentence": "Her entrenched tone was established, even when criticized."
-        },
-        {
-          "id": 12,
-          "word": "exotic",
-          "synonym": "unfamiliar",
-          "sentence": "The exotic remarks sounded unfamiliar, which raised immediate concerns."
-        },
-        {
-          "id": 13,
-          "word": "exploitative",
-          "synonym": "predatory",
-          "sentence": "Her exploitative tone was predatory, even when criticized."
-        },
-        {
-          "id": 14,
-          "word": "foreseeable",
-          "synonym": "predictable",
-          "sentence": "The foreseeable remarks sounded predictable, which raised immediate concerns."
-        },
-        {
-          "id": 15,
-          "word": "forsake",
-          "synonym": "abandon",
-          "sentence": "It was a forsake response—clearly abandon to everyone present."
-        },
-        {
-          "id": 16,
-          "word": "gratify",
-          "synonym": "please",
-          "sentence": "After new evidence emerged, she decided to gratify the decision—to please it."
-        },
-        {
-          "id": 17,
-          "word": "heed",
-          "synonym": "notice",
-          "sentence": "It was a heed response—clearly notice to everyone present."
-        },
-        {
-          "id": 18,
-          "word": "judicious",
-          "synonym": "wise",
-          "sentence": "Her judicious tone was wise, even when criticized."
-        },
-        {
-          "id": 19,
-          "word": "lucid",
-          "synonym": "clear",
-          "sentence": "The lucid remarks sounded clear, which raised immediate concerns."
-        },
-        {
-          "id": 20,
-          "word": "pertinent",
-          "synonym": "relevant",
-          "sentence": "It was a pertinent response—clearly relevant to everyone present."
-        },
-        {
-          "id": 21,
-          "word": "propriety",
-          "synonym": "decorum",
-          "sentence": "The situation demanded propriety, a kind of decorum few people showed."
-        },
-        {
-          "id": 22,
-          "word": "scintillating",
-          "synonym": "brilliant",
-          "sentence": "The scintillating remarks sounded brilliant, which raised immediate concerns."
-        },
-        {
-          "id": 23,
-          "word": "sensational",
-          "synonym": "shocking",
-          "sentence": "The sensational remarks sounded shocking, which raised immediate concerns."
-        },
-        {
-          "id": 24,
-          "word": "sophisticated",
-          "synonym": "urbane",
-          "sentence": "Her sophisticated tone was urbane, even when criticized."
-        },
-        {
-          "id": 25,
-          "word": "strife",
-          "synonym": "conflict",
-          "sentence": "Her strife reflected deep conflict, even under pressure."
-        },
-        {
-          "id": 26,
-          "word": "understated",
-          "synonym": "restrained",
-          "sentence": "Her understated tone was restrained, even when criticized."
-        },
-        {
-          "id": 27,
-          "word": "unscrupulous",
-          "synonym": "unprincipled",
-          "sentence": "Her unscrupulous tone was unprincipled, even when criticized."
-        },
-        {
-          "id": 28,
-          "word": "veracity",
-          "synonym": "truthfulness",
-          "sentence": "The situation demanded veracity, a kind of truthfulness few people showed."
-        },
-        {
-          "id": 29,
-          "word": "virulent",
-          "synonym": "venomous",
-          "sentence": "Her virulent tone was venomous, even when criticized."
-        },
-        {
-          "id": 30,
-          "word": "volatile",
-          "synonym": "unstable",
-          "sentence": "It was a volatile response—clearly unstable to everyone present."
-        }
+        { "id": 1, "word": "alienate", "synonym": "", "sentence": "" },
+        { "id": 2, "word": "apathy", "synonym": "", "sentence": "" },
+        { "id": 3, "word": "apropos", "synonym": "", "sentence": "" },
+        { "id": 4, "word": "apt", "synonym": "", "sentence": "" },
+        { "id": 5, "word": "cloak", "synonym": "", "sentence": "" },
+        { "id": 6, "word": "consensus", "synonym": "", "sentence": "" },
+        { "id": 7, "word": "distort", "synonym": "", "sentence": "" },
+        { "id": 8, "word": "divergent", "synonym": "", "sentence": "" },
+        { "id": 9, "word": "elated", "synonym": "", "sentence": "" },
+        { "id": 10, "word": "enchant", "synonym": "", "sentence": "" },
+        { "id": 11, "word": "entrenched", "synonym": "", "sentence": "" },
+        { "id": 12, "word": "exotic", "synonym": "", "sentence": "" },
+        { "id": 13, "word": "exploitative", "synonym": "", "sentence": "" },
+        { "id": 14, "word": "foreseeable", "synonym": "", "sentence": "" },
+        { "id": 15, "word": "forsake", "synonym": "", "sentence": "" },
+        { "id": 16, "word": "gratify", "synonym": "", "sentence": "" },
+        { "id": 17, "word": "heed", "synonym": "", "sentence": "" },
+        { "id": 18, "word": "judicious", "synonym": "", "sentence": "" },
+        { "id": 19, "word": "lucid", "synonym": "", "sentence": "" },
+        { "id": 20, "word": "pertinent", "synonym": "", "sentence": "" },
+        { "id": 21, "word": "propriety", "synonym": "", "sentence": "" },
+        { "id": 22, "word": "scintillating", "synonym": "", "sentence": "" },
+        { "id": 23, "word": "sensational", "synonym": "", "sentence": "" },
+        { "id": 24, "word": "sophisticated", "synonym": "", "sentence": "" },
+        { "id": 25, "word": "strife", "synonym": "", "sentence": "" },
+        { "id": 26, "word": "understated", "synonym": "", "sentence": "" },
+        { "id": 27, "word": "unscrupulous", "synonym": "", "sentence": "" },
+        { "id": 28, "word": "veracity", "synonym": "", "sentence": "" },
+        { "id": 29, "word": "virulent", "synonym": "", "sentence": "" },
+        { "id": 30, "word": "volatile", "synonym": "", "sentence": "" }
       ]
     },
+
     {
       "id": 16,
       "name": "Set 16",
       "words": [
-        {
-          "id": 1,
-          "word": "antedate",
-          "synonym": "precede",
-          "sentence": "They chose to antedate the claim; in other words, to precede it."
-        },
-        {
-          "id": 2,
-          "word": "banish",
-          "synonym": "expel",
-          "sentence": "It was a banish response—clearly expel to everyone present."
-        },
-        {
-          "id": 3,
-          "word": "bridle",
-          "synonym": "restrain",
-          "sentence": "Her bridle tone was restrain, even when criticized."
-        },
-        {
-          "id": 4,
-          "word": "comply",
-          "synonym": "obey",
-          "sentence": "Her comply tone was obey, even when criticized."
-        },
-        {
-          "id": 5,
-          "word": "crestfallen",
-          "synonym": "dejected",
-          "sentence": "The team tried to crestfallen the report, meaning to dejected it before release."
-        },
-        {
-          "id": 6,
-          "word": "curtail",
-          "synonym": "reduce",
-          "sentence": "Her curtail tone was reduce, even when criticized."
-        },
-        {
-          "id": 7,
-          "word": "elucidate",
-          "synonym": "clarify",
-          "sentence": "They chose to elucidate the claim; in other words, to clarify it."
-        },
-        {
-          "id": 8,
-          "word": "evade",
-          "synonym": "elude",
-          "sentence": "They chose to evade the claim; in other words, to elude it."
-        },
-        {
-          "id": 9,
-          "word": "feckless",
-          "synonym": "inept",
-          "sentence": "It was a feckless response—clearly inept to everyone present."
-        },
-        {
-          "id": 10,
-          "word": "fester",
-          "synonym": "worsen",
-          "sentence": "It was a fester response—clearly worsen to everyone present."
-        },
-        {
-          "id": 11,
-          "word": "iconoclastic",
-          "synonym": "rebellious",
-          "sentence": "The iconoclastic remarks sounded rebellious, which raised immediate concerns."
-        },
-        {
-          "id": 12,
-          "word": "immure",
-          "synonym": "imprison",
-          "sentence": "The immure remarks sounded imprison, which raised immediate concerns."
-        },
-        {
-          "id": 13,
-          "word": "improvise",
-          "synonym": "ad-lib",
-          "sentence": "After new evidence emerged, she decided to improvise the decision—to ad-lib it."
-        },
-        {
-          "id": 14,
-          "word": "inhibit",
-          "synonym": "restrain",
-          "sentence": "It was an inhibit response—clearly restrain to everyone present."
-        },
-        {
-          "id": 15,
-          "word": "inscrutable",
-          "synonym": "enigmatic",
-          "sentence": "The inscrutable remarks sounded enigmatic, which raised immediate concerns."
-        },
-        {
-          "id": 16,
-          "word": "lionize",
-          "synonym": "idolize",
-          "sentence": "The team tried to lionize the report, meaning to idolize it before release."
-        },
-        {
-          "id": 17,
-          "word": "monotonous",
-          "synonym": "repetitive",
-          "sentence": "Her monotonous tone was repetitive, even when criticized."
-        },
-        {
-          "id": 18,
-          "word": "peculiar",
-          "synonym": "odd",
-          "sentence": "It was a peculiar response—clearly odd to everyone present."
-        },
-        {
-          "id": 19,
-          "word": "premeditate",
-          "synonym": "plan",
-          "sentence": "They chose to premeditate the claim; in other words, to plan it."
-        },
-        {
-          "id": 20,
-          "word": "profligate",
-          "synonym": "wasteful",
-          "sentence": "The team tried to profligate the report, meaning to wasteful it before release."
-        },
-        {
-          "id": 21,
-          "word": "reconcile",
-          "synonym": "resolve",
-          "sentence": "The reconcile remarks sounded resolve, which raised immediate concerns."
-        },
-        {
-          "id": 22,
-          "word": "refine",
-          "synonym": "improve",
-          "sentence": "Her refine tone was improve, even when criticized."
-        },
-        {
-          "id": 23,
-          "word": "relinquish",
-          "synonym": "surrender",
-          "sentence": "Her relinquish tone was surrender, even when criticized."
-        },
-        {
-          "id": 24,
-          "word": "ruminate",
-          "synonym": "ponder",
-          "sentence": "The team tried to ruminate the report, meaning to ponder it before release."
-        },
-        {
-          "id": 25,
-          "word": "skittish",
-          "synonym": "jittery",
-          "sentence": "Her skittish tone was jittery, even when criticized."
-        },
-        {
-          "id": 26,
-          "word": "superfluous",
-          "synonym": "unnecessary",
-          "sentence": "Her superfluous tone was unnecessary, even when criticized."
-        },
-        {
-          "id": 27,
-          "word": "synoptic",
-          "synonym": "summary",
-          "sentence": "The synoptic remarks sounded summary, which raised immediate concerns."
-        },
-        {
-          "id": 28,
-          "word": "thorough",
-          "synonym": "comprehensive",
-          "sentence": "Her thorough tone was comprehensive, even when criticized."
-        },
-        {
-          "id": 29,
-          "word": "visionary",
-          "synonym": "far-sighted",
-          "sentence": "Her visionary reflected deep far-sighted, even under pressure."
-        },
-        {
-          "id": 30,
-          "word": "vociferous",
-          "synonym": "outspoken",
-          "sentence": "The vociferous remarks sounded outspoken, which raised immediate concerns."
-        }
+        { "id": 1, "word": "antedate", "synonym": "", "sentence": "" },
+        { "id": 2, "word": "banish", "synonym": "", "sentence": "" },
+        { "id": 3, "word": "bridle", "synonym": "", "sentence": "" },
+        { "id": 4, "word": "comply", "synonym": "", "sentence": "" },
+        { "id": 5, "word": "crestfallen", "synonym": "", "sentence": "" },
+        { "id": 6, "word": "curtail", "synonym": "", "sentence": "" },
+        { "id": 7, "word": "elucidate", "synonym": "", "sentence": "" },
+        { "id": 8, "word": "evade", "synonym": "", "sentence": "" },
+        { "id": 9, "word": "feckless", "synonym": "", "sentence": "" },
+        { "id": 10, "word": "fester", "synonym": "", "sentence": "" },
+        { "id": 11, "word": "iconoclastic", "synonym": "", "sentence": "" },
+        { "id": 12, "word": "immure", "synonym": "", "sentence": "" },
+        { "id": 13, "word": "improvise", "synonym": "", "sentence": "" },
+        { "id": 14, "word": "inhibit", "synonym": "", "sentence": "" },
+        { "id": 15, "word": "inscrutable", "synonym": "", "sentence": "" },
+        { "id": 16, "word": "lionize", "synonym": "", "sentence": "" },
+        { "id": 17, "word": "monotonous", "synonym": "", "sentence": "" },
+        { "id": 18, "word": "peculiar", "synonym": "", "sentence": "" },
+        { "id": 19, "word": "premeditate", "synonym": "", "sentence": "" },
+        { "id": 20, "word": "profligate", "synonym": "", "sentence": "" },
+        { "id": 21, "word": "reconcile", "synonym": "", "sentence": "" },
+        { "id": 22, "word": "refine", "synonym": "", "sentence": "" },
+        { "id": 23, "word": "relinquish", "synonym": "", "sentence": "" },
+        { "id": 24, "word": "ruminate", "synonym": "", "sentence": "" },
+        { "id": 25, "word": "skittish", "synonym": "", "sentence": "" },
+        { "id": 26, "word": "superfluous", "synonym": "", "sentence": "" },
+        { "id": 27, "word": "synoptic", "synonym": "", "sentence": "" },
+        { "id": 28, "word": "thorough", "synonym": "", "sentence": "" },
+        { "id": 29, "word": "visionary", "synonym": "", "sentence": "" },
+        { "id": 30, "word": "vociferous", "synonym": "", "sentence": "" }
       ]
     },
+
     {
       "id": 17,
       "name": "Set 17",
       "words": [
-        {
-          "id": 1,
-          "word": "acclaim",
-          "synonym": "praise",
-          "sentence": "Her acclaim tone was praise, even when criticized."
-        },
-        {
-          "id": 2,
-          "word": "ascertain",
-          "synonym": "determine",
-          "sentence": "The team tried to ascertain the report, meaning to determine it before release."
-        },
-        {
-          "id": 3,
-          "word": "assertive",
-          "synonym": "forceful",
-          "sentence": "Her assertive tone was forceful, even when criticized."
-        },
-        {
-          "id": 4,
-          "word": "bogus",
-          "synonym": "fake",
-          "sentence": "Her bogus tone was fake, even when criticized."
-        },
-        {
-          "id": 5,
-          "word": "cataclysmic",
-          "synonym": "disastrous",
-          "sentence": "The cataclysmic remarks sounded disastrous, which raised immediate concerns."
-        },
-        {
-          "id": 6,
-          "word": "circumscribe",
-          "synonym": "limit",
-          "sentence": "They chose to circumscribe the claim; in other words, to limit it."
-        },
-        {
-          "id": 7,
-          "word": "complementary",
-          "synonym": "matching",
-          "sentence": "Her complementary reflected deep matching, even under pressure."
-        },
-        {
-          "id": 8,
-          "word": "contentious",
-          "synonym": "quarrelsome",
-          "sentence": "Her contentious tone was quarrelsome, even when criticized."
-        },
-        {
-          "id": 9,
-          "word": "disingenuous",
-          "synonym": "insincere",
-          "sentence": "The disingenuous remarks sounded insincere, which raised immediate concerns."
-        },
-        {
-          "id": 10,
-          "word": "divulge",
-          "synonym": "disclose",
-          "sentence": "They chose to divulge the claim; in other words, to disclose it."
-        },
-        {
-          "id": 11,
-          "word": "dogmatic",
-          "synonym": "opinionated",
-          "sentence": "The dogmatic remarks sounded opinionated, which raised immediate concerns."
-        },
-        {
-          "id": 12,
-          "word": "fallacious",
-          "synonym": "erroneous",
-          "sentence": "Her fallacious tone was erroneous, even when criticized."
-        },
-        {
-          "id": 13,
-          "word": "foolhardy",
-          "synonym": "reckless",
-          "sentence": "The foolhardy remarks sounded reckless, which raised immediate concerns."
-        },
-        {
-          "id": 14,
-          "word": "hinder",
-          "synonym": "obstruct",
-          "sentence": "The hinder remarks sounded obstruct, which raised immediate concerns."
-        },
-        {
-          "id": 15,
-          "word": "impair",
-          "synonym": "damage",
-          "sentence": "Her impair tone was damage, even when criticized."
-        },
-        {
-          "id": 16,
-          "word": "impugn",
-          "synonym": "challenge",
-          "sentence": "The team tried to impugn the report, meaning to challenge it before release."
-        },
-        {
-          "id": 17,
-          "word": "incessant",
-          "synonym": "relentless",
-          "sentence": "The incessant remarks sounded relentless, which raised immediate concerns."
-        },
-        {
-          "id": 18,
-          "word": "inclined",
-          "synonym": "disposed",
-          "sentence": "It was an inclined response—clearly disposed to everyone present."
-        },
-        {
-          "id": 19,
-          "word": "inveterate",
-          "synonym": "habitual",
-          "sentence": "The team tried to inveterate the report, meaning to habitual it before release."
-        },
-        {
-          "id": 20,
-          "word": "miserly",
-          "synonym": "stingy",
-          "sentence": "It was a miserly response—clearly stingy to everyone present."
-        },
-        {
-          "id": 21,
-          "word": "patent",
-          "synonym": "obvious",
-          "sentence": "Her patent tone was obvious, even when criticized."
-        },
-        {
-          "id": 22,
-          "word": "petulant",
-          "synonym": "sulky",
-          "sentence": "The petulant remarks sounded sulky, which raised immediate concerns."
-        },
-        {
-          "id": 23,
-          "word": "pithy",
-          "synonym": "concise",
-          "sentence": "It was a pithy response—clearly concise to everyone present."
-        },
-        {
-          "id": 24,
-          "word": "pliant",
-          "synonym": "flexible",
-          "sentence": "It was a pliant response—clearly flexible to everyone present."
-        },
-        {
-          "id": 25,
-          "word": "sanctimonious",
-          "synonym": "self-righteous",
-          "sentence": "It was a sanctimonious response—clearly self-righteous to everyone present."
-        },
-        {
-          "id": 26,
-          "word": "sound",
-          "synonym": "valid",
-          "sentence": "Her sound tone was valid, even when criticized."
-        },
-        {
-          "id": 27,
-          "word": "tarnish",
-          "synonym": "sully",
-          "sentence": "It was a tarnish response—clearly sully to everyone present."
-        },
-        {
-          "id": 28,
-          "word": "tepid",
-          "synonym": "lukewarm",
-          "sentence": "Her tepid tone was lukewarm, even when criticized."
-        },
-        {
-          "id": 29,
-          "word": "upbraid",
-          "synonym": "scold",
-          "sentence": "The upbraid remarks sounded scold, which raised immediate concerns."
-        },
-        {
-          "id": 30,
-          "word": "vexation",
-          "synonym": "annoyance",
-          "sentence": "His vexation—simple annoyance—was obvious during the discussion."
-        }
+        { "id": 1, "word": "acclaim", "synonym": "", "sentence": "" },
+        { "id": 2, "word": "ascertain", "synonym": "", "sentence": "" },
+        { "id": 3, "word": "assertive", "synonym": "", "sentence": "" },
+        { "id": 4, "word": "bogus", "synonym": "", "sentence": "" },
+        { "id": 5, "word": "cataclysmic", "synonym": "", "sentence": "" },
+        { "id": 6, "word": "circumscribe", "synonym": "", "sentence": "" },
+        { "id": 7, "word": "complementary", "synonym": "", "sentence": "" },
+        { "id": 8, "word": "contentious", "synonym": "", "sentence": "" },
+        { "id": 9, "word": "disingenuous", "synonym": "", "sentence": "" },
+        { "id": 10, "word": "divulge", "synonym": "", "sentence": "" },
+        { "id": 11, "word": "dogmatic", "synonym": "", "sentence": "" },
+        { "id": 12, "word": "fallacious", "synonym": "", "sentence": "" },
+        { "id": 13, "word": "foolhardy", "synonym": "", "sentence": "" },
+        { "id": 14, "word": "hinder", "synonym": "", "sentence": "" },
+        { "id": 15, "word": "impair", "synonym": "", "sentence": "" },
+        { "id": 16, "word": "impugn", "synonym": "", "sentence": "" },
+        { "id": 17, "word": "incessant", "synonym": "", "sentence": "" },
+        { "id": 18, "word": "inclined", "synonym": "", "sentence": "" },
+        { "id": 19, "word": "inveterate", "synonym": "", "sentence": "" },
+        { "id": 20, "word": "miserly", "synonym": "", "sentence": "" },
+        { "id": 21, "word": "patent", "synonym": "", "sentence": "" },
+        { "id": 22, "word": "petulant", "synonym": "", "sentence": "" },
+        { "id": 23, "word": "pithy", "synonym": "", "sentence": "" },
+        { "id": 24, "word": "pliant", "synonym": "", "sentence": "" },
+        { "id": 25, "word": "sanctimonious", "synonym": "", "sentence": "" },
+        { "id": 26, "word": "sound", "synonym": "", "sentence": "" },
+        { "id": 27, "word": "tarnish", "synonym": "", "sentence": "" },
+        { "id": 28, "word": "tepid", "synonym": "", "sentence": "" },
+        { "id": 29, "word": "upbraid", "synonym": "", "sentence": "" },
+        { "id": 30, "word": "vexation", "synonym": "", "sentence": "" }
       ]
     },
+
     {
       "id": 18,
       "name": "Set 18",
       "words": [
-        {
-          "id": 1,
-          "word": "abet",
-          "synonym": "assist",
-          "sentence": "After new evidence emerged, she decided to abet the decision—to assist it."
-        },
-        {
-          "id": 2,
-          "word": "accessible",
-          "synonym": "obtainable",
-          "sentence": "It was an accessible response—clearly obtainable to everyone present."
-        },
-        {
-          "id": 3,
-          "word": "acquisitive",
-          "synonym": "materialistic",
-          "sentence": "The acquisitive remarks sounded materialistic, which raised immediate concerns."
-        },
-        {
-          "id": 4,
-          "word": "amalgamate",
-          "synonym": "merge",
-          "sentence": "The team tried to amalgamate the report, meaning to merge it before release."
-        },
-        {
-          "id": 5,
-          "word": "attenuate",
-          "synonym": "weaken",
-          "sentence": "The team tried to attenuate the report, meaning to weaken it before release."
-        },
-        {
-          "id": 6,
-          "word": "augment",
-          "synonym": "increase",
-          "sentence": "The situation demanded augment, a kind of increase few people showed."
-        },
-        {
-          "id": 7,
-          "word": "aversion",
-          "synonym": "dislike",
-          "sentence": "The situation demanded aversion, a kind of dislike few people showed."
-        },
-        {
-          "id": 8,
-          "word": "blithe",
-          "synonym": "carefree",
-          "sentence": "It was a blithe response—clearly carefree to everyone present."
-        },
-        {
-          "id": 9,
-          "word": "contempt",
-          "synonym": "scorn",
-          "sentence": "His contempt—simple scorn—was obvious during the discussion."
-        },
-        {
-          "id": 10,
-          "word": "dawdle",
-          "synonym": "loiter",
-          "sentence": "Her dawdle tone was loiter, even when criticized."
-        },
-        {
-          "id": 11,
-          "word": "deflect",
-          "synonym": "divert",
-          "sentence": "The deflect remarks sounded divert, which raised immediate concerns."
-        },
-        {
-          "id": 12,
-          "word": "discount",
-          "synonym": "disregard",
-          "sentence": "It was a discount response—clearly disregard to everyone present."
-        },
-        {
-          "id": 13,
-          "word": "dissident",
-          "synonym": "rebel",
-          "sentence": "Her dissident tone was rebel, even when criticized."
-        },
-        {
-          "id": 14,
-          "word": "efficacious",
-          "synonym": "effective",
-          "sentence": "The efficacious remarks sounded effective, which raised immediate concerns."
-        },
-        {
-          "id": 15,
-          "word": "equitable",
-          "synonym": "fair",
-          "sentence": "It was an equitable response—clearly fair to everyone present."
-        },
-        {
-          "id": 16,
-          "word": "erratic",
-          "synonym": "unpredictable",
-          "sentence": "Her erratic tone was unpredictable, even when criticized."
-        },
-        {
-          "id": 17,
-          "word": "industrious",
-          "synonym": "diligent",
-          "sentence": "It was an industrious response—clearly diligent to everyone present."
-        },
-        {
-          "id": 18,
-          "word": "inform",
-          "synonym": "enlighten",
-          "sentence": "Her inform tone was enlighten, even when criticized."
-        },
-        {
-          "id": 19,
-          "word": "irksome",
-          "synonym": "annoying",
-          "sentence": "Her irksome tone was annoying, even when criticized."
-        },
-        {
-          "id": 20,
-          "word": "manacle",
-          "synonym": "shackle",
-          "sentence": "The manacle remarks sounded shackle, which raised immediate concerns."
-        },
-        {
-          "id": 21,
-          "word": "modest",
-          "synonym": "humble",
-          "sentence": "The modest remarks sounded humble, which raised immediate concerns."
-        },
-        {
-          "id": 22,
-          "word": "noxious",
-          "synonym": "harmful",
-          "sentence": "It was a noxious response—clearly harmful to everyone present."
-        },
-        {
-          "id": 23,
-          "word": "pernicious",
-          "synonym": "destructive",
-          "sentence": "Her pernicious tone was destructive, even when criticized."
-        },
-        {
-          "id": 24,
-          "word": "predicament",
-          "synonym": "dilemma",
-          "sentence": "His predicament—simple dilemma—was obvious during the discussion."
-        },
-        {
-          "id": 25,
-          "word": "proficient",
-          "synonym": "skilled",
-          "sentence": "Her proficient tone was skilled, even when criticized."
-        },
-        {
-          "id": 26,
-          "word": "prolix",
-          "synonym": "wordy",
-          "sentence": "It was a prolix response—clearly wordy to everyone present."
-        },
-        {
-          "id": 27,
-          "word": "scorn",
-          "synonym": "disdain",
-          "sentence": "Her scorn tone was disdain, even when criticized."
-        },
-        {
-          "id": 28,
-          "word": "subordinate",
-          "synonym": "secondary",
-          "sentence": "The team tried to subordinate the report, meaning to secondary it before release."
-        },
-        {
-          "id": 29,
-          "word": "unseemly",
-          "synonym": "inappropriate",
-          "sentence": "Her unseemly tone was inappropriate, even when criticized."
-        },
-        {
-          "id": 30,
-          "word": "veritable",
-          "synonym": "genuine",
-          "sentence": "The veritable remarks sounded genuine, which raised immediate concerns."
-        }
+        { "id": 1, "word": "abet", "synonym": "", "sentence": "" },
+        { "id": 2, "word": "accessible", "synonym": "", "sentence": "" },
+        { "id": 3, "word": "acquisitive", "synonym": "", "sentence": "" },
+        { "id": 4, "word": "amalgamate", "synonym": "", "sentence": "" },
+        { "id": 5, "word": "attenuate", "synonym": "", "sentence": "" },
+        { "id": 6, "word": "augment", "synonym": "", "sentence": "" },
+        { "id": 7, "word": "aversion", "synonym": "", "sentence": "" },
+        { "id": 8, "word": "blithe", "synonym": "", "sentence": "" },
+        { "id": 9, "word": "contempt", "synonym": "", "sentence": "" },
+        { "id": 10, "word": "dawdle", "synonym": "", "sentence": "" },
+        { "id": 11, "word": "deflect", "synonym": "", "sentence": "" },
+        { "id": 12, "word": "discount", "synonym": "", "sentence": "" },
+        { "id": 13, "word": "dissident", "synonym": "", "sentence": "" },
+        { "id": 14, "word": "efficacious", "synonym": "", "sentence": "" },
+        { "id": 15, "word": "equitable", "synonym": "", "sentence": "" },
+        { "id": 16, "word": "erratic", "synonym": "", "sentence": "" },
+        { "id": 17, "word": "industrious", "synonym": "", "sentence": "" },
+        { "id": 18, "word": "inform", "synonym": "", "sentence": "" },
+        { "id": 19, "word": "irksome", "synonym": "", "sentence": "" },
+        { "id": 20, "word": "manacle", "synonym": "", "sentence": "" },
+        { "id": 21, "word": "modest", "synonym": "", "sentence": "" },
+        { "id": 22, "word": "noxious", "synonym": "", "sentence": "" },
+        { "id": 23, "word": "pernicious", "synonym": "", "sentence": "" },
+        { "id": 24, "word": "predicament", "synonym": "", "sentence": "" },
+        { "id": 25, "word": "proficient", "synonym": "", "sentence": "" },
+        { "id": 26, "word": "prolix", "synonym": "", "sentence": "" },
+        { "id": 27, "word": "scorn", "synonym": "", "sentence": "" },
+        { "id": 28, "word": "subordinate", "synonym": "", "sentence": "" },
+        { "id": 29, "word": "unseemly", "synonym": "", "sentence": "" },
+        { "id": 30, "word": "veritable", "synonym": "", "sentence": "" }
       ]
     },
+
     {
       "id": 19,
       "name": "Set 19",
       "words": [
-        {
-          "id": 1,
-          "word": "acolyte",
-          "synonym": "disciple",
-          "sentence": "The acolyte remarks sounded disciple, which raised immediate concerns."
-        },
-        {
-          "id": 2,
-          "word": "anoint",
-          "synonym": "consecrate",
-          "sentence": "Her anoint tone was consecrate, even when criticized."
-        },
-        {
-          "id": 3,
-          "word": "base",
-          "synonym": "vile",
-          "sentence": "The base remarks sounded vile, which raised immediate concerns."
-        },
-        {
-          "id": 4,
-          "word": "coercion",
-          "synonym": "force",
-          "sentence": "The situation demanded coercion, a kind of force few people showed."
-        },
-        {
-          "id": 5,
-          "word": "coin",
-          "synonym": "invent",
-          "sentence": "They chose to coin the claim; in other words, to invent it."
-        },
-        {
-          "id": 6,
-          "word": "cunning",
-          "synonym": "sly",
-          "sentence": "Her cunning tone was sly, even when criticized."
-        },
-        {
-          "id": 7,
-          "word": "discomfit",
-          "synonym": "unsettle",
-          "sentence": "Her discomfit tone was unsettle, even when criticized."
-        },
-        {
-          "id": 8,
-          "word": "dissent",
-          "synonym": "disagree",
-          "sentence": "Her dissent tone was disagree, even when criticized."
-        },
-        {
-          "id": 9,
-          "word": "distill",
-          "synonym": "extract",
-          "sentence": "After new evidence emerged, she decided to distill the decision—to extract it."
-        },
-        {
-          "id": 10,
-          "word": "dubious",
-          "synonym": "doubtful",
-          "sentence": "Her dubious tone was doubtful, even when criticized."
-        },
-        {
-          "id": 11,
-          "word": "ebullient",
-          "synonym": "exuberant",
-          "sentence": "It was an ebullient response—clearly exuberant to everyone present."
-        },
-        {
-          "id": 12,
-          "word": "facetious",
-          "synonym": "flippant",
-          "sentence": "The facetious remarks sounded flippant, which raised immediate concerns."
-        },
-        {
-          "id": 13,
-          "word": "fallible",
-          "synonym": "imperfect",
-          "sentence": "It was a fallible response—clearly imperfect to everyone present."
-        },
-        {
-          "id": 14,
-          "word": "florid",
-          "synonym": "ornate",
-          "sentence": "The florid remarks sounded ornate, which raised immediate concerns."
-        },
-        {
-          "id": 15,
-          "word": "gawky",
-          "synonym": "awkward",
-          "sentence": "The gawky remarks sounded awkward, which raised immediate concerns."
-        },
-        {
-          "id": 16,
-          "word": "inveigle",
-          "synonym": "entice",
-          "sentence": "It was an inveigle response—clearly entice to everyone present."
-        },
-        {
-          "id": 17,
-          "word": "jettison",
-          "synonym": "discard",
-          "sentence": "The team tried to jettison the report, meaning to discard it before release."
-        },
-        {
-          "id": 18,
-          "word": "mendacity",
-          "synonym": "dishonesty",
-          "sentence": "Her mendacity reflected deep dishonesty, even under pressure."
-        },
-        {
-          "id": 19,
-          "word": "munificent",
-          "synonym": "generous",
-          "sentence": "It was a munificent response—clearly generous to everyone present."
-        },
-        {
-          "id": 20,
-          "word": "naive",
-          "synonym": "innocent",
-          "sentence": "It was a naive response—clearly innocent to everyone present."
-        },
-        {
-          "id": 21,
-          "word": "noble",
-          "synonym": "honorable",
-          "sentence": "The noble remarks sounded honorable, which raised immediate concerns."
-        },
-        {
-          "id": 22,
-          "word": "parochial",
-          "synonym": "narrow-minded",
-          "sentence": "It was a parochial response—clearly narrow-minded to everyone present."
-        },
-        {
-          "id": 23,
-          "word": "pedestrian",
-          "synonym": "commonplace",
-          "sentence": "The pedestrian remarks sounded commonplace, which raised immediate concerns."
-        },
-        {
-          "id": 24,
-          "word": "prevaricate",
-          "synonym": "equivocate",
-          "sentence": "They chose to prevaricate the claim; in other words, to equivocate it."
-        },
-        {
-          "id": 25,
-          "word": "prime",
-          "synonym": "principal",
-          "sentence": "Her prime tone was principal, even when criticized."
-        },
-        {
-          "id": 26,
-          "word": "radical",
-          "synonym": "extreme",
-          "sentence": "Her radical tone was extreme, even when criticized."
-        },
-        {
-          "id": 27,
-          "word": "recrudescent",
-          "synonym": "resurgent",
-          "sentence": "The recrudescent remarks sounded resurgent, which raised immediate concerns."
-        },
-        {
-          "id": 28,
-          "word": "temporal",
-          "synonym": "worldly",
-          "sentence": "The temporal remarks sounded worldly, which raised immediate concerns."
-        },
-        {
-          "id": 29,
-          "word": "transitory",
-          "synonym": "fleeting",
-          "sentence": "His transitory—simple fleeting—was obvious during the discussion."
-        },
-        {
-          "id": 30,
-          "word": "viable",
-          "synonym": "feasible",
-          "sentence": "Her viable tone was feasible, even when criticized."
-        }
+        { "id": 1, "word": "acolyte", "synonym": "", "sentence": "" },
+        { "id": 2, "word": "anoint", "synonym": "", "sentence": "" },
+        { "id": 3, "word": "base", "synonym": "", "sentence": "" },
+        { "id": 4, "word": "coercion", "synonym": "", "sentence": "" },
+        { "id": 5, "word": "coin", "synonym": "", "sentence": "" },
+        { "id": 6, "word": "cunning", "synonym": "", "sentence": "" },
+        { "id": 7, "word": "discomfit", "synonym": "", "sentence": "" },
+        { "id": 8, "word": "dissent", "synonym": "", "sentence": "" },
+        { "id": 9, "word": "distill", "synonym": "", "sentence": "" },
+        { "id": 10, "word": "dubious", "synonym": "", "sentence": "" },
+        { "id": 11, "word": "ebullient", "synonym": "", "sentence": "" },
+        { "id": 12, "word": "facetious", "synonym": "", "sentence": "" },
+        { "id": 13, "word": "fallible", "synonym": "", "sentence": "" },
+        { "id": 14, "word": "florid", "synonym": "", "sentence": "" },
+        { "id": 15, "word": "gawky", "synonym": "", "sentence": "" },
+        { "id": 16, "word": "inveigle", "synonym": "", "sentence": "" },
+        { "id": 17, "word": "jettison", "synonym": "", "sentence": "" },
+        { "id": 18, "word": "mendacity", "synonym": "", "sentence": "" },
+        { "id": 19, "word": "munificent", "synonym": "", "sentence": "" },
+        { "id": 20, "word": "naive", "synonym": "", "sentence": "" },
+        { "id": 21, "word": "noble", "synonym": "", "sentence": "" },
+        { "id": 22, "word": "parochial", "synonym": "", "sentence": "" },
+        { "id": 23, "word": "pedestrian", "synonym": "", "sentence": "" },
+        { "id": 24, "word": "prevaricate", "synonym": "", "sentence": "" },
+        { "id": 25, "word": "prime", "synonym": "", "sentence": "" },
+        { "id": 26, "word": "radical", "synonym": "", "sentence": "" },
+        { "id": 27, "word": "recrudescent", "synonym": "", "sentence": "" },
+        { "id": 28, "word": "temporal", "synonym": "", "sentence": "" },
+        { "id": 29, "word": "transitory", "synonym": "", "sentence": "" },
+        { "id": 30, "word": "viable", "synonym": "", "sentence": "" }
       ]
     },
+
     {
       "id": 20,
       "name": "Set 20",
