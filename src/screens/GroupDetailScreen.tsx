@@ -72,12 +72,17 @@ export function GroupDetailScreen() {
     <ScreenContainer edges={["left", "right", "bottom"]}>
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
         <ThemedText variant="title">{group.name}</ThemedText>
-        <Pressable onPress={() => setIsAddWordOpen(true)} hitSlop={10}>
-          <Ionicons name="add-circle-outline" size={26} color={theme.colors.primary} />
-        </Pressable>
+        <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
+          <Pressable onPress={() => navigation.navigate("WordPlayer", { groupId })} hitSlop={10}>
+            <Ionicons name="play-circle-outline" size={26} color={theme.colors.text} />
+          </Pressable>
+          <Pressable onPress={() => setIsAddWordOpen(true)} hitSlop={10}>
+            <Ionicons name="add-circle-outline" size={26} color={theme.colors.primary} />
+          </Pressable>
+        </View>
       </View>
       <ThemedText variant="muted" style={{ marginTop: 6 }}>
-        Tap a word for details. Star the ones you keep forgetting.
+        Tap a word for details. Long-press to open Player (swipe left/right).
       </ThemedText>
 
       <TextInput
@@ -106,10 +111,13 @@ export function GroupDetailScreen() {
         ItemSeparatorComponent={() => <View style={{ height: 10 }} />}
         renderItem={({ item }) => {
           const statusLabel = item.srs.isNew ? "New" : `Due ${item.srs.dueDateISO}`;
+          const subtitle = [item.synonym?.trim(), statusLabel].filter(Boolean).join(" • ");
 
           return (
             <Pressable
               onPress={() => navigation.navigate("WordDetail", { wordId: item.id })}
+              onLongPress={() => navigation.navigate("WordPlayer", { groupId, startWordId: item.id })}
+              delayLongPress={250}
               style={({ pressed }) => [
                 {
                   backgroundColor: theme.colors.card,
@@ -127,7 +135,7 @@ export function GroupDetailScreen() {
                     {item.word}
                   </ThemedText>
                   <ThemedText variant="muted" style={{ marginTop: 3 }} numberOfLines={1}>
-                    {item.synonym} • {statusLabel}
+                    {subtitle}
                   </ThemedText>
                 </View>
 

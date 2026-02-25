@@ -256,33 +256,85 @@ export const useAppStore = create<AppState>()(
             state = { ...state, groups: deduped.groups, wordsById: deduped.wordsById };
           }
 
-          const existingGroupIds = new Set(state.groups.map((g) => g.id));
-          const missingSeedGroups = seed.groups.filter((g) => !existingGroupIds.has(g.id));
-
-          if (missingSeedGroups.length === 0) {
-            if (!state.isBootstrapped) set({ isBootstrapped: true });
-            return;
-          }
-
           const todayISO = toISODate(new Date());
           const nextGroups: GroupEntity[] = [...state.groups];
           const nextWordsById: Record<string, WordEntity> = { ...state.wordsById };
           const seenGlobal = new Set(Object.values(nextWordsById).map((w) => normalizeWordKey(w.word)));
 
-          for (const group of missingSeedGroups) {
-            const wordIds: string[] = [];
-            for (const seedWord of group.words) {
+          let didChange = false;
+
+          const groupIndexById = new Map<number, number>();
+          for (let i = 0; i < nextGroups.length; i++) {
+            groupIndexById.set(nextGroups[i].id, i);
+          }
+
+          for (const seedGroup of seed.groups) {
+            const existingGroupIndex = groupIndexById.get(seedGroup.id);
+
+            if (typeof existingGroupIndex !== "number") {
+              nextGroups.push({
+                id: seedGroup.id,
+                name: seedGroup.name,
+                wordIds: [],
+              });
+              groupIndexById.set(seedGroup.id, nextGroups.length - 1);
+              didChange = true;
+            } else {
+              const existingGroup = nextGroups[existingGroupIndex];
+              if (existingGroup.name !== seedGroup.name) {
+                nextGroups[existingGroupIndex] = { ...existingGroup, name: seedGroup.name };
+                didChange = true;
+              }
+            }
+
+            const groupIndex = groupIndexById.get(seedGroup.id)!;
+            const group = nextGroups[groupIndex];
+            const wordIdSet = new Set(group.wordIds);
+
+            for (const seedWord of seedGroup.words) {
               const key = normalizeWordKey(seedWord.word);
-              if (!key || seenGlobal.has(key)) continue;
-              const appWordId = `${group.id}-${seedWord.id}`;
-              if (nextWordsById[appWordId]) continue;
-              wordIds.push(appWordId);
+              if (!key) continue;
+
+              const appWordId = `${seedGroup.id}-${seedWord.id}`;
+              const existingWord = nextWordsById[appWordId];
+
+              if (existingWord) {
+                const nextWord = seedWord.word;
+                const nextSynonym = seedWord.synonym;
+                const nextSentence = seedWord.sentence;
+
+                if (
+                  existingWord.groupId !== seedGroup.id ||
+                  existingWord.groupName !== seedGroup.name ||
+                  existingWord.word !== nextWord ||
+                  existingWord.synonym !== nextSynonym ||
+                  existingWord.sentence !== nextSentence
+                ) {
+                  nextWordsById[appWordId] = {
+                    ...existingWord,
+                    groupId: seedGroup.id,
+                    groupName: seedGroup.name,
+                    word: nextWord,
+                    synonym: nextSynonym,
+                    sentence: nextSentence,
+                  };
+                  didChange = true;
+                }
+
+                if (!wordIdSet.has(appWordId)) {
+                  wordIdSet.add(appWordId);
+                  didChange = true;
+                }
+                continue;
+              }
+
+              if (seenGlobal.has(key)) continue;
               seenGlobal.add(key);
 
               nextWordsById[appWordId] = {
                 id: appWordId,
-                groupId: group.id,
-                groupName: group.name,
+                groupId: seedGroup.id,
+                groupName: seedGroup.name,
                 word: seedWord.word,
                 synonym: seedWord.synonym,
                 sentence: seedWord.sentence,
@@ -293,22 +345,24 @@ export const useAppStore = create<AppState>()(
                   lastReviewedAtISO: undefined,
                 },
               };
+              wordIdSet.add(appWordId);
+              didChange = true;
             }
 
-            nextGroups.push({
-              id: group.id,
-              name: group.name,
-              wordIds,
-            });
+            if (wordIdSet.size !== group.wordIds.length) {
+              nextGroups[groupIndex] = { ...group, wordIds: Array.from(wordIdSet) };
+            }
           }
 
           nextGroups.sort((a, b) => a.id - b.id);
 
-          set({
-            isBootstrapped: true,
-            groups: nextGroups,
-            wordsById: nextWordsById,
-          });
+          if (didChange || !state.isBootstrapped) {
+            set({
+              isBootstrapped: true,
+              groups: nextGroups,
+              wordsById: nextWordsById,
+            });
+          }
           return;
         }
 

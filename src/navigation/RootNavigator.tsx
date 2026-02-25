@@ -14,6 +14,7 @@ import { TodoScreen } from "../screens/TodoScreen";
 import { RewardsScreen } from "../screens/RewardsScreen";
 import { GroupDetailScreen } from "../screens/GroupDetailScreen";
 import { WordDetailScreen } from "../screens/WordDetailScreen";
+import { WordPlayerScreen } from "../screens/WordPlayerScreen";
 import { SettingsScreen } from "../screens/SettingsScreen";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -64,6 +65,7 @@ export function RootNavigator() {
         options={({ route }) => ({ title: `Set ${route.params.groupId}` })}
       />
       <Stack.Screen name="WordDetail" component={WordDetailScreen} options={{ title: "Word" }} />
+      <Stack.Screen name="WordPlayer" component={WordPlayerScreen} options={{ headerShown: false }} />
       <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: "Settings" }} />
     </Stack.Navigator>
   );

@@ -2,6 +2,7 @@ export type RootStackParamList = {
   Tabs: undefined;
   GroupDetail: { groupId: number };
   WordDetail: { wordId: string };
+  WordPlayer: { groupId: number; startWordId?: string };
   Settings: undefined;
 };
 
