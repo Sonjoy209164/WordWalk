@@ -7,6 +7,7 @@ import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 import { ScreenContainer } from "../components/ScreenContainer";
 import { ThemedCard } from "../components/ThemedCard";
 import { ThemedText } from "../components/ThemedText";
+import { PrimaryButton } from "../components/PrimaryButton";
 import { PRACTICE_CHAPTERS, type PracticeChapter, type PracticeChapterSection } from "../data/practiceChapters";
 import { useAppStore } from "../store/useAppStore";
 
@@ -61,6 +62,23 @@ export function PracticeChaptersScreen() {
         <ThemedText variant="muted" style={{ marginTop: 6 }}>
           Pick a topic and run a timer. Add your own questions.
         </ThemedText>
+
+        <ThemedCard style={{ marginTop: 12, padding: 14 }}>
+          <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 10 }}>
+            <View style={{ flex: 1 }}>
+              <ThemedText style={{ fontWeight: "900" }}>Timer only</ThemedText>
+              <ThemedText variant="muted" style={{ marginTop: 4 }}>
+                No questions • Just a countdown timer
+              </ThemedText>
+            </View>
+            <PrimaryButton
+              label="Open"
+              variant="outline"
+              onPress={() => navigation.navigate("PracticeTimer", { title: "Timer", initialDurationSec: 10 * 60 })}
+              style={{ width: 120 }}
+            />
+          </View>
+        </ThemedCard>
       </View>
 
       <FlatList
@@ -109,4 +127,3 @@ export function PracticeChaptersScreen() {
     </ScreenContainer>
   );
 }
-

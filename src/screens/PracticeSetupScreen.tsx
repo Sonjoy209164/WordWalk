@@ -192,22 +192,36 @@ export function PracticeSetupScreen() {
               </ThemedText>
             </View>
 
-            <PrimaryButton
-              label="Start"
-              disabled={safeQuestionCount <= 0}
-              onPress={() => {
-                const durationSec = Math.max(60, Math.floor(minutes * 60));
-                startTimedPracticeForChapter({
-                  chapterId,
-                  chapterTitle: `${titleLabel}: ${chapter.title}`,
-                  questionCount: safeQuestionCount,
-                  durationSec,
-                  todayISO: toISODate(new Date()),
-                });
-                navigation.navigate("PracticeTake");
-              }}
-              style={{ width: 120 }}
-            />
+            <View style={{ gap: 10 }}>
+              <PrimaryButton
+                label="Start"
+                disabled={safeQuestionCount <= 0}
+                onPress={() => {
+                  const durationSec = Math.max(60, Math.floor(minutes * 60));
+                  startTimedPracticeForChapter({
+                    chapterId,
+                    chapterTitle: `${titleLabel}: ${chapter.title}`,
+                    questionCount: safeQuestionCount,
+                    durationSec,
+                    todayISO: toISODate(new Date()),
+                  });
+                  navigation.navigate("PracticeTake");
+                }}
+                style={{ width: 120 }}
+              />
+              <PrimaryButton
+                label="Timer"
+                variant="outline"
+                onPress={() => {
+                  const durationSec = Math.max(60, Math.floor(minutes * 60));
+                  navigation.navigate("PracticeTimer", {
+                    title: `${titleLabel}: ${chapter.title}`,
+                    initialDurationSec: durationSec,
+                  });
+                }}
+                style={{ width: 120 }}
+              />
+            </View>
           </View>
         </ThemedCard>
       </View>

@@ -161,7 +161,13 @@
           "id": 14,
           "type": "multipleChoice",
           "prompt": "If 617 is divided by 49, the sum of the tens digit and the tenths digit of the resulting number is what value?",
-          "choices": ["1", "5", "6", "7", "9"],
+          "choices": [
+            "1",
+            "5",
+            "6",
+            "7",
+            "9"
+          ],
           "explanation": "617 ÷ 49 = 12.5918… Tens digit is 1; tenths digit is 5; sum = 6.",
           "correctIndex": 2
         },
@@ -195,7 +201,13 @@
           "id": 17,
           "type": "multipleChoice",
           "prompt": "In a certain ancient kingdom, the standard unit of measure was the “crown,” equal to 10 standard modern inches. An alternative unit of measure was the “scepter,” equal to 14 standard modern inches. If a tower measured 70 crowns tall, how many scepters tall was it?",
-          "choices": ["35", "49", "50", "75", "98"],
+          "choices": [
+            "35",
+            "49",
+            "50",
+            "75",
+            "98"
+          ],
           "explanation": "70 crowns = 70·10 = 700 inches. 700 ÷ 14 = 50 scepters.",
           "correctIndex": 2
         },
@@ -232,7 +244,13 @@
           "id": 21,
           "type": "multipleChoice",
           "prompt": "If the formula for converting degrees Fahrenheit to degrees Celsius is C = (5/9)(F − 32), what is the value of F when C is 30?",
-          "choices": ["−10/9", "338/9", "86", "558/5", "112"],
+          "choices": [
+            "−10/9",
+            "338/9",
+            "86",
+            "558/5",
+            "112"
+          ],
           "explanation": "30 = (5/9)(F−32) ⇒ (9/5)·30 = F−32 ⇒ 54 = F−32 ⇒ F = 86.",
           "correctIndex": 2
         },
@@ -248,7 +266,13 @@
           "id": 23,
           "type": "multipleChoice",
           "prompt": "How many 1-inch square tiles would it take to cover the floor of a closet that has dimensions 5 feet by 4 feet? (1 foot = 12 inches)",
-          "choices": ["20", "240", "1,440", "2,160", "2,880"],
+          "choices": [
+            "20",
+            "240",
+            "1,440",
+            "2,160",
+            "2,880"
+          ],
           "explanation": "Convert to inches first: 5 ft = 60 in, 4 ft = 48 in. Area = 60×48 = 2,880 square inches, so 2,880 tiles.",
           "correctIndex": 4
         },
@@ -269,7 +293,13 @@
           "id": 25,
           "type": "multipleChoice",
           "prompt": "Out of 5.5 billion bacteria grown for an experiment, 1 in 75 million has a particular mutation. Approximately how many of the bacteria have the mutation?",
-          "choices": ["7", "73", "733", "7,333", "73,333"],
+          "choices": [
+            "7",
+            "73",
+            "733",
+            "7,333",
+            "73,333"
+          ],
           "explanation": "5.5×10^9 ÷ 75×10^6 = (5.5/75)×10^3 ≈ 0.07333×1000 ≈ 73.",
           "correctIndex": 1
         },
@@ -277,7 +307,13 @@
           "id": 26,
           "type": "multipleChoice",
           "prompt": "A particular nation’s GDP (Gross Domestic Product) is $4.5 billion. If the population of the nation is 1.75 million, what is the per capita (per person) GDP, rounded to the nearest dollar?",
-          "choices": ["$3", "$25", "$257", "$2,571", "$25,714"],
+          "choices": [
+            "$3",
+            "$25",
+            "$257",
+            "$2,571",
+            "$25,714"
+          ],
           "explanation": "4.5×10^9 ÷ 1.75×10^6 = (4.5/1.75)×10^3 ≈ 2.5714×1000 ≈ 2,571.",
           "correctIndex": 3
         },
@@ -285,7 +321,13 @@
           "id": 27,
           "type": "multipleChoice",
           "prompt": "Global GDP (Gross Domestic Product) was $69.97 trillion in 2011. If the world population for 2011 was best estimated at 6,973,738,433, approximately what was the global GDP per person?",
-          "choices": ["$10", "$100", "$1,000", "$10,000", "$100,000"],
+          "choices": [
+            "$10",
+            "$100",
+            "$1,000",
+            "$10,000",
+            "$100,000"
+          ],
           "explanation": "Estimate: ~70 trillion ÷ ~7 billion = (70/7)×10^3 ≈ 10×1000 = 10,000.",
           "correctIndex": 3
         },
@@ -303,7 +345,11 @@
           ],
           "explanation": "Time = distance ÷ speed. With speeds 4 to 7 mph, times range from 5/7 hr ≈ 42.86 min (fastest) to 5/4 hr = 75 min (slowest). Valid choices are those between 42.86 and 75 minutes inclusive: 48, 60, and 75 minutes.",
           "correctIndex": -1,
-          "correctIndices": [1, 2, 3]
+          "correctIndices": [
+            1,
+            2,
+            3
+          ]
         }
       ]
     }

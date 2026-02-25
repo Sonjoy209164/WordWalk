@@ -23,4 +23,5 @@ export type TestStackParamList = {
   PracticeSetup: { chapterId: string };
   PracticeTake: undefined;
   PracticeResult: undefined;
+  PracticeTimer: { title?: string; initialDurationSec?: number };
 };
