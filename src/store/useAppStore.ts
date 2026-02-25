@@ -70,6 +70,7 @@ export interface AppState {
   setHasHydrated: (hasHydrated: boolean) => void;
 
   bootstrapFromSeed: (seed: SeedData) => void;
+  bootstrapPracticeQuestionsFromSeed: (seed: any) => void;
   recordReview: (wordId: string, rating: ReviewRating, todayISO?: string) => void;
   toggleStar: (wordId: string) => void;
 
@@ -469,6 +470,125 @@ export const useAppStore = create<AppState>()(
           groups,
           wordsById,
         });
+      },
+
+      bootstrapPracticeQuestionsFromSeed: (seed) => {
+        const chapters = Array.isArray(seed?.chapters) ? seed.chapters : [];
+        if (chapters.length === 0) return;
+
+        const state = get();
+        const todayISO = toISODate(new Date());
+
+        let didChange = false;
+        const nextByChapterId: AppState["practiceQuestionsByChapterId"] = { ...state.practiceQuestionsByChapterId };
+
+        for (const rawChapter of chapters) {
+          const chapterId = String(rawChapter?.id ?? rawChapter?.chapterId ?? "").trim();
+          if (!chapterId) continue;
+
+          const seedQuestions = Array.isArray(rawChapter?.questions) ? rawChapter.questions : [];
+          let existing = (nextByChapterId[chapterId] ?? []).slice();
+          const indexById = new Map<string, number>(existing.map((q, idx) => [q.id, idx]));
+          const sigSet = new Set(
+            existing.map((q) => {
+              const prompt = (q.prompt ?? "").trim();
+              const choices = Array.isArray(q.choices)
+                ? q.choices.map((c: string) => String(c ?? "").trim())
+                : [];
+              return `${prompt}\n--\n${choices.join("|")}`;
+            })
+          );
+
+          const seedIdSet = new Set<string>();
+          let chapterChanged = false;
+
+          for (const rawQ of seedQuestions) {
+            const seedId = String(rawQ?.id ?? "").trim();
+            if (!seedId) continue;
+            seedIdSet.add(seedId);
+
+            const stableId = `pqseed-${chapterId}-${seedId}`;
+            const prompt = String(rawQ?.prompt ?? "").trim();
+            if (!prompt) continue;
+
+            const choices = Array.isArray(rawQ?.choices)
+              ? rawQ.choices.map((c: unknown) => String(c ?? "").trim())
+              : [];
+            if (!(choices.length === 4 || choices.length === 5)) continue;
+            if (choices.some((c: string) => !c)) continue;
+
+            const correctIndex = Number.isFinite(rawQ?.correctIndex) ? Math.floor(rawQ.correctIndex) : -1;
+            if (correctIndex < 0 || correctIndex > choices.length - 1) continue;
+
+            const explanation = String(rawQ?.explanation ?? "").trim();
+
+            const existingIdx = indexById.get(stableId);
+            if (typeof existingIdx === "number") {
+              const prev = existing[existingIdx];
+              const same =
+                prev.chapterId === chapterId &&
+                prev.prompt === prompt &&
+                prev.correctIndex === correctIndex &&
+                (prev.explanation ?? "") === explanation &&
+                Array.isArray(prev.choices) &&
+                prev.choices.length === choices.length &&
+                prev.choices.every((c, i) => c === choices[i]);
+
+              if (!same) {
+                existing[existingIdx] = {
+                  ...prev,
+                  chapterId,
+                  prompt,
+                  choices,
+                  correctIndex,
+                  explanation,
+                  updatedAtISO: todayISO,
+                };
+                chapterChanged = true;
+              }
+              continue;
+            }
+
+            const sig = `${prompt}\n--\n${choices.join("|")}`;
+            if (sigSet.has(sig)) continue;
+            sigSet.add(sig);
+
+            const q: PracticeQuestion = {
+              id: stableId,
+              chapterId,
+              prompt,
+              choices,
+              correctIndex,
+              explanation,
+              createdAtISO: todayISO,
+              updatedAtISO: todayISO,
+            };
+            existing.push(q);
+            indexById.set(stableId, existing.length - 1);
+            chapterChanged = true;
+          }
+
+          const seedPrefix = `pqseed-${chapterId}-`;
+          const filtered = existing.filter((q) => {
+            if (!q.id.startsWith(seedPrefix)) return true;
+            const rawSeedId = q.id.slice(seedPrefix.length);
+            return seedIdSet.has(rawSeedId);
+          });
+
+          if (filtered.length !== existing.length) {
+            existing = filtered;
+            chapterChanged = true;
+          }
+
+          if (chapterChanged) {
+            nextByChapterId[chapterId] = existing;
+            didChange = true;
+          }
+        }
+
+        if (didChange) {
+          set({ practiceQuestionsByChapterId: nextByChapterId });
+        }
       },
 
       recordReview: (wordId, rating, todayISO = toISODate(new Date())) => {

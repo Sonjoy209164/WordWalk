@@ -221,7 +221,7 @@ export function PracticeSetupScreen() {
           <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
             <ThemedText variant="subtitle">Questions</ThemedText>
             <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
-              {sampleSeeds.length > 0 ? (
+              {sampleSeeds.length > 0 && availableCount === 0 ? (
                 <Pressable hitSlop={10} onPress={confirmAddSamples} style={({ pressed }) => ({ padding: 6, opacity: pressed ? 0.7 : 1 })}>
                   <Ionicons name="sparkles-outline" size={20} color={theme.colors.text} />
                 </Pressable>
@@ -259,22 +259,28 @@ export function PracticeSetupScreen() {
                     <ThemedText style={{ fontWeight: "800", flex: 1 }} numberOfLines={2}>
                       {q.prompt}
                     </ThemedText>
-                    <Pressable
-                      hitSlop={10}
-                      onPress={() =>
-                        Alert.alert("Delete question?", "This can’t be undone.", [
-                          { text: "Cancel", style: "cancel" },
-                          {
-                            text: "Delete",
-                            style: "destructive",
-                            onPress: () => deletePracticeQuestion({ chapterId, questionId: q.id }),
-                          },
-                        ])
-                      }
-                      style={{ padding: 6 }}
-                    >
-                      <Ionicons name="trash-outline" size={18} color={theme.colors.text} />
-                    </Pressable>
+                    {q.id.startsWith("pqseed-") ? (
+                      <View style={{ padding: 6, opacity: 0.7 }}>
+                        <Ionicons name="lock-closed-outline" size={18} color={theme.colors.text} />
+                      </View>
+                    ) : (
+                      <Pressable
+                        hitSlop={10}
+                        onPress={() =>
+                          Alert.alert("Delete question?", "This can’t be undone.", [
+                            { text: "Cancel", style: "cancel" },
+                            {
+                              text: "Delete",
+                              style: "destructive",
+                              onPress: () => deletePracticeQuestion({ chapterId, questionId: q.id }),
+                            },
+                          ])
+                        }
+                        style={{ padding: 6 }}
+                      >
+                        <Ionicons name="trash-outline" size={18} color={theme.colors.text} />
+                      </Pressable>
+                    )}
                   </View>
                   <ThemedText variant="muted" style={{ marginTop: 6 }}>
                     Correct: {String.fromCharCode(65 + Math.max(0, Math.min(q.choices.length - 1, q.correctIndex)))}
