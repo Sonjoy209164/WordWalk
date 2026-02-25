@@ -54,21 +54,42 @@ export function TestSetupScreen() {
 
   return (
     <ScreenContainer style={{ padding: 0 }} edges={["left", "right", "bottom"]}>
-      <ScrollView
-        contentContainerStyle={{ padding: 16, paddingBottom: bottomPadding }}
-        showsVerticalScrollIndicator={false}
-        keyboardShouldPersistTaps="handled"
-      >
+      <View style={{ padding: 16, paddingBottom: 0 }}>
         <ThemedText variant="title">GRE-Style Test</ThemedText>
         <ThemedText variant="muted" style={{ marginTop: 6 }}>
           Pick a set. You’ll get hard, 5-choice questions with explanations.
         </ThemedText>
 
-        {/* Debug-visible selection indicator */}
-        <ThemedText variant="muted" style={{ marginTop: 10 }}>
-          Selected: {selectedGroup ? selectedGroup.name : "None"}
-        </ThemedText>
+        <ThemedCard style={{ marginTop: 12, padding: 14 }}>
+          <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 10 }}>
+            <View style={{ flex: 1 }}>
+              <ThemedText style={{ fontWeight: "900" }}>
+                {selectedGroup ? selectedGroup.name : "Choose a set to begin"}
+              </ThemedText>
+              <ThemedText variant="muted" style={{ marginTop: 4 }}>
+                {selectedGroup ? `${safeQuestionCount} question(s) • ${availableCount} available` : "Select a set and question count."}
+              </ThemedText>
+            </View>
 
+            <PrimaryButton
+              label="Start"
+              disabled={!selectedGroup || safeQuestionCount <= 0}
+              onPress={() => {
+                if (!selectedGroup) return;
+                startHardTestForGroup(selectedGroup.id, safeQuestionCount);
+                navigation.navigate("TakeTest");
+              }}
+              style={{ width: 120 }}
+            />
+          </View>
+        </ThemedCard>
+      </View>
+
+      <ScrollView
+        contentContainerStyle={{ padding: 16, paddingTop: 12, paddingBottom: bottomPadding }}
+        showsVerticalScrollIndicator={false}
+        keyboardShouldPersistTaps="handled"
+      >
         <ThemedCard style={{ marginTop: 14 }}>
           <ThemedText variant="subtitle">Choose a Set</ThemedText>
 
@@ -160,18 +181,6 @@ export function TestSetupScreen() {
             Available: {availableCount} • You’ll take: {safeQuestionCount}
           </ThemedText>
         </ThemedCard>
-
-        <View style={{ marginTop: 14 }}>
-          <PrimaryButton
-            label="Start Test"
-            disabled={!selectedGroup || safeQuestionCount <= 0}
-            onPress={() => {
-              if (!selectedGroup) return;
-              startHardTestForGroup(selectedGroup.id, safeQuestionCount);
-              navigation.navigate("TakeTest");
-            }}
-          />
-        </View>
 
         {selectedGroup && availableCount === 0 ? (
           <ThemedText variant="muted" style={{ marginTop: 10 }}>

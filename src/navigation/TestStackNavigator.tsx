@@ -13,7 +13,7 @@ export function TestStackNavigator() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="TestSetup" component={TestSetupScreen} options={{ title: "Test" }} />
-      <Stack.Screen name="TakeTest" component={TakeTestScreen} options={{ title: "Take Test" }} />
+      <Stack.Screen name="TakeTest" component={TakeTestScreen} options={{ headerShown: false }} />
       <Stack.Screen name="TestResult" component={TestResultScreen} options={{ title: "Results" }} />
     </Stack.Navigator>
   );
