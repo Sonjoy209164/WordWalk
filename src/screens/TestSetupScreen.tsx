@@ -83,6 +83,24 @@ export function TestSetupScreen() {
             />
           </View>
         </ThemedCard>
+
+        <ThemedCard style={{ marginTop: 10, padding: 14 }}>
+          <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 10 }}>
+            <View style={{ flex: 1 }}>
+              <ThemedText style={{ fontWeight: "900" }}>Timed practice by topic</ThemedText>
+              <ThemedText variant="muted" style={{ marginTop: 4 }}>
+                Chapters • Timer • Build speed on one skill
+              </ThemedText>
+            </View>
+
+            <PrimaryButton
+              label="Chapters"
+              variant="outline"
+              onPress={() => navigation.navigate("PracticeChapters")}
+              style={{ width: 120 }}
+            />
+          </View>
+        </ThemedCard>
       </View>
 
       <ScrollView

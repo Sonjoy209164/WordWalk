@@ -6,10 +6,26 @@ import { toISODate, isYesterday } from "../utils/date";
 import { applySm2, makeNewSrsState, ReviewRating } from "../utils/sm2";
 import { coinRewardForRating, xpRewardForRating } from "../utils/rewards";
 import { generateTestForSet, type GreTestSession } from "../utils/greTest";
-import type { DailyActivity, GroupEntity, SeedData, TodoEntity, WordEntity } from "./types";
+import type { DailyActivity, GroupEntity, PracticeQuestion, SeedData, TodoEntity, WordEntity } from "./types";
 
 type ThemeMode = "system" | "light" | "dark";
 type SpeechLanguage = "system" | "en-US" | "en-GB";
+
+type PracticeSession = {
+  id: string;
+  chapterId: string;
+  chapterTitle: string;
+  startedAtISO: string;
+  durationSec: number;
+  endsAtMs: number;
+  questions: PracticeQuestion[];
+  currentIndex: number;
+  isSubmitted: boolean;
+  submittedAtISO?: string;
+  answersByQuestionId: Record<string, number>;
+  markedByQuestionId: Record<string, boolean>;
+  isExplanationVisibleByQuestionId: Record<string, boolean>;
+};
 
 export interface AppState {
   hasHydrated: boolean;
@@ -18,6 +34,7 @@ export interface AppState {
   groups: GroupEntity[];
   wordsById: Record<string, WordEntity>;
   todos: TodoEntity[];
+  practiceQuestionsByChapterId: Record<string, PracticeQuestion[]>;
 
   activityByDateISO: Record<string, DailyActivity>;
 
@@ -44,6 +61,9 @@ export interface AppState {
     };
   };
 
+  // ---- Timed practice (chapters)
+  activePracticeSession?: PracticeSession;
+
   // ---- Test mode (GRE-style)
   activeTestSession?: GreTestSession;
 
@@ -69,12 +89,40 @@ export interface AppState {
   toggleTodoCompletion: (todoId: string) => void;
   deleteTodo: (todoId: string) => void;
 
+  addPracticeQuestion: (params: {
+    chapterId: string;
+    prompt: string;
+    choices: string[];
+    correctIndex: number;
+    explanation: string;
+    todayISO?: string;
+  }) => { ok: true; questionId: string } | { ok: false; error: string };
+  deletePracticeQuestion: (params: { chapterId: string; questionId: string }) => void;
+
   setDailyGoal: (dailyGoal: number) => void;
   setThemeMode: (themeMode: ThemeMode) => void;
   setSpeechLanguage: (language: SpeechLanguage) => void;
   setSpeechVoiceId: (voiceId?: string) => void;
   setSpeechRate: (rate: number) => void;
   setSpeechPitch: (pitch: number) => void;
+
+  // Timed practice actions
+  startTimedPracticeForChapter: (params: {
+    chapterId: string;
+    chapterTitle: string;
+    questionCount: number;
+    durationSec: number;
+    todayISO?: string;
+  }) => void;
+  answerCurrentPracticeQuestion: (choiceIndex: number) => void;
+  clearCurrentPracticeAnswer: () => void;
+  goToNextPracticeQuestion: () => void;
+  goToPrevPracticeQuestion: () => void;
+  goToPracticeQuestion: (index: number) => void;
+  toggleMarkCurrentPracticeQuestion: () => void;
+  submitActivePractice: (todayISO?: string) => void;
+  togglePracticeExplanation: () => void;
+  clearPracticeSession: () => void;
 
   // Test actions
   startHardTestForGroup: (groupId: number, questionCount: number, todayISO?: string) => void;
@@ -102,6 +150,7 @@ type PersistedAppState = Pick<
   | "groups"
   | "wordsById"
   | "todos"
+  | "practiceQuestionsByChapterId"
   | "activityByDateISO"
   | "streak"
   | "wallet"
@@ -126,6 +175,15 @@ function pickFirstMissingPositiveInt(used: Set<number>): number {
     if (!used.has(i)) return i;
   }
   return Date.now();
+}
+
+function shuffle<T>(items: T[]): T[] {
+  const copy = [...items];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
 }
 
 function scoreForDedupe(word: WordEntity): number {
@@ -214,6 +272,7 @@ export const useAppStore = create<AppState>()(
       groups: [],
       wordsById: {},
       todos: [],
+      practiceQuestionsByChapterId: {},
 
       activityByDateISO: {},
 
@@ -241,6 +300,7 @@ export const useAppStore = create<AppState>()(
       },
 
       activeTestSession: undefined,
+      activePracticeSession: undefined,
 
       setHasHydrated: (hasHydrated) => set({ hasHydrated }),
 
@@ -603,6 +663,73 @@ export const useAppStore = create<AppState>()(
         }));
       },
 
+      addPracticeQuestion: ({ chapterId, prompt, choices, correctIndex, explanation, todayISO = toISODate(new Date()) }) => {
+        const safeChapterId = chapterId.trim();
+        if (!safeChapterId) return { ok: false, error: "Chapter is required." };
+
+        const safePrompt = prompt.trim();
+        if (!safePrompt) return { ok: false, error: "Question text is required." };
+
+        const safeChoices = Array.isArray(choices) ? choices.map((c) => String(c ?? "").trim()) : [];
+        if (!(safeChoices.length === 4 || safeChoices.length === 5)) {
+          return { ok: false, error: "Provide 4 (A–D) or 5 (A–E) answer choices." };
+        }
+        if (safeChoices.some((c) => !c)) return { ok: false, error: "Answer choices can’t be empty." };
+
+        const safeCorrectIndex = Number.isFinite(correctIndex) ? Math.floor(correctIndex) : -1;
+        const maxIndex = safeChoices.length - 1;
+        if (safeCorrectIndex < 0 || safeCorrectIndex > maxIndex) {
+          const maxLabel = String.fromCharCode(65 + maxIndex);
+          return { ok: false, error: `Pick the correct answer (A–${maxLabel}).` };
+        }
+
+        const safeExplanation = (explanation ?? "").trim();
+
+        const questionId = makeId("pq");
+        const q: PracticeQuestion = {
+          id: questionId,
+          chapterId: safeChapterId,
+          prompt: safePrompt,
+          choices: safeChoices,
+          correctIndex: safeCorrectIndex,
+          explanation: safeExplanation,
+          createdAtISO: todayISO,
+          updatedAtISO: todayISO,
+        };
+
+        set((state) => {
+          const existing = state.practiceQuestionsByChapterId[safeChapterId] ?? [];
+          return {
+            practiceQuestionsByChapterId: {
+              ...state.practiceQuestionsByChapterId,
+              [safeChapterId]: [q, ...existing],
+            },
+          };
+        });
+
+        return { ok: true, questionId };
+      },
+
+      deletePracticeQuestion: ({ chapterId, questionId }) => {
+        const safeChapterId = chapterId.trim();
+        if (!safeChapterId) return;
+        if (!questionId) return;
+
+        set((state) => {
+          const existing = state.practiceQuestionsByChapterId[safeChapterId] ?? [];
+          if (existing.length === 0) return {};
+          const next = existing.filter((q) => q.id !== questionId);
+          if (next.length === existing.length) return {};
+
+          return {
+            practiceQuestionsByChapterId: {
+              ...state.practiceQuestionsByChapterId,
+              [safeChapterId]: next,
+            },
+          };
+        });
+      },
+
       setDailyGoal: (dailyGoal) => {
         set((state) => ({
           settings: { ...state.settings, dailyGoal: normalizeGoal(dailyGoal) },
@@ -639,6 +766,170 @@ export const useAppStore = create<AppState>()(
         set((state) => ({
           settings: { ...state.settings, speech: { ...state.settings.speech, pitch: safe } },
         }));
+      },
+
+      startTimedPracticeForChapter: ({ chapterId, chapterTitle, questionCount, durationSec, todayISO = toISODate(new Date()) }) => {
+        const state = get();
+        const bank = state.practiceQuestionsByChapterId[chapterId] ?? [];
+        if (bank.length === 0) {
+          set({ activePracticeSession: undefined });
+          return;
+        }
+
+        const safeQuestionCount = Math.max(1, Math.min(Math.floor(questionCount), bank.length));
+        const safeDurationSec = Number.isFinite(durationSec)
+          ? Math.max(60, Math.min(3 * 60 * 60, Math.floor(durationSec)))
+          : 10 * 60;
+
+        const picked = shuffle(bank).slice(0, safeQuestionCount);
+        const nowMs = Date.now();
+
+        const session: PracticeSession = {
+          id: makeId("practice"),
+          chapterId,
+          chapterTitle: chapterTitle.trim() || "Timed Practice",
+          startedAtISO: todayISO,
+          durationSec: safeDurationSec,
+          endsAtMs: nowMs + safeDurationSec * 1000,
+          questions: picked,
+          currentIndex: 0,
+          isSubmitted: false,
+          submittedAtISO: undefined,
+          answersByQuestionId: {},
+          markedByQuestionId: {},
+          isExplanationVisibleByQuestionId: {},
+        };
+
+        set({ activePracticeSession: session });
+      },
+
+      answerCurrentPracticeQuestion: (choiceIndex) => {
+        const session = get().activePracticeSession;
+        if (!session) return;
+        if (session.isSubmitted) return;
+
+        const q = session.questions[session.currentIndex];
+        if (!q) return;
+
+        set({
+          activePracticeSession: {
+            ...session,
+            answersByQuestionId: {
+              ...session.answersByQuestionId,
+              [q.id]: choiceIndex,
+            },
+          },
+        });
+      },
+
+      clearCurrentPracticeAnswer: () => {
+        const session = get().activePracticeSession;
+        if (!session) return;
+        if (session.isSubmitted) return;
+        const q = session.questions[session.currentIndex];
+        if (!q) return;
+
+        const nextAnswers = { ...session.answersByQuestionId };
+        delete nextAnswers[q.id];
+
+        set({
+          activePracticeSession: {
+            ...session,
+            answersByQuestionId: nextAnswers,
+          },
+        });
+      },
+
+      goToPracticeQuestion: (index) => {
+        const session = get().activePracticeSession;
+        if (!session) return;
+        const safeIndex = Math.max(0, Math.min(index, session.questions.length - 1));
+        set({
+          activePracticeSession: {
+            ...session,
+            currentIndex: safeIndex,
+          },
+        });
+      },
+
+      goToNextPracticeQuestion: () => {
+        const session = get().activePracticeSession;
+        if (!session) return;
+        const nextIndex = Math.min(session.currentIndex + 1, session.questions.length - 1);
+        set({
+          activePracticeSession: {
+            ...session,
+            currentIndex: nextIndex,
+          },
+        });
+      },
+
+      goToPrevPracticeQuestion: () => {
+        const session = get().activePracticeSession;
+        if (!session) return;
+        const prevIndex = Math.max(session.currentIndex - 1, 0);
+        set({
+          activePracticeSession: {
+            ...session,
+            currentIndex: prevIndex,
+          },
+        });
+      },
+
+      toggleMarkCurrentPracticeQuestion: () => {
+        const session = get().activePracticeSession;
+        if (!session) return;
+        const q = session.questions[session.currentIndex];
+        if (!q) return;
+
+        const current = Boolean(session.markedByQuestionId[q.id]);
+        set({
+          activePracticeSession: {
+            ...session,
+            markedByQuestionId: {
+              ...session.markedByQuestionId,
+              [q.id]: !current,
+            },
+          },
+        });
+      },
+
+      submitActivePractice: (todayISO = toISODate(new Date())) => {
+        const session = get().activePracticeSession;
+        if (!session) return;
+        if (session.isSubmitted) return;
+
+        set({
+          activePracticeSession: {
+            ...session,
+            isSubmitted: true,
+            submittedAtISO: todayISO,
+            isExplanationVisibleByQuestionId: {},
+          },
+        });
+      },
+
+      togglePracticeExplanation: () => {
+        const session = get().activePracticeSession;
+        if (!session) return;
+        if (!session.isSubmitted) return;
+        const q = session.questions[session.currentIndex];
+        if (!q) return;
+
+        const current = Boolean(session.isExplanationVisibleByQuestionId[q.id]);
+        set({
+          activePracticeSession: {
+            ...session,
+            isExplanationVisibleByQuestionId: {
+              ...session.isExplanationVisibleByQuestionId,
+              [q.id]: !current,
+            },
+          },
+        });
+      },
+
+      clearPracticeSession: () => {
+        set({ activePracticeSession: undefined });
       },
 
       startHardTestForGroup: (groupId, questionCount, todayISO = toISODate(new Date())) => {
@@ -803,6 +1094,7 @@ export const useAppStore = create<AppState>()(
           groups: [],
           wordsById: {},
           todos: [],
+          practiceQuestionsByChapterId: {},
           activityByDateISO: {},
           streak: { currentStreak: 0, bestStreak: 0, lastGoalHitISO: undefined },
           wallet: { coins: 0, xp: 0, totalReviewed: 0 },
@@ -812,6 +1104,7 @@ export const useAppStore = create<AppState>()(
             speech: { language: "system", voiceId: undefined, rate: 0.95, pitch: 1.0 },
           },
           activeTestSession: undefined,
+          activePracticeSession: undefined,
         });
       },
 
@@ -896,6 +1189,7 @@ export const useAppStore = create<AppState>()(
         groups: state.groups,
         wordsById: state.wordsById,
         todos: state.todos,
+        practiceQuestionsByChapterId: state.practiceQuestionsByChapterId,
         activityByDateISO: state.activityByDateISO,
         streak: state.streak,
         wallet: state.wallet,

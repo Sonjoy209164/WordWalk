@@ -50,3 +50,14 @@ export interface DailyActivity {
   reviewedCount: number;
   didHitGoal: boolean;
 }
+
+export interface PracticeQuestion {
+  id: string;
+  chapterId: string;
+  prompt: string;
+  choices: string[]; // 4 (A–D, QC) or 5 (A–E, MC)
+  correctIndex: number; // 0..choices.length-1
+  explanation: string;
+  createdAtISO: string;
+  updatedAtISO?: string;
+}

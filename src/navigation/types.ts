@@ -19,4 +19,8 @@ export type TestStackParamList = {
   TestSetup: undefined;
   TakeTest: undefined;
   TestResult: undefined;
+  PracticeChapters: undefined;
+  PracticeSetup: { chapterId: string };
+  PracticeTake: undefined;
+  PracticeResult: undefined;
 };
