@@ -25,6 +25,12 @@
       "eas": {
         "projectId": "12c6295b-558c-48a8-a115-9fc0bf2d3892"
       }
+    },
+    "ios": {
+      "bundleIdentifier": "com.sonjoy209164.wordwalk",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     }
   }
 }

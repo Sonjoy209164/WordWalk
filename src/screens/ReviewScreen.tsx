@@ -52,6 +52,12 @@ export function ReviewScreen() {
   const wordsById = useAppStore((s) => s.wordsById);
   const recordReview = useAppStore((s) => s.recordReview);
 
+  const synonymWheelPool = useMemo(() => {
+    return Object.values(wordsById)
+      .map((w) => (w.synonym ?? "").trim())
+      .filter(Boolean);
+  }, [wordsById]);
+
   const reviewQueue = useMemo(
     () => buildReviewQueue({ dueIds, newIds, dailyGoal }),
     [dueIds, newIds, dailyGoal]
@@ -231,6 +237,12 @@ export function ReviewScreen() {
                 synonym={currentWord.synonym}
                 sentence={currentWord.sentence}
                 isRevealed={isRevealed}
+                wheelEnabled={!isWalkModeOn}
+                synonymWheelPool={synonymWheelPool}
+                onSynonymWheelAnswer={({ isCorrect }) => {
+                  if (isWalkModeOnRef.current) return;
+                  if (isCorrect) setIsRevealed(true);
+                }}
                 onToggleReveal={() => {
                   if (isWalkModeOn) return;
                   setIsRevealed((v) => !v);

@@ -24,6 +24,12 @@ export function WordPlayerScreen() {
   const wordsById = useAppStore((s) => s.wordsById);
   const toggleStar = useAppStore((s) => s.toggleStar);
 
+  const synonymWheelPool = useMemo(() => {
+    return Object.values(wordsById)
+      .map((w) => (w.synonym ?? "").trim())
+      .filter(Boolean);
+  }, [wordsById]);
+
   const words = useMemo(() => {
     if (!group) return [];
 
@@ -220,6 +226,13 @@ export function WordPlayerScreen() {
                 synonym={item.synonym}
                 sentence={item.sentence}
                 isRevealed={isRevealed && item.id === currentWord?.id}
+                wheelEnabled={!isPlayModeOn}
+                synonymWheelPool={synonymWheelPool}
+                onSynonymWheelAnswer={({ isCorrect }) => {
+                  if (isPlayModeOnRef.current) return;
+                  if (item.id !== currentWord?.id) return;
+                  if (isCorrect) setIsRevealed(true);
+                }}
                 onToggleReveal={() => {
                   if (isPlayModeOnRef.current) return;
                   if (item.id !== currentWord?.id) return;
