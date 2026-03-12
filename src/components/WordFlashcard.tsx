@@ -79,6 +79,7 @@ export function WordFlashcard(props: {
   const suppressNextTapRef = useRef(false);
   const feedbackTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const wheelAnim = useRef(new Animated.Value(0)).current;
+  const wheelFinalizedRef = useRef(false);
 
   const [cardSize, setCardSize] = useState({ width: 0, height: 0 });
   const [wheel, setWheel] = useState<{
@@ -104,13 +105,15 @@ export function WordFlashcard(props: {
     wheelVisibleRef.current = wheel.isVisible;
   }, [wheel.isVisible]);
 
-  const center = useMemo(
-    () => ({ x: cardSize.width / 2, y: cardSize.height / 2 }),
-    [cardSize.height, cardSize.width]
-  );
+  const wheelCenter = useMemo(() => {
+    const x = cardSize.width / 2;
+    const idealY = cardSize.height / 2 + 22; // keep a bit lower so the top panel stays readable
+    const y = Math.max(0, Math.min(cardSize.height, idealY));
+    return { x, y };
+  }, [cardSize.height, cardSize.width]);
   const radius = useMemo(() => {
     const base = Math.max(1, Math.min(cardSize.width, cardSize.height));
-    return Math.max(64, Math.min(112, base * 0.36));
+    return Math.max(74, Math.min(128, base * 0.4));
   }, [cardSize.height, cardSize.width]);
   const deadZone = useMemo(() => Math.max(26, Math.min(44, radius * 0.45)), [radius]);
   const wheelOverlayBg = useMemo(() => withAlpha(theme.colors.background, 0.94), [theme.colors.background]);
@@ -132,11 +135,19 @@ export function WordFlashcard(props: {
 
   function computeOptionCenters(count: number): { x: number; y: number }[] {
     const n = Math.max(1, count);
-    const step = (2 * Math.PI) / n;
+    // Keep a top "gap" so the sentence panel stays readable.
+    // We render choices on a 240° arc (gap = 120° centered at top).
+    const gapRad = (120 * Math.PI) / 180;
+    const start = -Math.PI / 2 + gapRad / 2; // starts around upper-right
+    const sweep = 2 * Math.PI - gapRad; // 240°
+    const step = n === 1 ? 0 : sweep / (n - 1);
     const centers: { x: number; y: number }[] = [];
     for (let i = 0; i < n; i++) {
-      const angle = -Math.PI / 2 + i * step;
-      centers.push({ x: center.x + Math.cos(angle) * radius, y: center.y + Math.sin(angle) * radius });
+      const angle = start + i * step;
+      centers.push({
+        x: wheelCenter.x + Math.cos(angle) * radius,
+        y: wheelCenter.y + Math.sin(angle) * radius,
+      });
     }
     return centers;
   }
@@ -146,7 +157,7 @@ export function WordFlashcard(props: {
     if (wheel.options.length === 0) return [];
     if (cardSize.width <= 0 || cardSize.height <= 0) return [];
     return computeOptionCenters(wheel.options.length);
-  }, [cardSize.height, cardSize.width, center.x, center.y, radius, wheel.isVisible, wheel.options.length]);
+  }, [cardSize.height, cardSize.width, radius, wheel.isVisible, wheel.options.length, wheelCenter.x, wheelCenter.y]);
 
   function clearFeedbackLater() {
     if (feedbackTimerRef.current) clearTimeout(feedbackTimerRef.current);
@@ -189,31 +200,11 @@ export function WordFlashcard(props: {
     if (options.length < 2) return;
 
     suppressNextTapRef.current = true;
+    wheelFinalizedRef.current = false;
 
-    const initialIndex = (() => {
-      if (!startPoint) return null;
-      if (cardSize.width <= 0 || cardSize.height <= 0) return null;
-
-      const dx = startPoint.x - center.x;
-      const dy = startPoint.y - center.y;
-      const dist = Math.hypot(dx, dy);
-      if (dist < deadZone) return null;
-
-      const centers = computeOptionCenters(options.length);
-      let bestIndex = 0;
-      let bestDist = Number.POSITIVE_INFINITY;
-      for (let i = 0; i < centers.length; i++) {
-        const d = Math.hypot(startPoint.x - centers[i].x, startPoint.y - centers[i].y);
-        if (d < bestDist) {
-          bestDist = d;
-          bestIndex = i;
-        }
-      }
-      return bestIndex;
-    })();
-
-    selectedIndexRef.current = initialIndex;
-    setWheel({ isVisible: true, options, selectedIndex: initialIndex });
+    // Don't auto-select on open; only commit a choice after the user drags + releases.
+    selectedIndexRef.current = null;
+    setWheel({ isVisible: true, options, selectedIndex: null });
 
     wheelAnim.stopAnimation();
     wheelAnim.setValue(0);
@@ -227,6 +218,8 @@ export function WordFlashcard(props: {
 
   function finalizeWheelSelection() {
     if (!wheel.isVisible) return;
+    if (wheelFinalizedRef.current) return;
+    wheelFinalizedRef.current = true;
     const idx = wheel.selectedIndex;
     const selectedSynonym = typeof idx === "number" ? wheel.options[idx] : "";
     const isCorrect = Boolean(selectedSynonym) && isSameChoice(selectedSynonym, props.synonym);
@@ -261,8 +254,8 @@ export function WordFlashcard(props: {
     if (wheel.options.length === 0) return;
     if (cardSize.width <= 0 || cardSize.height <= 0) return;
 
-    const dx = params.x - center.x;
-    const dy = params.y - center.y;
+    const dx = params.x - wheelCenter.x;
+    const dy = params.y - wheelCenter.y;
     const dist = Math.hypot(dx, dy);
     if (dist < deadZone) {
       setSelectedIndex(null);
@@ -309,24 +302,37 @@ export function WordFlashcard(props: {
         borderWidth: 1,
         borderColor: feedbackToneColor,
         minHeight: 260,
-        overflow: "hidden",
+        overflow: wheel.isVisible ? "visible" : "hidden",
+        zIndex: wheel.isVisible ? 50 : 0,
+        elevation: wheel.isVisible ? 12 : 0,
       }}
     >
       <Pressable
         onLayout={handleCardLayout}
         delayLongPress={380}
         pressRetentionOffset={wheelPressRetentionOffset}
-        onLongPress={(e) =>
-          openWheel({ x: e.nativeEvent.locationX, y: e.nativeEvent.locationY })
-        }
+        onLongPress={() => openWheel()}
         onPress={() => {
           if (wheel.isVisible) return;
           if (suppressNextTapRef.current) return;
           props.onToggleReveal();
         }}
-        onPressOut={() => {
+        onTouchEnd={() => {
           if (!wheel.isVisible) return;
           finalizeWheelSelection();
+        }}
+        onPressOut={() => {
+          // Fallback: ensure we always close/commit on release even if onTouchEnd isn't delivered.
+          if (!wheel.isVisible) return;
+          finalizeWheelSelection();
+        }}
+        onTouchCancel={() => {
+          if (!wheel.isVisible) return;
+          wheelFinalizedRef.current = true;
+          closeWheelAnimated();
+          setTimeout(() => {
+            suppressNextTapRef.current = false;
+          }, 250);
         }}
         onTouchMove={(e) => {
           if (!wheel.isVisible) return;
@@ -368,10 +374,10 @@ export function WordFlashcard(props: {
             pointerEvents="none"
             style={{
               position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
+              top: -28,
+              left: -12,
+              right: -12,
+              bottom: -40,
               backgroundColor: wheelOverlayBg,
               padding: 14,
               opacity: wheelAnim,
@@ -381,22 +387,8 @@ export function WordFlashcard(props: {
             <View
               style={{
                 position: "absolute",
-                top: 10,
-                left: 14,
-                right: 14,
-                alignItems: "center",
-              }}
-            >
-              <ThemedText variant="subtitle" style={{ textTransform: "lowercase", textAlign: "center" }}>
-                {props.word}
-              </ThemedText>
-            </View>
-
-            <View
-              style={{
-                position: "absolute",
-                left: center.x - deadZone,
-                top: center.y - deadZone,
+                left: wheelCenter.x - deadZone,
+                top: wheelCenter.y - deadZone,
                 width: deadZone * 2,
                 height: deadZone * 2,
                 borderRadius: deadZone,
@@ -406,37 +398,8 @@ export function WordFlashcard(props: {
               }}
             />
 
-            <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-              <View
-                style={{
-                  maxWidth: 260,
-                  paddingVertical: 10,
-                  paddingHorizontal: 12,
-                  borderRadius: 14,
-                  backgroundColor: theme.colors.card,
-                  borderWidth: 1.5,
-                  borderColor: wheelAccentBorder,
-                }}
-              >
-                <ThemedText variant="caption" style={{ textAlign: "center" }}>
-                  Sentence
-                </ThemedText>
-                <ThemedText
-                  variant="muted"
-                  style={{ textAlign: "center", lineHeight: 20, marginTop: 6 }}
-                  numberOfLines={4}
-                >
-                  {normalizeChoice(props.sentence) ? props.sentence : "No sentence available."}
-                </ThemedText>
-              </View>
-
-              <ThemedText variant="caption" style={{ textAlign: "center", marginTop: 12 }}>
-                Long press, then drag to choose
-              </ThemedText>
-            </View>
-
             {wheel.options.map((opt, i) => {
-              const pos = optionCenters[i] ?? { x: center.x, y: center.y };
+              const pos = optionCenters[i] ?? { x: wheelCenter.x, y: wheelCenter.y };
               const x = pos.x;
               const y = pos.y;
 
@@ -480,6 +443,66 @@ export function WordFlashcard(props: {
                 </View>
               );
             })}
+
+            {/* Top panel: keep sentence always readable above choices */}
+            <View style={{ position: "absolute", top: 12, left: 14, right: 14, alignItems: "center" }}>
+              <ThemedText variant="subtitle" style={{ textTransform: "lowercase", textAlign: "center" }}>
+                {props.word}
+              </ThemedText>
+            </View>
+
+            <View style={{ position: "absolute", top: 50, left: 14, right: 14 }}>
+              <View
+                style={{
+                  paddingVertical: 10,
+                  paddingHorizontal: 12,
+                  borderRadius: 16,
+                  backgroundColor: theme.colors.card,
+                  borderWidth: 1.5,
+                  borderColor: wheelAccentBorder,
+                  shadowColor: "#000000",
+                  shadowOpacity: 0.16,
+                  shadowRadius: 10,
+                  shadowOffset: { width: 0, height: 6 },
+                  elevation: 4,
+                }}
+              >
+                <ThemedText variant="caption" style={{ textAlign: "center" }}>
+                  Sentence
+                </ThemedText>
+                <ThemedText
+                  variant="muted"
+                  style={{ textAlign: "center", lineHeight: 20, marginTop: 6 }}
+                  numberOfLines={5}
+                >
+                  {normalizeChoice(props.sentence) ? props.sentence : "No sentence available."}
+                </ThemedText>
+              </View>
+            </View>
+
+            <View style={{ position: "absolute", bottom: 12, left: 14, right: 14, alignItems: "center" }}>
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  gap: 10,
+                  paddingVertical: 8,
+                  paddingHorizontal: 12,
+                  borderRadius: 999,
+                  backgroundColor: theme.colors.card,
+                  borderWidth: 1,
+                  borderColor: wheelAccentBorder,
+                }}
+              >
+                <ThemedText variant="caption">Selected:</ThemedText>
+                <ThemedText variant="caption" style={{ fontWeight: "900" }} numberOfLines={1}>
+                  {wheel.selectedIndex === null ? "—" : wheel.options[wheel.selectedIndex]}
+                </ThemedText>
+                <ThemedText variant="caption" style={{ opacity: 0.8 }}>
+                  • Release to choose
+                </ThemedText>
+              </View>
+            </View>
           </Animated.View>
         ) : null}
 
