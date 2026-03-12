@@ -72,6 +72,7 @@ export function WordFlashcard(props: {
   synonymWheelPool?: string[];
   synonymWheelCount?: number;
   onSynonymWheelAnswer?: (params: { selectedSynonym: string; isCorrect: boolean }) => void;
+  onSynonymWheelVisibleChange?: (visible: boolean) => void;
 }) {
   const theme = useTheme();
   const wheelEnabled = props.wheelEnabled ?? true;
@@ -80,6 +81,7 @@ export function WordFlashcard(props: {
   const feedbackTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const wheelAnim = useRef(new Animated.Value(0)).current;
   const wheelFinalizedRef = useRef(false);
+  const wheelStartPointRef = useRef<{ x: number; y: number } | null>(null);
 
   const [cardSize, setCardSize] = useState({ width: 0, height: 0 });
   const [wheel, setWheel] = useState<{
@@ -98,6 +100,7 @@ export function WordFlashcard(props: {
     return () => {
       if (feedbackTimerRef.current) clearTimeout(feedbackTimerRef.current);
       wheelAnim.stopAnimation();
+      props.onSynonymWheelVisibleChange?.(false);
     };
   }, [wheelAnim]);
 
@@ -105,24 +108,14 @@ export function WordFlashcard(props: {
     wheelVisibleRef.current = wheel.isVisible;
   }, [wheel.isVisible]);
 
-  const wheelCenter = useMemo(() => {
-    const x = cardSize.width / 2;
-    const idealY = cardSize.height / 2 + 22; // keep a bit lower so the top panel stays readable
-    const y = Math.max(0, Math.min(cardSize.height, idealY));
-    return { x, y };
-  }, [cardSize.height, cardSize.width]);
-  const radius = useMemo(() => {
-    const base = Math.max(1, Math.min(cardSize.width, cardSize.height));
-    return Math.max(74, Math.min(128, base * 0.4));
-  }, [cardSize.height, cardSize.width]);
-  const deadZone = useMemo(() => Math.max(26, Math.min(44, radius * 0.45)), [radius]);
   const wheelOverlayBg = useMemo(() => withAlpha(theme.colors.background, 0.94), [theme.colors.background]);
   const wheelAccentSoft = useMemo(() => withAlpha(theme.colors.primary, 0.14), [theme.colors.primary]);
   const wheelAccentBorder = useMemo(() => withAlpha(theme.colors.primary, 0.28), [theme.colors.primary]);
-  const wheelPressRetentionOffset = useMemo(() => {
-    const pad = Math.ceil(radius + 90);
-    return { top: pad, bottom: pad, left: pad, right: pad };
-  }, [radius]);
+  const wheelOverlayPadding = 14;
+  const wheelPressRetentionOffset = useMemo(
+    () => ({ top: 220, bottom: 220, left: 220, right: 220 }),
+    []
+  );
 
   const wheelOverlayScale = useMemo(
     () =>
@@ -133,31 +126,14 @@ export function WordFlashcard(props: {
     [wheelAnim]
   );
 
-  function computeOptionCenters(count: number): { x: number; y: number }[] {
-    const n = Math.max(1, count);
-    // Keep a top "gap" so the sentence panel stays readable.
-    // We render choices on a 240° arc (gap = 120° centered at top).
-    const gapRad = (120 * Math.PI) / 180;
-    const start = -Math.PI / 2 + gapRad / 2; // starts around upper-right
-    const sweep = 2 * Math.PI - gapRad; // 240°
-    const step = n === 1 ? 0 : sweep / (n - 1);
-    const centers: { x: number; y: number }[] = [];
-    for (let i = 0; i < n; i++) {
-      const angle = start + i * step;
-      centers.push({
-        x: wheelCenter.x + Math.cos(angle) * radius,
-        y: wheelCenter.y + Math.sin(angle) * radius,
-      });
-    }
-    return centers;
-  }
-
-  const optionCenters = useMemo(() => {
-    if (!wheel.isVisible) return [];
-    if (wheel.options.length === 0) return [];
-    if (cardSize.width <= 0 || cardSize.height <= 0) return [];
-    return computeOptionCenters(wheel.options.length);
-  }, [cardSize.height, cardSize.width, radius, wheel.isVisible, wheel.options.length, wheelCenter.x, wheelCenter.y]);
+  const cardScale = useMemo(
+    () =>
+      wheelAnim.interpolate({
+        inputRange: [0, 1],
+        outputRange: [1, 1.07],
+      }),
+    [wheelAnim]
+  );
 
   function clearFeedbackLater() {
     if (feedbackTimerRef.current) clearTimeout(feedbackTimerRef.current);
@@ -183,12 +159,14 @@ export function WordFlashcard(props: {
       useNativeDriver: true,
     }).start(() => {
       setWheel({ isVisible: false, options: [], selectedIndex: null });
+      wheelStartPointRef.current = null;
+      props.onSynonymWheelVisibleChange?.(false);
     });
 
     selectedIndexRef.current = null;
   }
 
-  function openWheel(startPoint?: { x: number; y: number }) {
+  function openWheel(startPoint: { x: number; y: number } | null) {
     if (!wheelEnabled) return;
     if (wheelVisibleRef.current) return;
     const correct = normalizeChoice(props.synonym);
@@ -201,10 +179,12 @@ export function WordFlashcard(props: {
 
     suppressNextTapRef.current = true;
     wheelFinalizedRef.current = false;
+    wheelStartPointRef.current = startPoint;
 
     // Don't auto-select on open; only commit a choice after the user drags + releases.
     selectedIndexRef.current = null;
     setWheel({ isVisible: true, options, selectedIndex: null });
+    props.onSynonymWheelVisibleChange?.(true);
 
     wheelAnim.stopAnimation();
     wheelAnim.setValue(0);
@@ -252,39 +232,37 @@ export function WordFlashcard(props: {
   function handleWheelMove(params: { x: number; y: number }) {
     if (!wheel.isVisible) return;
     if (wheel.options.length === 0) return;
-    if (cardSize.width <= 0 || cardSize.height <= 0) return;
+    if (cardSize.width <= 0) return;
 
-    const dx = params.x - wheelCenter.x;
-    const dy = params.y - wheelCenter.y;
-    const dist = Math.hypot(dx, dy);
-    if (dist < deadZone) {
-      setSelectedIndex(null);
-      return;
-    }
-
-    if (optionCenters.length === 0) return;
-
-    let bestIndex = 0;
-    let bestDist = Number.POSITIVE_INFINITY;
-    for (let i = 0; i < optionCenters.length; i++) {
-      const d = Math.hypot(params.x - optionCenters[i].x, params.y - optionCenters[i].y);
-      if (d < bestDist) {
-        bestDist = d;
-        bestIndex = i;
-      }
-    }
-
-    const current = selectedIndexRef.current;
-    if (typeof current === "number" && optionCenters[current]) {
-      const currentDist = Math.hypot(params.x - optionCenters[current].x, params.y - optionCenters[current].y);
-      const hysteresisPx = Math.max(10, Math.min(20, radius * 0.12));
-      if (currentDist - bestDist < hysteresisPx) {
-        setSelectedIndex(current);
+    const bottomZoneHeight = 120;
+    if (cardSize.height > 0) {
+      const selectionZoneTop = Math.max(wheelOverlayPadding, cardSize.height - bottomZoneHeight);
+      if (params.y < selectionZoneTop) {
+        setSelectedIndex(null);
         return;
       }
     }
 
-    setSelectedIndex(bestIndex);
+    const start = wheelStartPointRef.current;
+    if (start) {
+      const dx = params.x - start.x;
+      const dy = params.y - start.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      // Small "dead zone" to avoid accidental selection from tiny jitter.
+      if (dist < 14) {
+        setSelectedIndex(null);
+        return;
+      }
+    }
+
+    const n = Math.max(1, wheel.options.length);
+    const rowX = wheelOverlayPadding;
+    const rowW = Math.max(1, cardSize.width - wheelOverlayPadding * 2);
+    const clampedX = Math.max(rowX, Math.min(params.x, rowX + rowW));
+    const segmentW = rowW / n;
+    const raw = Math.floor((clampedX - rowX) / Math.max(1, segmentW));
+    const idx = Math.max(0, Math.min(raw, n - 1));
+    setSelectedIndex(idx);
   }
 
   const feedbackToneColor =
@@ -295,276 +273,255 @@ export function WordFlashcard(props: {
         : theme.colors.border;
 
   return (
-    <View
-      style={{
-        backgroundColor: theme.colors.card,
-        borderRadius: 20,
-        borderWidth: 1,
-        borderColor: feedbackToneColor,
-        minHeight: 260,
-        overflow: wheel.isVisible ? "visible" : "hidden",
-        zIndex: wheel.isVisible ? 50 : 0,
-        elevation: wheel.isVisible ? 12 : 0,
-      }}
-    >
-      <Pressable
-        onLayout={handleCardLayout}
-        delayLongPress={380}
-        pressRetentionOffset={wheelPressRetentionOffset}
-        onLongPress={() => openWheel()}
-        onPress={() => {
-          if (wheel.isVisible) return;
-          if (suppressNextTapRef.current) return;
-          props.onToggleReveal();
+    <Animated.View style={{ transform: [{ scale: cardScale }] }}>
+      <View
+        style={{
+          backgroundColor: theme.colors.card,
+          borderRadius: 20,
+          borderWidth: 1,
+          borderColor: feedbackToneColor,
+          minHeight: 260,
+          overflow: "hidden",
         }}
-        onTouchEnd={() => {
-          if (!wheel.isVisible) return;
-          finalizeWheelSelection();
-        }}
-        onPressOut={() => {
-          // Fallback: ensure we always close/commit on release even if onTouchEnd isn't delivered.
-          if (!wheel.isVisible) return;
-          finalizeWheelSelection();
-        }}
-        onTouchCancel={() => {
-          if (!wheel.isVisible) return;
-          wheelFinalizedRef.current = true;
-          closeWheelAnimated();
-          setTimeout(() => {
-            suppressNextTapRef.current = false;
-          }, 250);
-        }}
-        onTouchMove={(e) => {
-          if (!wheel.isVisible) return;
-          handleWheelMove({ x: e.nativeEvent.locationX, y: e.nativeEvent.locationY });
-        }}
-        style={({ pressed }) => [
-          {
-            padding: 18,
-            minHeight: 260,
-            justifyContent: "center",
-            opacity: pressed ? 0.92 : 1,
-          },
-        ]}
       >
-        <View style={{ alignItems: "center", gap: 10 }}>
-          <ThemedText variant="title" style={{ textTransform: "lowercase" }}>
-            {props.word}
-          </ThemedText>
-
-          {props.isRevealed ? (
-            <View style={{ gap: 10 }}>
-              <ThemedText variant="subtitle" style={{ textAlign: "center" }}>
-                {props.synonym}
-              </ThemedText>
-              <ThemedText variant="muted" style={{ textAlign: "center", lineHeight: 20 }}>
-                {props.sentence}
-              </ThemedText>
-            </View>
-          ) : (
-            <ThemedText variant="muted" style={{ textAlign: "center" }}>
-              Tap to reveal meaning + sentence
-            </ThemedText>
-          )}
-        </View>
-
-        {/* Synonym wheel overlay (long-press + drag) */}
-        {wheel.isVisible ? (
-          <Animated.View
-            pointerEvents="none"
-            style={{
-              position: "absolute",
-              top: -28,
-              left: -12,
-              right: -12,
-              bottom: -40,
-              backgroundColor: wheelOverlayBg,
-              padding: 14,
-              opacity: wheelAnim,
-              transform: [{ scale: wheelOverlayScale }],
-            }}
-          >
-            <View
-              style={{
-                position: "absolute",
-                left: wheelCenter.x - deadZone,
-                top: wheelCenter.y - deadZone,
-                width: deadZone * 2,
-                height: deadZone * 2,
-                borderRadius: deadZone,
-                borderWidth: 1,
-                borderColor: wheelAccentBorder,
-                backgroundColor: wheelAccentSoft,
-              }}
-            />
-
-            {wheel.options.map((opt, i) => {
-              const pos = optionCenters[i] ?? { x: wheelCenter.x, y: wheelCenter.y };
-              const x = pos.x;
-              const y = pos.y;
-
-              const n = Math.max(1, wheel.options.length);
-              const baseW = Math.max(96, Math.min(132, cardSize.width * 0.32));
-              const w = Math.max(88, Math.round(baseW - Math.max(0, n - 6) * 6));
-              const h = 44;
-              const isSelected = wheel.selectedIndex === i;
-
-              return (
-                <View
-                  key={`${opt}-${i}`}
-                  style={{
-                    position: "absolute",
-                    left: x - w / 2,
-                    top: y - h / 2,
-                    width: w,
-                    height: h,
-                    borderRadius: 999,
-                    alignItems: "center",
-                    justifyContent: "center",
-                    paddingHorizontal: 10,
-                    backgroundColor: isSelected ? theme.colors.primary : wheelAccentSoft,
-                    borderWidth: isSelected ? 2 : 1,
-                    borderColor: isSelected ? theme.colors.primary : wheelAccentBorder,
-                    transform: [{ scale: isSelected ? 1.06 : 1 }],
-                    shadowColor: "#000000",
-                    shadowOpacity: isSelected ? 0.22 : 0.12,
-                    shadowRadius: isSelected ? 12 : 8,
-                    shadowOffset: { width: 0, height: 6 },
-                    elevation: isSelected ? 6 : 3,
-                  }}
-                >
-                  <ThemedText
-                    variant="caption"
-                    style={{ textAlign: "center", color: isSelected ? "#FFFFFF" : theme.colors.text }}
-                    numberOfLines={2}
-                  >
-                    {opt}
-                  </ThemedText>
-                </View>
-              );
-            })}
-
-            {/* Top panel: keep sentence always readable above choices */}
-            <View style={{ position: "absolute", top: 12, left: 14, right: 14, alignItems: "center" }}>
-              <ThemedText variant="subtitle" style={{ textTransform: "lowercase", textAlign: "center" }}>
+        <Pressable
+          onLayout={handleCardLayout}
+          delayLongPress={380}
+          pressRetentionOffset={wheelPressRetentionOffset}
+          onLongPress={(e) => openWheel({ x: e.nativeEvent.locationX, y: e.nativeEvent.locationY })}
+          onPress={() => {
+            if (wheel.isVisible) return;
+            if (suppressNextTapRef.current) return;
+            props.onToggleReveal();
+          }}
+          onTouchEnd={() => {
+            if (!wheel.isVisible) return;
+            finalizeWheelSelection();
+          }}
+          onTouchCancel={() => {
+            if (!wheel.isVisible) return;
+            wheelFinalizedRef.current = true;
+            closeWheelAnimated();
+            setTimeout(() => {
+              suppressNextTapRef.current = false;
+            }, 250);
+          }}
+          onTouchMove={(e) => {
+            if (!wheel.isVisible) return;
+            handleWheelMove({ x: e.nativeEvent.locationX, y: e.nativeEvent.locationY });
+          }}
+          style={({ pressed }) => [
+            {
+              minHeight: 260,
+              justifyContent: "center",
+              opacity: wheel.isVisible ? 1 : pressed ? 0.92 : 1,
+            },
+          ]}
+        >
+          <View style={{ padding: 18, minHeight: 260, justifyContent: "center" }}>
+            <View style={{ alignItems: "center", gap: 10 }}>
+              <ThemedText variant="title" style={{ textTransform: "lowercase" }}>
                 {props.word}
               </ThemedText>
-            </View>
 
-            <View style={{ position: "absolute", top: 50, left: 14, right: 14 }}>
-              <View
-                style={{
-                  paddingVertical: 10,
-                  paddingHorizontal: 12,
-                  borderRadius: 16,
-                  backgroundColor: theme.colors.card,
-                  borderWidth: 1.5,
-                  borderColor: wheelAccentBorder,
-                  shadowColor: "#000000",
-                  shadowOpacity: 0.16,
-                  shadowRadius: 10,
-                  shadowOffset: { width: 0, height: 6 },
-                  elevation: 4,
-                }}
-              >
-                <ThemedText variant="caption" style={{ textAlign: "center" }}>
-                  Sentence
+              {props.isRevealed ? (
+                <View style={{ gap: 10 }}>
+                  <ThemedText variant="subtitle" style={{ textAlign: "center" }}>
+                    {props.synonym}
+                  </ThemedText>
+                  <ThemedText variant="muted" style={{ textAlign: "center", lineHeight: 20 }}>
+                    {props.sentence}
+                  </ThemedText>
+                </View>
+              ) : (
+                <ThemedText variant="muted" style={{ textAlign: "center" }}>
+                  Tap to reveal meaning + sentence
                 </ThemedText>
-                <ThemedText
-                  variant="muted"
-                  style={{ textAlign: "center", lineHeight: 20, marginTop: 6 }}
-                  numberOfLines={5}
-                >
-                  {normalizeChoice(props.sentence) ? props.sentence : "No sentence available."}
-                </ThemedText>
-              </View>
-            </View>
-
-            <View style={{ position: "absolute", bottom: 12, left: 14, right: 14, alignItems: "center" }}>
-              <View
-                style={{
-                  flexDirection: "row",
-                  alignItems: "center",
-                  gap: 10,
-                  paddingVertical: 8,
-                  paddingHorizontal: 12,
-                  borderRadius: 999,
-                  backgroundColor: theme.colors.card,
-                  borderWidth: 1,
-                  borderColor: wheelAccentBorder,
-                }}
-              >
-                <ThemedText variant="caption">Selected:</ThemedText>
-                <ThemedText variant="caption" style={{ fontWeight: "900" }} numberOfLines={1}>
-                  {wheel.selectedIndex === null ? "—" : wheel.options[wheel.selectedIndex]}
-                </ThemedText>
-                <ThemedText variant="caption" style={{ opacity: 0.8 }}>
-                  • Release to choose
-                </ThemedText>
-              </View>
-            </View>
-          </Animated.View>
-        ) : null}
-
-        {feedback ? (
-          <View
-            pointerEvents="none"
-            style={{
-              position: "absolute",
-              left: 0,
-              right: 0,
-              bottom: 12,
-              alignItems: "center",
-            }}
-          >
-            <View
-              style={{
-                paddingVertical: 6,
-                paddingHorizontal: 12,
-                borderRadius: 999,
-                backgroundColor: theme.colors.background,
-                borderWidth: 1,
-                borderColor: feedbackToneColor,
-              }}
-            >
-              <ThemedText variant="caption" style={{ color: feedbackToneColor, fontWeight: "900" }}>
-                {feedback.text}
-              </ThemedText>
+              )}
             </View>
           </View>
-        ) : null}
-      </Pressable>
 
-      {/* Pronounce button */}
-      <Pressable
-        onPress={() => {
-          if (props.isRevealed) {
-            speakEnglishSequence({
-              texts: [props.word, props.synonym, props.sentence],
-              interrupt: true,
-            });
-          } else {
-            speakEnglishWord({ text: props.word });
-          }
-        }}
-        onLongPress={() => stopSpeaking()}
-        style={({ pressed }) => ({
-          position: "absolute",
-          top: 12,
-          right: 12,
-          width: 40,
-          height: 40,
-          borderRadius: 20,
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: theme.colors.background,
-          borderWidth: 1,
-          borderColor: theme.colors.border,
-          opacity: pressed ? 0.85 : 1,
-        })}
-      >
-        <Ionicons name="volume-high" size={20} color={theme.colors.text} />
-      </Pressable>
-    </View>
+          {/* Synonym wheel overlay (long-press + drag) */}
+          {wheel.isVisible ? (
+            <Animated.View
+              pointerEvents="none"
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                backgroundColor: wheelOverlayBg,
+                padding: wheelOverlayPadding,
+                opacity: wheelAnim,
+                transform: [{ scale: wheelOverlayScale }],
+              }}
+            >
+              <View style={{ flex: 1, justifyContent: "space-between" }}>
+                <View style={{ alignItems: "center", marginTop: 4 }}>
+                  <ThemedText variant="subtitle" style={{ textTransform: "lowercase", textAlign: "center" }}>
+                    {props.word}
+                  </ThemedText>
+
+                  <View
+                    style={{
+                      marginTop: 10,
+                      paddingVertical: 10,
+                      paddingHorizontal: 12,
+                      borderRadius: 16,
+                      backgroundColor: withAlpha(theme.colors.primary, 0.06),
+                      borderWidth: 1.5,
+                      borderColor: wheelAccentBorder,
+                    }}
+                  >
+                    <ThemedText variant="caption" style={{ textAlign: "center" }}>
+                      Sentence
+                    </ThemedText>
+                    <ThemedText
+                      variant="body"
+                      style={{ textAlign: "center", lineHeight: 22, marginTop: 6 }}
+                      numberOfLines={4}
+                    >
+                      {normalizeChoice(props.sentence) ? props.sentence : "No sentence available."}
+                    </ThemedText>
+                  </View>
+
+                  <ThemedText variant="caption" style={{ textAlign: "center", marginTop: 10, opacity: 0.9 }}>
+                    Hold, then slide • Release to select
+                  </ThemedText>
+                </View>
+
+                <View style={{ alignItems: "center" }}>
+                  <View
+                    style={{
+                      marginBottom: 10,
+                      paddingVertical: 8,
+                      paddingHorizontal: 12,
+                      borderRadius: 999,
+                      backgroundColor:
+                        wheel.selectedIndex === null ? theme.colors.card : withAlpha(theme.colors.primary, 0.15),
+                      borderWidth: 1,
+                      borderColor: wheelAccentBorder,
+                      shadowColor: "#000",
+                      shadowOpacity: 0.18,
+                      shadowRadius: 10,
+                      shadowOffset: { width: 0, height: 6 },
+                      elevation: 3,
+                    }}
+                  >
+                    <ThemedText variant="caption" style={{ textAlign: "center", fontWeight: "900" }}>
+                      {wheel.selectedIndex === null ? "Slide left/right to pick" : wheel.options[wheel.selectedIndex]}
+                    </ThemedText>
+                  </View>
+
+                  <View
+                    style={{
+                      width: "100%",
+                      flexDirection: "row",
+                      borderRadius: 16,
+                      overflow: "hidden",
+                      borderWidth: 1,
+                      borderColor: wheelAccentBorder,
+                      backgroundColor: theme.colors.card,
+                    }}
+                  >
+                    {wheel.options.map((opt, i) => {
+                      const isSelected = wheel.selectedIndex === i;
+                      return (
+                        <View
+                          key={`${opt}-${i}`}
+                          style={{
+                            flex: 1,
+                            minHeight: 62,
+                            alignItems: "center",
+                            justifyContent: "center",
+                            paddingHorizontal: 8,
+                            backgroundColor: isSelected ? theme.colors.primary : wheelAccentSoft,
+                            borderLeftWidth: i === 0 ? 0 : 1,
+                            borderLeftColor: wheelAccentBorder,
+                          }}
+                        >
+                          <ThemedText
+                            variant="caption"
+                            style={{
+                              textAlign: "center",
+                              color: isSelected ? "#FFFFFF" : theme.colors.text,
+                              fontWeight: isSelected ? "900" : "700",
+                            }}
+                            numberOfLines={2}
+                          >
+                            {opt}
+                          </ThemedText>
+                        </View>
+                      );
+                    })}
+                  </View>
+                </View>
+              </View>
+            </Animated.View>
+          ) : null}
+
+          {feedback ? (
+            <View
+              pointerEvents="none"
+              style={{
+                position: "absolute",
+                left: 0,
+                right: 0,
+                bottom: 12,
+                alignItems: "center",
+              }}
+            >
+              <View
+                style={{
+                  paddingVertical: 6,
+                  paddingHorizontal: 12,
+                  borderRadius: 999,
+                  backgroundColor: theme.colors.background,
+                  borderWidth: 1,
+                  borderColor: feedbackToneColor,
+                }}
+              >
+                <ThemedText variant="caption" style={{ color: feedbackToneColor, fontWeight: "900" }}>
+                  {feedback.text}
+                </ThemedText>
+              </View>
+            </View>
+          ) : null}
+        </Pressable>
+
+        {/* Pronounce button */}
+        <Pressable
+          pointerEvents={wheel.isVisible ? "none" : "auto"}
+          onPress={() => {
+            if (props.isRevealed) {
+              speakEnglishSequence({
+                texts: [props.word, props.synonym, props.sentence],
+                interrupt: true,
+              });
+            } else {
+              speakEnglishWord({ text: props.word });
+            }
+          }}
+          onLongPress={() => stopSpeaking()}
+          style={({ pressed }) => ({
+            position: "absolute",
+            top: 12,
+            right: 12,
+            width: 40,
+            height: 40,
+            borderRadius: 20,
+            alignItems: "center",
+            justifyContent: "center",
+            backgroundColor: theme.colors.background,
+            borderWidth: 1,
+            borderColor: theme.colors.border,
+            opacity: wheel.isVisible ? 0 : pressed ? 0.85 : 1,
+          })}
+        >
+          <Ionicons name="volume-high" size={20} color={theme.colors.text} />
+        </Pressable>
+      </View>
+    </Animated.View>
   );
 }

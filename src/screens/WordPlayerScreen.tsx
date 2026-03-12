@@ -68,6 +68,7 @@ export function WordPlayerScreen() {
   }, [currentIndex]);
 
   const [isRevealed, setIsRevealed] = useState(false);
+  const [isSynonymWheelOpen, setIsSynonymWheelOpen] = useState(false);
   const [isPlayModeOn, setIsPlayModeOn] = useState(false);
   const isPlayModeOnRef = useRef(isPlayModeOn);
   useEffect(() => {
@@ -99,6 +100,7 @@ export function WordPlayerScreen() {
     if (words.length === 0) return;
     const clamped = Math.max(0, Math.min(index, words.length - 1));
     stopAll();
+    setIsSynonymWheelOpen(false);
     setIsRevealed(false);
     setCurrentIndex(clamped);
     listRef.current?.scrollToOffset({ offset: width * clamped, animated });
@@ -207,6 +209,7 @@ export function WordPlayerScreen() {
           }}
           horizontal
           pagingEnabled
+          scrollEnabled={!isSynonymWheelOpen}
           showsHorizontalScrollIndicator={false}
           data={words}
           keyExtractor={(item) => item.id}
@@ -228,6 +231,9 @@ export function WordPlayerScreen() {
                 isRevealed={isRevealed && item.id === currentWord?.id}
                 wheelEnabled={!isPlayModeOn}
                 synonymWheelPool={synonymWheelPool}
+                onSynonymWheelVisibleChange={(visible) => {
+                  setIsSynonymWheelOpen(visible);
+                }}
                 onSynonymWheelAnswer={({ isCorrect }) => {
                   if (isPlayModeOnRef.current) return;
                   if (item.id !== currentWord?.id) return;
